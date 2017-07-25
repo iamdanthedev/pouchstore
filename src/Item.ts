@@ -13,13 +13,13 @@ import {
 } from 'mobx'
 
 import { isNewDocument, isNil } from './utils'
-import { Store } from './Pouchstore'
+import { Store } from './Store'
 import { Attachment, ItemDoc, NewItemDoc, ExistingItemDoc  } from './types'
 
 
 const clone = require('lodash.clone')
 const uuid = require('uuid')
-const log = require('debug')('App:Modules:PouchStore:PouchstoreItem')
+const log = require('debug')('App:Modules:PouchStore:Item')
 
 
 /**
@@ -32,14 +32,13 @@ interface ItemModel {
 
 
 /**
- * Items that PouchStores consist of should be an object of or inherit PouchstoreItem
+ * Items that PouchStores consist of should be an object of or inherit Item
  *
- * It provides basic ways of working with PouchStore items
+ * It provides basic ways of working with Pouchstore items
  */
-export
-class PouchstoreItem<T extends ItemModel, U extends PouchstoreItem<T, U, S>, S extends Store<T, U>> {
+export class Item<T extends ItemModel> {
 
-	constructor(doc: ItemDoc<T>, collection: S) {
+	constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>>) {
 		log('constructor() %o', { doc })
 
 		this._collection = collection
@@ -87,20 +86,20 @@ class PouchstoreItem<T extends ItemModel, U extends PouchstoreItem<T, U, S>, S e
   /**
    * Updates the item's underlying PouchDB document
    * Changes are not saved
-   * @use PouchstoreItem#save()
+   * @use Item#save()
    */
-	set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>): U
+	set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>): this
 
   /**
    * Updates one property of the item's underlying PouchDB document
    * Changes are not saved
-   * @use PouchstoreItem#save()
+   * @use Item#save()
    */
-	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K]): U
+	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K]): this
 
   /** @internal */
 	@action
-	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(docOrProp: K | DOC | Partial<DOC>, value?: DOC[K]): U {
+	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(docOrProp: K | DOC | Partial<DOC>, value?: DOC[K]): this {
 		log('set()', { docOrProp, value })
 
 		if (typeof docOrProp === 'string' && value) {
@@ -134,7 +133,7 @@ class PouchstoreItem<T extends ItemModel, U extends PouchstoreItem<T, U, S>, S e
       .catch(err => Promise.reject(err))
   }
 
-  /** Attach a file to the document */
+  /** Attaches a file to the document */
 	@action
 	attach(name: string, data: Blob | Buffer, contentType: string): void {
 
@@ -149,7 +148,7 @@ class PouchstoreItem<T extends ItemModel, U extends PouchstoreItem<T, U, S>, S e
 	}
 
   /**
-   * Remove attachment
+   * Removes attachment
    * This is the same as calling PouchStore#put(item)
    */
 	@action
@@ -286,7 +285,7 @@ class PouchstoreItem<T extends ItemModel, U extends PouchstoreItem<T, U, S>, S e
 
 	/** Sets the whole underlying doc, some of its properties or a single property */
 	@action
-	protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>): PouchstoreItem<T, U, S> {
+	protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>): this {
 		const doc: Partial<DOC> = clone(data)
 
 
@@ -315,7 +314,7 @@ class PouchstoreItem<T extends ItemModel, U extends PouchstoreItem<T, U, S>, S e
 	protected _attachmentsMap: ObservableMap<PouchDB.Core.AttachmentResponse> =
 		observable.map([], '_attachmentsMap')
 
-	protected _collection: S
+	protected _collection: Store<T, Item<T>>
 
 	@observable.deep
 	protected _doc: ItemDoc<T>

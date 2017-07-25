@@ -1,8 +1,9 @@
 import { computed, observable, ObservableMap } from 'mobx'
 
-import { PouchStoreOptions, IPouchStoreOptions } from './PouchstoreOptions'
-import { PouchstoreItem, ItemModel } from './PouchstoreItem'
+import { StoreOptions, IStoreOptions } from './StoreOptions'
+import { Item, ItemModel } from './Item'
 import { isNil } from './utils'
+import { MapOf, ItemDoc, ExistingItemDoc, NewItemDoc } from './types'
 
 const uuid = require('uuid')
 const log = require('debug')('PouchStore')
@@ -17,7 +18,7 @@ const log = require('debug')('PouchStore')
  *             nor options.classFactory
  */
 export
-class Store<T extends ItemModel, U extends PouchstoreItem<T>>
+class Store<T extends ItemModel, U extends Item<T>>
 {
 
   /**
@@ -25,12 +26,12 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
    * It does not subsribe/attach it to any PouchDB database automatically
    * @see PouchStore#subsribe() Use subsribe to do so
    */
-  constructor(options: IPouchStoreOptions<T, U> | PouchStoreOptions<T, U>) {
+  constructor(options: IStoreOptions<T, U> | StoreOptions<T, U>) {
 
-    if (options instanceof PouchStoreOptions)
+    if (options instanceof StoreOptions)
       this._options = options
     else
-      this._options = new PouchStoreOptions<T, U>(options)
+      this._options = new StoreOptions<T, U>(options)
 
 
     log(`${this._options.type} constructor() %o`, { options: this._options })
@@ -88,8 +89,8 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
    * Returns a map of all documents
    */
   @computed
-  get allMap(): TMapOf<U> {
-    const result: TMapOf<U> = {}
+  get allMap(): MapOf<U> {
+    const result: MapOf<U> = {}
     this.all.forEach(item => result[item.$doc[this._options.idField]] = item)
 
     return result
@@ -121,7 +122,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
    * Creates a new object
    * It does not include it into the store
    *
-   * @see PouchstoreItem#save()
+   * @see Item#save()
    */
   create(data: Partial<T>): U {
     log(`${this._options.type} create() %o`, { data })
@@ -129,7 +130,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
     const item: T = this._options.validator(data)
     const _id = this._id(item)
 
-    const doc: TNewDocument<T> = Object.assign({}, item, {
+    const doc: NewItemDoc<T> = Object.assign({}, item, {
       _id,
       _rev: undefined,
     })
@@ -154,7 +155,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
    *
    * @todo Actually, it is, probably, not supposed to be in a public interface
    */
-  put(item: U): Promise<TExistingDocument<T>> {
+  put(item: U): Promise<ExistingItemDoc<T>> {
     log(`${this._options.type} update() %o`, { item })
 
     if (!this._db)
@@ -178,7 +179,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
     // now put it into the bucket
     return db.put(doc)
       .then(() => db.get(_id))
-      .then((doc: TExistingDocument<T>) => Promise.resolve(doc))
+      .then((doc: ExistingItemDoc<T>) => Promise.resolve(doc))
       .catch(err => Promise.reject(err))
 
   }
@@ -206,11 +207,11 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
       return Promise.reject('Could not get item\'s id')
 
     return db.get(_id)
-      .then((doc: TExistingDocument<T>) =>
+      .then((doc: ExistingItemDoc<T>) =>
         db.putAttachment(doc._id, name, doc._rev, file, contentType),
       )
       .then(() => db.get(_id))
-      .then((doc: TExistingDocument<T>) => Promise.resolve(this._addDoc(doc)))
+      .then((doc: ExistingItemDoc<T>) => Promise.resolve(this._addDoc(doc)))
       .catch(err => Promise.reject(err))
 
   }
@@ -242,7 +243,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
     // TODO: this should go into separate function - hook invoker
     // like this return invokeHook('onBeforeRemove').then()
     // hook invoker returns Promise.reject() if failed
-    let beforeRemovePromise: Promise<TDocument<any>[] | false | void>
+    let beforeRemovePromise: Promise<ItemDoc<any>[] | false | void>
 
     if (this._options.onBeforeRemove) {
       beforeRemovePromise = this._options.onBeforeRemove.call(this, item)
@@ -250,7 +251,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
       beforeRemovePromise = Promise.resolve()
     }
 
-    const extraDocs: TDocument<any> =  []
+    const extraDocs: ItemDoc<any> =  []
 
     return beforeRemovePromise
       .then((resp) => {
@@ -294,7 +295,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
 
     return db.allDocs(options)
       .then((result) => {
-        result.rows.forEach(row => this._addDoc(<TExistingDocument<T>>row.doc))
+        result.rows.forEach(row => this._addDoc(<ExistingItemDoc<T>>row.doc))
         return Promise.resolve()
       })
       .catch(err => Promise.reject(err))
@@ -327,10 +328,10 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
         log(`${this._options.type} change info`, info)
 
         if (info.doc && !info.deleted)
-          this._addDoc(info.doc as TExistingDocument<T>)
+          this._addDoc(info.doc as ExistingItemDoc<T>)
 
         if (info.doc && info.deleted)
-          this._removeItem(info.doc as TExistingDocument<T>)
+          this._removeItem(info.doc as ExistingItemDoc<T>)
       })
 
     return Promise.resolve()
@@ -338,7 +339,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
   }
 
   /** Instantiates a new object depending in modelClass and modelFactory options */
-  private _instantiate(doc: TDocument<T>): U {
+  private _instantiate(doc: ItemDoc<T>): U {
     log('_instantite() %o', { doc })
 
     const { factory } = this._options
@@ -359,7 +360,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
     this._items.set(id, item)
   }
 
-  private _addDoc(doc: TExistingDocument<T>): void {
+  private _addDoc(doc: ExistingItemDoc<T>): void {
     log(`${this._options.type} _setItem() %o`, { doc })
 
     const id = doc[this._options.idField]
@@ -376,7 +377,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
 
   }
 
-  private _removeItem(doc: TExistingDocument<T>) {
+  private _removeItem(doc: ExistingItemDoc<T>) {
     log(`${this._options.type} _removeItem %o`, { doc })
 
     this._items.delete(doc[this._options.idField])
@@ -400,7 +401,7 @@ class Store<T extends ItemModel, U extends PouchstoreItem<T>>
     return `${type}::${id}`
   }
 
-  protected _options: PouchStoreOptions<T, U>
+  protected _options: StoreOptions<T, U>
 
   protected _db: PouchDB.Database<T> | null
 

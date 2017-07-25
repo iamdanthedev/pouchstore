@@ -1,12 +1,16 @@
-import { PouchStore } from './Pouchstore'
+import { Store } from './Store'
+import { ItemModel, Item } from './Item'
+import { ItemDoc, OnBeforeRemove } from './types'
 
 /**
  * Options which the PouchCollection constructor is supplied with
  */
 export
-class PouchStoreOptions<T extends PouchstoreModel, U extends IPouchStoreItem<T>> {
+class StoreOptions<T extends ItemModel, U extends Item<T>>
+implements IStoreOptions<T, U>
+{
 
-  constructor(options: IPouchStoreOptions<T, U>) {
+  constructor(options: IStoreOptions<T, U>) {
 
     this.loadAttachments = options.loadAttachments || this.loadAttachments
     this.type = options.type || this.type
@@ -14,7 +18,6 @@ class PouchStoreOptions<T extends PouchstoreModel, U extends IPouchStoreItem<T>>
     this.factory = options.factory || this.factory
     this.validator = options.validator || this.validator
     this.onBeforeRemove = options.onBeforeRemove || this.onBeforeRemove
-
   }
 
 
@@ -25,26 +28,26 @@ class PouchStoreOptions<T extends PouchstoreModel, U extends IPouchStoreItem<T>>
    *
    * @danger May consumes a lot of extra memory!
    */
-  loadAttachments: boolean = false
+  loadAttachments: OptionLoadAttachments = false
 
   /** Every item created received a type property and id in the form of '{$type}::id' */
-  type: string
+  type: OptionType
 
   /** Model's primary key */
-  idField: keyof T
+  idField: OptionIdField<T>
 
   /** Model factory */
-  factory: <S extends PouchStore<T, U>>(doc: TDocument<T>, collection: S) => U
+  factory: OptionFactory<T, U>
 
   /** Default values for model properties */
-  validator: (data: Partial<T>) => T
+  validator: OptionValidator<T>
 
   /** Hook to be evaluated before a store item it removed */
-  onBeforeRemove: TOnBeforeRemoveCallback<U>
+  onBeforeRemove: OnBeforeRemove<U>
 }
 
 export
-interface IPouchStoreOptions<T extends PouchstoreModel, U extends IPouchStoreItem<T>> {
+interface IStoreOptions<T extends ItemModel, U extends Item<T>> {
   /**
    * Should attachments be loaded into items automatically
    * In this case all attachments will be 'local' by default
@@ -52,20 +55,35 @@ interface IPouchStoreOptions<T extends PouchstoreModel, U extends IPouchStoreIte
    *
    * @danger May consumes a lot of extra memory!
    */
-  loadAttachments?: boolean
+  loadAttachments?: OptionLoadAttachments
 
   /** Every item created received a type property and id in the form of '{$type}::id' */
-  type: string
+  type: OptionType
 
   /** Model's primary key */
-  idField: keyof T
+  idField: OptionIdField<T>
 
   /** Model factory */
-  factory: <S extends PouchStore<T, U>>(doc: TDocument<T>, collection: S) => U
+  factory: OptionFactory<T, U>
 
   /** Default values for model properties */
-  validator: (data: Partial<T>) => T
+  validator: OptionValidator<T>
 
   /** Hook to be evaluated before a store item it removed */
-  onBeforeRemove?: TOnBeforeRemoveCallback<U>
+  onBeforeRemove?: OnBeforeRemove<U>
 }
+
+type OptionLoadAttachments = boolean
+
+/** Every item created received a type property and id in the form of '{$type}::id' */
+type OptionType = string
+
+/** Model's primary key */
+type OptionIdField<T extends ItemModel> = keyof T
+
+/** Model factory */
+type OptionFactory<T extends ItemModel, U extends Item<T>> = (doc: ItemDoc<T>, collection: Store<T, U>) => U
+
+/** Default values for model properties */
+type OptionValidator<T extends ItemModel> = (data: Partial<T>) => T
+

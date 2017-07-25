@@ -1,4 +1,4 @@
-import { ItemModel } from './PouchstoreItem'
+import { ItemModel } from './Item'
 
 export type Attachment = PouchDB.Core.AttachmentResponse
 

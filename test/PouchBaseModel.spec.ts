@@ -1,14 +1,14 @@
-import {PouchStore, PouchstoreItem} from '../src'
+import { Store, Item } from './..'
 import * as PouchDB from 'pouchdb'
 import * as chai from 'chai'
 import * as faker from 'faker'
 
-import {ITodo, TodoValidator, todos} from './mocks/todo'
+import { ITodo, TodoValidator, todos } from './mocks/todo'
 
 const fs = require('fs')
 const uuid = require('uuid')
 const chaiAsPromised = require('chai-as-promised')
-const {assert, expect} = chai
+const { assert, expect } = chai
 
 PouchDB.plugin(require('pouchdb-adapter-memory'))
 chai.use(chaiAsPromised)
@@ -21,12 +21,12 @@ describe('PouchBaseModel', () => {
   describe('Record#1 from data', () => {
 
     let todoDB: PouchDB.Database<ITodo>
-    let todoStore: IPouchStore<ITodo, IPouchStoreItem<ITodo>>
+    let todoStore: Store<ITodo, Item<ITodo>>
 
-    let todo: IPouchStoreItem<ITodo>
+    let todo: Item<ITodo>
 
     before(() => {
-      todoDB = new PouchDB('TodoStore', {adapter: 'memory'})
+      todoDB = new PouchDB('TodoStore', { adapter: 'memory' })
     })
 
     it('DB should be empty', () => {
@@ -36,16 +36,16 @@ describe('PouchBaseModel', () => {
     })
 
     it('Should create new store', () => {
-      todoStore = new PouchStore<ITodo, IPouchStoreItem<ITodo>>({
+      todoStore = new Store<ITodo, Item<ITodo>>({
         type: 'todo',
         idField: 'id',
         validator: TodoValidator,
-        factory: (doc, collection) => new PouchstoreItem(doc, collection)
+        factory: (doc, collection) => new Item(doc, collection),
       })
 
       todoStore.subscribe(todoDB)
 
-      expect(todoStore).to.be.instanceOf(PouchStore)
+      expect(todoStore).to.be.instanceOf(Store)
     })
 
     const data = todos[0]
@@ -83,7 +83,7 @@ describe('PouchBaseModel', () => {
     })
 
 
-    let item: IPouchStoreItem<ITodo> | undefined
+    let item: Item<ITodo> | undefined
 
     it('Record#1 data should match', () => {
       item = todoStore.get(data.id)
@@ -188,12 +188,12 @@ describe('PouchBaseModel', () => {
   describe('Attachments', () => {
 
     let todoDB: PouchDB.Database<ITodo>
-    let todoStore: IPouchStore<ITodo, IPouchStoreItem<ITodo>>
+    let todoStore: Store<ITodo, Item<ITodo>>
 
-    let todo: IPouchStoreItem<ITodo>
+    let todo: Item<ITodo>
 
     before(() => {
-      todoDB = new PouchDB('TodoStore', {adapter: 'memory'})
+      todoDB = new PouchDB('TodoStore', { adapter: 'memory' })
     })
 
     it('DB should be empty', () => {
@@ -203,16 +203,16 @@ describe('PouchBaseModel', () => {
     })
 
     it('Should create new store', () => {
-      todoStore = new PouchStore<ITodo, IPouchStoreItem<ITodo>>({
+      todoStore = new Store<ITodo, Item<ITodo>>({
         type: 'todo',
         idField: 'id',
         validator: TodoValidator,
-        factory: (doc, collection) => new PouchstoreItem(doc, collection)
+        factory: (doc, collection) => new Item(doc, collection),
       })
 
       todoStore.subscribe(todoDB)
 
-      expect(todoStore).to.be.instanceOf(PouchStore)
+      expect(todoStore).to.be.instanceOf(Store)
     })
 
     const data = todos[0]

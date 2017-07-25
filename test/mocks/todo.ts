@@ -1,8 +1,11 @@
+import { ItemModel } from './../..'
+
 import * as faker from 'faker'
+
 const uuid = require('uuid')
 
 export
-interface ITodo extends PouchstoreModel {
+interface ITodo extends ItemModel {
     type: 'todo'
     id: string
     title: string

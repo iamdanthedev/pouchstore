@@ -1,9 +1,10 @@
-import { PouchStore, PouchstoreItem } from '../src'
+import { Store, Item } from './..'
+
 import * as PouchDB from 'pouchdb'
 import * as chai from 'chai'
-import * as sinon from 'sinon'
 
 import { ITodo, TodoValidator, todos } from './mocks/todo'
+
 
 const fs = require('fs')
 const uuid = require('uuid')
@@ -15,13 +16,13 @@ chai.use(chaiAsPromised)
 
 const mocksDir = __dirname + '/../../test/mocks/'
 
-describe('PouchStore', () => {
+describe('Store', () => {
 
 
 	describe('Single Store empty', () => {
 
 		let todoDB: PouchDB.Database<ITodo>
-		let todoStore: IPouchStore<ITodo, IPouchStoreItem<ITodo>>
+		let todoStore: Store<ITodo, Item<ITodo>>
 
 		before(() => {
 			todoDB = new PouchDB('TodoStore', { adapter: 'memory'} )
@@ -34,16 +35,16 @@ describe('PouchStore', () => {
     })
 
 		it('Should create new store', () => {
-			todoStore = new PouchStore<ITodo, IPouchStoreItem<ITodo>>({
+			todoStore = new Store<ITodo, Item<ITodo>>({
 				type: 'todo',
 				idField: 'id',
 				validator: TodoValidator,
-				factory: (doc, collection) => new PouchstoreItem(doc, collection)
+				factory: (doc, collection) => new Item(doc, collection)
 			})
 
 			todoStore.subscribe(todoDB)
 
-			expect(todoStore).to.be.instanceOf(PouchStore)
+			expect(todoStore).to.be.instanceOf(Store)
 		})
 
 		it('Add many items to store', () => {
@@ -53,7 +54,7 @@ describe('PouchStore', () => {
 			}
 		})
 
-		it('PouchStore#all, PouchStore#get', () => {
+		it('Store#all, Store#get', () => {
 			const items = todoStore.all
 
 			expect(todoStore.all).to.be.lengthOf(todos.length)
@@ -69,7 +70,7 @@ describe('PouchStore', () => {
 			}
 		})
 
-		it('PouchStore#allMap works', () => {
+		it('Store#allMap works', () => {
 			const allMap = todoStore.allMap
 
 			for(var data of todos) {
@@ -78,7 +79,7 @@ describe('PouchStore', () => {
 			}
 		})
 
-		it('PouchStore#remove(item)', () => {
+		it('Store#remove(item)', () => {
 			const id = todos[0].id
 			const item = todoStore.get(id)
 
@@ -90,7 +91,7 @@ describe('PouchStore', () => {
 			})
 		})
 
-		it('PouchStore#remove(itemId)')
+		it('Store#remove(itemId)')
 
 		it('changes')
 

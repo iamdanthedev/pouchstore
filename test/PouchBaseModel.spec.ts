@@ -1,4 +1,4 @@
-import {PouchStore, PouchStoreItem} from '../src'
+import {PouchStore, PouchstoreItem} from '../src'
 import * as PouchDB from 'pouchdb'
 import * as chai from 'chai'
 import * as faker from 'faker'
@@ -40,7 +40,7 @@ describe('PouchBaseModel', () => {
         type: 'todo',
         idField: 'id',
         validator: TodoValidator,
-        factory: (doc, collection) => new PouchStoreItem(doc, collection)
+        factory: (doc, collection) => new PouchstoreItem(doc, collection)
       })
 
       todoStore.subscribe(todoDB)
@@ -207,7 +207,7 @@ describe('PouchBaseModel', () => {
         type: 'todo',
         idField: 'id',
         validator: TodoValidator,
-        factory: (doc, collection) => new PouchStoreItem(doc, collection)
+        factory: (doc, collection) => new PouchstoreItem(doc, collection)
       })
 
       todoStore.subscribe(todoDB)

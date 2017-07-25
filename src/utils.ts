@@ -4,7 +4,7 @@ function isNil(arg: any): arg is undefined | null {
 }
 
 export
-function isNewDocument<T extends IPouchDataModel>(
+function isNewDocument<T extends PouchstoreModel>(
     arg: TDocument<T>,
 ):arg is TNewDocument<T> {
     return isNil(arg._rev)

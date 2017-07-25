@@ -1,4 +1,4 @@
-export { PouchStore } from './src/PouchStore'
-export { PouchStoreItem } from './src/PouchStoreItem'
+export { PouchStore } from './src/Pouchstore'
+export { PouchstoreItem } from './src/PouchstoreItem'
 export { isNewDocument, isNil } from './src/utils'
 

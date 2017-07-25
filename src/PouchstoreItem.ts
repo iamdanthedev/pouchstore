@@ -13,19 +13,33 @@ import {
 } from 'mobx'
 
 import { isNewDocument, isNil } from './utils'
+import { Store } from './Pouchstore'
+import { Attachment, ItemDoc, NewItemDoc, ExistingItemDoc  } from './types'
+
 
 const clone = require('lodash.clone')
 const uuid = require('uuid')
-const log = require('debug')('App:Modules:PouchStore:PouchStoreItem')
+const log = require('debug')('App:Modules:PouchStore:PouchstoreItem')
 
+
+/**
+ * Base models interface
+ */
 export
-class PouchStoreItem<T extends IPouchDataModel>
-implements IPouchStoreItem<T> {
+interface ItemModel {
+  type: string
+}
 
-	constructor(
-		doc: TDocument<T>,
-		collection: IPouchStore<T, IPouchStoreItem<T>>,
-	) {
+
+/**
+ * Items that PouchStores consist of should be an object of or inherit PouchstoreItem
+ *
+ * It provides basic ways of working with PouchStore items
+ */
+export
+class PouchstoreItem<T extends ItemModel, U extends PouchstoreItem<T, U, S>, S extends Store<T, U>> {
+
+	constructor(doc: ItemDoc<T>, collection: S) {
 		log('constructor() %o', { doc })
 
 		this._collection = collection
@@ -35,10 +49,17 @@ implements IPouchStoreItem<T> {
 		this._set(doc)
 	}
 
+  /**
+   * Return a PouchDB collection this item belongs to
+   * Set by the collection which creates an item
+   */
 	get $collection() {
 		return this._collection
 	}
 
+  /**
+   * Returns **a copy** of an underlying PouchDB doc
+   */
 	@computed
 	get $doc() {
 		const _attachments = toJS(this._attachmentsMap)
@@ -46,24 +67,40 @@ implements IPouchStoreItem<T> {
 		return Object.assign({}, toJS(this._doc), { _attachments })
 	}
 
+  /** If the item has been changed after load/last save */
 	@computed
 	get isDirty(): boolean {
 		return this._dirty
 	}
 
+  /** If the item has never been saved */
 	@computed
 	get isNew(): boolean {
 		return isNewDocument(this._doc)
 	}
 
+  /** Get a property of the item */
 	get<K extends keyof T>(property: K): T[K] {
 		return this._doc[property]
 	}
 
-	set<DOC extends TDocument<T>>(doc: DOC | Partial<DOC>): IPouchStoreItem<T>
-	set<DOC extends TDocument<T>, K extends keyof TDocument<T>>(prop: K, value: DOC[K]): IPouchStoreItem<T>
+  /**
+   * Updates the item's underlying PouchDB document
+   * Changes are not saved
+   * @use PouchstoreItem#save()
+   */
+	set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>): U
+
+  /**
+   * Updates one property of the item's underlying PouchDB document
+   * Changes are not saved
+   * @use PouchstoreItem#save()
+   */
+	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K]): U
+
+  /** @internal */
 	@action
-	set<DOC extends TDocument<T>, K extends keyof TDocument<T>>(docOrProp: K | DOC | Partial<DOC>, value?: DOC[K]): IPouchStoreItem<T> {
+	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(docOrProp: K | DOC | Partial<DOC>, value?: DOC[K]): U {
 		log('set()', { docOrProp, value })
 
 		if (typeof docOrProp === 'string' && value) {
@@ -84,7 +121,20 @@ implements IPouchStoreItem<T> {
 
 	}
 
+	/** Save this item in the store. This will update the PouchDB database */
+  @action
+  save(): Promise<void> {
+    return this.$collection.put(this)
+      .then((doc) => {
+        this._doc = doc
+        this._dirty = false
 
+        return Promise.resolve()
+      })
+      .catch(err => Promise.reject(err))
+  }
+
+  /** Attach a file to the document */
 	@action
 	attach(name: string, data: Blob | Buffer, contentType: string): void {
 
@@ -98,23 +148,19 @@ implements IPouchStoreItem<T> {
 
 	}
 
+  /**
+   * Remove attachment
+   * This is the same as calling PouchStore#put(item)
+   */
 	@action
 	detach(name: string) {
 		this._attachmentsMap.delete(name)
 	}
 
-	@action
-	save(): Promise<void> {
-		return this.$collection.put(this)
-			.then((doc) => {
-				this._doc = doc
-				this._dirty = false
-
-				return Promise.resolve()
-			})
-			.catch(err => Promise.reject(err))
-	}
-
+	/**
+   * Remove this item from the store.
+   * This is the same as calling PouchStore#remove(item)
+   */
 	@action
 	remove(): Promise<void> {
 		if (this.isNew)
@@ -123,6 +169,10 @@ implements IPouchStoreItem<T> {
 		return this.$collection.remove(this)
 	}
 
+  /**
+   * Checks if attachment exists
+   * Return attachment digest (for mobx observers - to track changes)
+   */
 	hasAttachment(name: string): string | undefined {
 		log('hasAttachment() %s', name)
 
@@ -134,13 +184,17 @@ implements IPouchStoreItem<T> {
 		}
 	}
 
-
-	getAttachment(name: string): PouchDB.Core.AttachmentResponse | undefined {
+  /**
+   * Returns attachment by name.
+   * Local loadAttachments will have data prop of type string | Blob | Buffer
+   */
+	getAttachment(name: string): Attachment | undefined {
 		log('getAttachment() %s', name)
 
 		return this._attachmentsMap.get(name)
 	}
 
+  /** Returns true if attachment is stored on the model */
 	isLocalAttachment(name: string): boolean | undefined {
 		log('isLocalAttachment() %s', name)
 
@@ -150,8 +204,8 @@ implements IPouchStoreItem<T> {
 			return !isNil(att.data)
 	}
 
-
-	loadAttachment(name: string): Promise<PouchDB.Core.AttachmentResponse>  {
+  /** Loads attachment irrespectively of whether it is local or remote */
+	loadAttachment(name: string): Promise<Attachment>  {
 
 		const att = this.getAttachment(name)
 
@@ -175,6 +229,11 @@ implements IPouchStoreItem<T> {
 			.catch(err => Promise.reject('Could not load attachment' + err ))
 	}
 
+  /**
+   * Loads attachment and returns a WebAPI URL Object string
+   *
+   * **Important**: Don't forget to release the object created with URL.revokeObjectURL(str)
+   */
 	loadAttachmentAsURL(name: string, localOnly: boolean = false): Promise<string | null> {
 		log('loadAttachmentAsURL()', { name, localOnly })
 
@@ -211,8 +270,9 @@ implements IPouchStoreItem<T> {
 		}
 	}
 
+	/** Updates _attachmentMap */
 	@action
-	private _refreshAttachmentsMap() {
+	protected _updateAttachmentsMap() {
 		this._attachmentsMap.clear()
 
 		const doc = this._doc
@@ -224,15 +284,16 @@ implements IPouchStoreItem<T> {
 			this._attachmentsMap.set(key, doc._attachments[key])
 	}
 
+	/** Sets the whole underlying doc, some of its properties or a single property */
 	@action
-	protected _set<DOC extends TDocument<T>, K extends keyof TDocument<T>>(data: DOC | Partial<DOC>): IPouchStoreItem<T> {
+	protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>): PouchstoreItem<T, U, S> {
 		const doc: Partial<DOC> = clone(data)
 
 
 		// initial set (document is just created)
 		if (!this._doc) {
 			this._doc = data as DOC
-			this._refreshAttachmentsMap()
+			this._updateAttachmentsMap()
 			return this
 		}
 
@@ -242,7 +303,7 @@ implements IPouchStoreItem<T> {
 				this._dirty = true
 
 				if (key === '_attachments')
-					this._refreshAttachmentsMap()
+					this._updateAttachmentsMap()
 			} else {
 				log(`set(): key ${key} is protected and was filtered out`)
 			}
@@ -254,12 +315,12 @@ implements IPouchStoreItem<T> {
 	protected _attachmentsMap: ObservableMap<PouchDB.Core.AttachmentResponse> =
 		observable.map([], '_attachmentsMap')
 
-	protected _collection: IPouchStore<T, IPouchStoreItem<T>>
+	protected _collection: S
 
 	@observable.deep
-	protected _doc: TDocument<T>
+	protected _doc: ItemDoc<T>
 
-	protected _protectedFields: Array<(keyof TDocument<T>) | 'id'>
+	protected _protectedFields: Array<(keyof ItemDoc<T>) | 'id'>
 
 	@observable
 	private	_dirty: boolean = false

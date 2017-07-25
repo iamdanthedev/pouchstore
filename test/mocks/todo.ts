@@ -2,7 +2,7 @@ import * as faker from 'faker'
 const uuid = require('uuid')
 
 export
-interface ITodo extends IPouchDataModel {
+interface ITodo extends PouchstoreModel {
     type: 'todo'
     id: string
     title: string

@@ -1,2 +1,3 @@
-export {PouchStore} from "./PouchStore"
-export {PouchStoreItem} from "./PouchStoreItem"
+export { PouchStore } from './Pouchstore'
+export { PouchstoreItem } from './PouchstoreItem'
+export { PouchStoreOptions, IPouchStoreOptions } from './PouchstoreOptions'

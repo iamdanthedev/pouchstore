@@ -1,7 +1,7 @@
 import { PouchStore, BasePouchStoreItem } from '../src'
 import * as PouchDB from 'pouchdb'
 import * as chai from 'chai'
-import * as faker from 'faker'
+import * as sinon from 'sinon'
 
 import { ITodo, TodoValidator, todos } from './mocks/todo'
 
@@ -26,6 +26,12 @@ describe('PouchStore', () => {
 		before(() => {
 			todoDB = new PouchDB('TodoStore', { adapter: 'memory'} )
 		})
+
+    it('DB should be empty', () => {
+      return todoDB.allDocs().then((resp) => {
+        expect(resp.total_rows).to.eq(0)
+      })
+    })
 
 		it('Should create new store', () => {
 			todoStore = new PouchStore<ITodo, IPouchStoreItem<ITodo>>({
@@ -72,18 +78,28 @@ describe('PouchStore', () => {
 			}
 		})
 
-		it('PouchStore#remove(item)')
+		it('PouchStore#remove(item)', () => {
+			const id = todos[0].id
+			const item = todoStore.get(id)
+
+			if (!item)
+				return assert.fail('Could not get item')
+
+			todoStore.remove(item).then(() => {
+        expect(todoStore.get(id)).to.be.undefined
+			})
+		})
 
 		it('PouchStore#remove(itemId)')
 
 		it('changes')
 
+		it('hooks')
 
 
 
 		after(() => {
-			todoDB.destroy()
-			todoDB.close()
+			return todoDB.destroy()
 		})
 
 	})

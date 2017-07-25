@@ -40,8 +40,7 @@
 	},
 	"peerDependencies": {
 		"mobx": "^3.2.1",
-		"pouchdb": "^6.3.4",
-		"crypto-js": "^3.1.9-1"
+		"pouchdb": "^6.3.4"
 	},
 	"dependencies": {
 		"debug": "^2.6.8",

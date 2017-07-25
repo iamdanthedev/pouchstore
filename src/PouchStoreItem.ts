@@ -16,10 +16,10 @@ import { isNewDocument, isNil } from './utils'
 
 const clone = require('lodash.clone')
 const uuid = require('uuid')
-const log = require('debug')('App:Modules:PouchStore:BasePouchStoreItem')
+const log = require('debug')('App:Modules:PouchStore:PouchStoreItem')
 
 export
-class BasePouchStoreItem<T extends IPouchDataModel>
+class PouchStoreItem<T extends IPouchDataModel>
 implements IPouchStoreItem<T> {
 
 	constructor(

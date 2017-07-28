@@ -13,7 +13,7 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc -w",
-    "build:lib": "tsc && node tasks/makeDist.js",
+    "build:lib": "tsc && node tasks/makeLib.js",
     "test": "nyc mocha",
     "test:debug": "node $NODE_DEBUG_OPTION node_modules/mocha/bin/_mocha",
     "test:watch": "mocha -w"

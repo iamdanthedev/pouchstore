@@ -23,7 +23,6 @@ export
 export
   type WithAttachments<T> = T & { _attachments?: Attachments }
 
-
 /**
  * onBeforeRemove callback
  *

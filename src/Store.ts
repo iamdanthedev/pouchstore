@@ -317,10 +317,10 @@ class Store<T extends ItemModel, U extends Item<T>>
       attachments: this._options.loadAttachments,
       binary: true,
       filter(doc, params) {
-        return doc.docType === params.query.docType
+        return doc.type === params.query.type
       },
       query_params: {
-        docType: this._options.type,
+        type: this._options.type,
       },
     })
       .on('change', (info) => {

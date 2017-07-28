@@ -61,9 +61,7 @@ export class Item<T extends ItemModel> {
    */
 	@computed
 	get $doc() {
-		const _attachments = toJS(this._attachmentsMap)
-
-		return Object.assign({}, toJS(this._doc), { _attachments })
+		return Object.assign({}, toJS(this._doc))
 	}
 
   /** If the item has been changed after load/last save */

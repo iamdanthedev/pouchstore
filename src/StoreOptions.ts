@@ -73,17 +73,22 @@ interface IStoreOptions<T extends ItemModel, U extends Item<T>> {
   onBeforeRemove?: OnBeforeRemove<U>
 }
 
+export
 type OptionLoadAttachments = boolean
 
 /** Every item created received a type property and id in the form of '{$type}::id' */
+export
 type OptionType = string
 
 /** Model's primary key */
+export
 type OptionIdField<T extends ItemModel> = keyof T
 
 /** Model factory */
+export
 type OptionFactory<T extends ItemModel, U extends Item<T>> = (doc: ItemDoc<T>, collection: Store<T, U>) => U
 
 /** Default values for model properties */
+export
 type OptionValidator<T extends ItemModel> = (data: Partial<T>) => T
 

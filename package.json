@@ -1,8 +1,9 @@
 {
   "name": "pouchstore",
-  "version": "0.1.31",
+  "version": "0.1.32",
   "description": "PouchDB to Mobx Store",
   "main": "lib/index.js",
+  "module": "lib/index.js",
   "files": [
     "lib"
   ],
@@ -51,5 +52,6 @@
     "debug": "^2.6.8",
     "lodash.clone": "^4.5.0",
     "uuid": "^3.1.0"
-  }
+  },
+  "typings": "lib/index.d.ts"
 }

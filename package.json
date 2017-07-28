@@ -1,55 +1,57 @@
 {
-	"name": "pouchstore",
-	"version": "0.1.0",
-	"description": "PouchDB to Mobx Store",
-	"main": "dist/index.js",
-  "files": ["dist"],
-	"directories": {
-		"test": "test"
-	},
-	"scripts": {
-		"build": "tsc",
-		"build:watch": "tsc -w",
+  "name": "pouchstore",
+  "version": "0.1.0",
+  "description": "PouchDB to Mobx Store",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build:watch": "tsc -w",
     "dist": "tsc && node tasks/makeDist.js",
-		"test": "nyc mocha",
-		"test:debug": "node $NODE_DEBUG_OPTION node_modules/mocha/bin/_mocha",
-		"test:watch": "mocha -w"
-	},
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"@types/bluebird": "^3.5.8",
-		"@types/chai": "^4.0.1",
-		"@types/chai-as-promised": "0.0.31",
-		"@types/debug": "0.0.29",
-		"@types/faker": "^4.1.0",
-		"@types/lodash.clone": "^4.5.2",
-		"@types/mocha": "^2.2.41",
-		"@types/node": "^8.0.14",
-		"@types/pouchdb": "^6.1.1",
-		"@types/sinon": "^2.3.3",
-		"bluebird": "^3.5.0",
-		"chai": "^4.1.0",
-		"chai-as-promised": "^7.1.1",
-		"faker": "^4.1.0",
-		"fs-extra": "^4.0.0",
-		"mocha": "^3.4.2",
-		"nyc": "^11.0.3",
-		"pouchdb-adapter-memory": "^6.3.4",
-		"sinon": "^2.3.8",
-		"source-map-support": "^0.4.15",
-		"ts-node": "^3.2.1",
-		"typescript": "^2.4.2"
-	},
-	"peerDependencies": {
-		"mobx": "^3.2.1",
-		"pouchdb": "^6.3.4"
-	},
-	"dependencies": {
-		"debug": "^2.6.8",
-		"lodash.clone": "^4.5.0",
-		"mobx": "^3.2.1",
-		"pouchdb": "^6.3.4",
-		"uuid": "^3.1.0"
-	}
+    "test": "nyc mocha",
+    "test:debug": "node $NODE_DEBUG_OPTION node_modules/mocha/bin/_mocha",
+    "test:watch": "mocha -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.8",
+    "@types/chai": "^4.0.1",
+    "@types/chai-as-promised": "0.0.31",
+    "@types/debug": "0.0.29",
+    "@types/faker": "^4.1.0",
+    "@types/lodash.clone": "^4.5.2",
+    "@types/mocha": "^2.2.41",
+    "@types/node": "^8.0.14",
+    "@types/pouchdb": "^6.1.1",
+    "@types/sinon": "^2.3.3",
+    "bluebird": "^3.5.0",
+    "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
+    "faker": "^4.1.0",
+    "fs-extra": "^4.0.0",
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3",
+    "pouchdb-adapter-memory": "^6.3.4",
+    "sinon": "^2.3.8",
+    "source-map-support": "^0.4.15",
+    "ts-node": "^3.2.1",
+    "typescript": "^2.4.2"
+  },
+  "peerDependencies": {
+    "mobx": "^3.2.1",
+    "pouchdb": "^6.3.4"
+  },
+  "dependencies": {
+    "debug": "^2.6.8",
+    "lodash.clone": "^4.5.0",
+    "mobx": "^3.2.1",
+    "pouchdb": "^6.3.4",
+    "uuid": "^3.1.0"
+  }
 }

@@ -1,7 +1,7 @@
 const fs = require('fs-extra')
 const path = require('path')
 
-const distDir = path.resolve(__dirname, '..', 'dist')
+const distDir = path.resolve(__dirname, '..', 'lib')
 const buildSrcDir = path.resolve(__dirname, '..', 'build/src')
 
 try {

@@ -1,4 +1,4 @@
-import { ItemModel } from './../..'
+import { ItemModel } from '../../src'
 
 import * as faker from 'faker'
 

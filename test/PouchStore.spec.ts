@@ -1,4 +1,4 @@
-import { Store, Item } from './..'
+import { Store, Item } from '../src'
 
 import * as PouchDB from 'pouchdb'
 import * as chai from 'chai'

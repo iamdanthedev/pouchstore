@@ -1,11 +1,8 @@
 {
   "name": "pouchstore",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "PouchDB to Mobx Store",
   "main": "dist/index.js",
-  "files": [
-    "dist"
-  ],
   "directories": {
     "test": "test"
   },
@@ -50,8 +47,6 @@
   "dependencies": {
     "debug": "^2.6.8",
     "lodash.clone": "^4.5.0",
-    "mobx": "^3.2.1",
-    "pouchdb": "^6.3.4",
     "uuid": "^3.1.0"
   }
 }

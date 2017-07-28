@@ -1,0 +1,12 @@
+# Created by .ignore support plugin (hsz.mobi)
+.vscode
+.nyc_output
+build
+coverage
+node_modules
+src
+tasks
+test
+tsconfig.json
+.gitignore
+.editorconfig

@@ -20,13 +20,13 @@ export interface ItemModel {
  *
  * It provides basic ways of working with Pouchstore items
  */
-export declare class Item<T extends ItemModel> {
-    constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>>);
+export declare class Item<T extends ItemModel, S = {}> {
+    constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>> & S);
     /**
      * Return a PouchDB collection this item belongs to
      * Set by the collection which creates an item
      */
-    readonly $collection: Store<T, Item<T>>;
+    readonly $collection: Store<T, Item<T, {}>> & S;
     /**
      * Returns **a copy** of an underlying PouchDB doc
      */
@@ -44,13 +44,13 @@ export declare class Item<T extends ItemModel> {
      * Changes are not saved
      * @use Item#save()
      */
-    set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>): this;
+    set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>, dontDirty?: boolean): this;
     /**
      * Updates one property of the item's underlying PouchDB document
      * Changes are not saved
      * @use Item#save()
      */
-    set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K]): this;
+    set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K], dontDirty?: boolean): this;
     /** Save this item in the store. This will update the PouchDB database */
     save(): Promise<void>;
     /** Attaches a file to the document */
@@ -88,9 +88,9 @@ export declare class Item<T extends ItemModel> {
     /** Updates _attachmentMap */
     protected _updateAttachmentsMap(): void;
     /** Sets the whole underlying doc, some of its properties or a single property */
-    protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>): this;
+    protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>, dontDirty: boolean): this;
     protected _attachmentsMap: ObservableMap<PouchDB.Core.AttachmentResponse>;
-    protected _collection: Store<T, Item<T>>;
+    protected _collection: Store<T, Item<T>> & S;
     protected _doc: ItemDoc<T>;
     protected _protectedFields: Array<(keyof ItemDoc<T>) | 'id'>;
     private _dirty;

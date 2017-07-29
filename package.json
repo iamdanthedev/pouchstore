@@ -31,7 +31,6 @@
     "@types/node": "^8.0.14",
     "@types/pouchdb": "^6.1.1",
     "@types/sinon": "^2.3.3",
-    "bluebird": "^3.5.0",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "faker": "^4.1.0",
@@ -41,7 +40,6 @@
     "pouchdb-adapter-memory": "^6.3.4",
     "sinon": "^2.3.8",
     "source-map-support": "^0.4.15",
-    "ts-node": "^3.2.1",
     "typescript": "^2.4.2"
   },
   "peerDependencies": {

@@ -15,7 +15,7 @@ chai.use(chaiAsPromised)
 
 const mocksDir = __dirname + '/../../test/mocks/'
 
-describe('PouchBaseModel', () => {
+describe('Item', () => {
 
 
   describe('Record#1 from data', () => {
@@ -53,6 +53,13 @@ describe('PouchBaseModel', () => {
     it('Shoud create Record#1', () => {
       todo = todoStore.create(data)
       expect(todo).to.exist
+    })
+
+    it('Record1#$collection === todoStore', () => {
+      if (!todo || !todoStore)
+        return assert.fail('todo || todoStore is undefined')
+
+      expect(todo.$collection).to.be.eq(todoStore)
     })
 
     it('Record#1 data should match', () => {
@@ -97,6 +104,13 @@ describe('PouchBaseModel', () => {
       }
     })
 
+    it('item === todo', () => {
+      if (!item || !todo)
+        return assert.fail('item || todo is null')
+
+      expect(item).to.eq(todo)
+    })
+
     it('Record#1.isNew == false', () => {
       if (!item)
         return assert.fail('Record is null')
@@ -122,8 +136,11 @@ describe('PouchBaseModel', () => {
       assert(item.isDirty === true)
     })
 
-    it('Record#1.save fulfills', () => {
-      return todo.save()
+    it('Record#1.save() fulfills', () => {
+      if (!item)
+        return assert.fail('item is undefined')
+
+      return item.save()
         .then(() => {
           const it = todoStore.get(data.id)
 
@@ -134,7 +151,11 @@ describe('PouchBaseModel', () => {
         })
     })
 
-    it('Record#1.isDirty == false', () => {
+    it('item references the same object as in the store', () => {
+      expect(item).to.eq(todoStore.get(data.id))
+    })
+
+    it('Record#1.isDirty === false', () => {
       if (!item)
         return assert.fail('item is undefined')
 

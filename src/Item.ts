@@ -36,16 +36,16 @@ interface ItemModel {
  *
  * It provides basic ways of working with Pouchstore items
  */
-export class Item<T extends ItemModel> {
+export class Item<T extends ItemModel, S = {}> {
 
-	constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>>) {
+	constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>> & S) {
 		log('constructor() %o', { doc })
 
 		this._collection = collection
 
 		this._protectedFields = ['_id', '_rev', 'id']
 
-		this._set(doc)
+		this._set(doc, true)
 	}
 
   /**
@@ -86,29 +86,50 @@ export class Item<T extends ItemModel> {
    * Changes are not saved
    * @use Item#save()
    */
-	set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>): this
+	set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>, dontDirty?: boolean): this
 
   /**
    * Updates one property of the item's underlying PouchDB document
    * Changes are not saved
    * @use Item#save()
    */
-	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K]): this
+	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K], dontDirty?: boolean): this
 
   /** @internal */
 	@action
-	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(docOrProp: K | DOC | Partial<DOC>, value?: DOC[K]): this {
-		log('set()', { docOrProp, value })
+	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(docOrProp: K | DOC | Partial<DOC>, ...args: any[]): this {
+		log('set()', { docOrProp, args })
 
-		if (typeof docOrProp === 'string' && value) {
+    let doc: DOC | Partial<DOC> | null = null
+    let prop: K | null = null
+    let value: DOC[K] | null = null
+    let dontDirty: boolean = false
+
+    if (typeof docOrProp === 'string') {
+		  prop = docOrProp
+
+      if (args.length == 0)
+        throw new Error('Wrong arguments')
+
+      value = args[0]
+      dontDirty = args.length == 2 ? args[1] : false
+
+    } else if (typeof docOrProp === 'object') {
+
+		  doc = docOrProp
+      dontDirty = args.length == 1 ? args[0] : false
+    }
+
+
+		if (prop && value) {
 
 			const data: Partial<DOC> = {}
-			data[docOrProp] = value
-			return this._set(data)
+			data[prop] = value
+			return this._set(data, dontDirty)
 
-		} else if (typeof docOrProp === 'object') {
+		} else if (doc) {
 
-			return this._set(docOrProp)
+			return this._set(doc, dontDirty)
 
 		} else {
 
@@ -283,7 +304,7 @@ export class Item<T extends ItemModel> {
 
 	/** Sets the whole underlying doc, some of its properties or a single property */
 	@action
-	protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>): this {
+	protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>, dontDirty: boolean): this {
 		const doc: Partial<DOC> = clone(data)
 
 
@@ -297,7 +318,9 @@ export class Item<T extends ItemModel> {
 		for (var key in doc as Partial<T>) {
 			if (!this._protectedFields.includes(key)) {
 				this._doc[key] = clone(doc[key])
-				this._dirty = true
+
+        if (!dontDirty)
+  				this._dirty = true
 
 				if (key === '_attachments')
 					this._updateAttachmentsMap()
@@ -312,7 +335,7 @@ export class Item<T extends ItemModel> {
 	protected _attachmentsMap: ObservableMap<PouchDB.Core.AttachmentResponse> =
 		observable.map([], '_attachmentsMap')
 
-	protected _collection: Store<T, Item<T>>
+	protected _collection: Store<T, Item<T>> & S
 
 	@observable.deep
 	protected _doc: ItemDoc<T>

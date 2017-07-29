@@ -371,7 +371,7 @@ class Store<T extends ItemModel, U extends Item<T>>
     const item = this._items.get(id)
 
     if (item)
-      item.set(doc)
+      item.set(doc, true)
     else
       this._setItem(this._instantiate(doc))
 

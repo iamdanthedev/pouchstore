@@ -16,9 +16,12 @@ const log = require('debug')('PouchStore')
  * @template U Result of transforming incoming model (what we actually store on the colleciton)
  *             U can equal T if we, for example, don't provide neither options.classModel
  *             nor options.classFactory
+ *           S For situations when the items in the store do not satisfy the constraint
+ *             restricting U (e.g. complex factory function), setting S will override
+ *             the constraint
  */
 export
-class Store<T extends ItemModel, U extends Item<T>>
+class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
 {
 
   /**
@@ -26,12 +29,12 @@ class Store<T extends ItemModel, U extends Item<T>>
    * It does not subsribe/attach it to any PouchDB database automatically
    * @see PouchStore#subsribe() Use subsribe to do so
    */
-  constructor(options: IStoreOptions<T, U> | StoreOptions<T, U>) {
+  constructor(options: IStoreOptions<T, U, S> | StoreOptions<T, U, S>) {
 
     if (options instanceof StoreOptions)
       this._options = options
     else
-      this._options = new StoreOptions<T, U>(options)
+      this._options = new StoreOptions<T, U, S>(options)
 
 
     log(`${this._options.type} constructor() %o`, { options: this._options })
@@ -78,7 +81,7 @@ class Store<T extends ItemModel, U extends Item<T>>
    * Returns array of all documents sorted by ids
    */
   @computed
-  get all(): U[] {
+  get all(): S[] {
     if (!this._subscribed)
       log(`${this._options.type} attempt to access unsubscribed collection items'`)
 
@@ -89,19 +92,19 @@ class Store<T extends ItemModel, U extends Item<T>>
    * Returns a map of all documents
    */
   @computed
-  get allMap(): MapOf<U> {
-    const result: MapOf<U> = {}
+  get allMap(): MapOf<S> {
+    const result: MapOf<S> = {}
     this.all.forEach(item => result[item.$doc[this._options.idField]] = item)
 
     return result
   }
 
   /** Get item by id or index */
-  get(arg: string | number): U | undefined {
+  get(arg: string | number): S | undefined {
     if (!this._subscribed)
       log(`${this._options.type} error: attempt to access unsubscribed collection items`)
 
-    let result: U | undefined
+    let result: S | undefined
 
     if (typeof arg === 'string') {
       result = this._items.get(arg)
@@ -124,7 +127,7 @@ class Store<T extends ItemModel, U extends Item<T>>
    *
    * @see Item#save()
    */
-  create(data: Partial<T>): U {
+  create(data: Partial<T>): S {
     log(`${this._options.type} create() %o`, { data })
 
     const item: T = this._options.validator(data)
@@ -155,7 +158,7 @@ class Store<T extends ItemModel, U extends Item<T>>
    *
    * @todo Actually, it is, probably, not supposed to be in a public interface
    */
-  put(item: U): Promise<ExistingItemDoc<T>> {
+  put(item: S): Promise<ExistingItemDoc<T>> {
     log(`${this._options.type} update() %o`, { item })
 
     if (!this._db)
@@ -220,9 +223,9 @@ class Store<T extends ItemModel, U extends Item<T>>
    * Remove item from the store
    * It will be saved with { _deleted: true } in PouchDB
    */
-  remove(item: U): Promise<any>
+  remove(item: S): Promise<any>
   remove(itemId: string): Promise<any>
-  remove(arg: string | U): Promise<any> {
+  remove(arg: string | S): Promise<any> {
     log(`${this._options.type} remove() %o`, { item: arg })
 
     const item = typeof arg === 'string' ? this.get(arg) : arg
@@ -339,7 +342,7 @@ class Store<T extends ItemModel, U extends Item<T>>
   }
 
   /** Instantiates a new object depending in modelClass and modelFactory options */
-  private _instantiate(doc: ItemDoc<T>): U {
+  private _instantiate(doc: ItemDoc<T>): S {
     log('_instantite() %o', { doc })
 
     const { factory } = this._options
@@ -351,7 +354,7 @@ class Store<T extends ItemModel, U extends Item<T>>
   }
 
 
-  private _setItem(item: U) {
+  private _setItem(item: S) {
     const id = item.$doc[this._options.idField]
 
     if (!!!id)
@@ -383,9 +386,9 @@ class Store<T extends ItemModel, U extends Item<T>>
     this._items.delete(doc[this._options.idField])
   }
 
-  private _id(item: T | U | string): string {
+  private _id(item: T | S | string): string {
 
-    const typeOfU = (arg: any): arg is U => !isNil(arg.$doc)
+    const typeOfS = (arg: any): arg is S => !isNil(arg.$doc)
     const typeOfT = (arg: any): arg is T => !arg.$doc
 
     const type = this._options.type
@@ -393,7 +396,7 @@ class Store<T extends ItemModel, U extends Item<T>>
 
     if (typeof item === 'string')
       id = item
-    else if (typeOfU(item))
+    else if (typeOfS(item))
       id = item.$doc[this._options.idField]
     else if (typeOfT(item))
       id = item[this._options.idField]
@@ -401,7 +404,7 @@ class Store<T extends ItemModel, U extends Item<T>>
     return `${type}::${id}`
   }
 
-  protected _options: StoreOptions<T, U>
+  protected _options: StoreOptions<T, U, S>
 
   protected _db: PouchDB.Database<T> | null
 
@@ -411,5 +414,5 @@ class Store<T extends ItemModel, U extends Item<T>>
 
   /** Collection of items */
   @observable
-  private _items: ObservableMap<U> = observable.map<U>()
+  private _items: ObservableMap<S> = observable.map<S>()
 }

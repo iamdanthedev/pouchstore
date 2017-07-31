@@ -26,7 +26,7 @@ export declare class Item<T extends ItemModel, S = {}> {
      * Return a PouchDB collection this item belongs to
      * Set by the collection which creates an item
      */
-    readonly $collection: Store<T, Item<T, {}>> & S;
+    readonly $collection: Store<T, Item<T, {}>, Item<T, {}>> & S;
     /**
      * Returns **a copy** of an underlying PouchDB doc
      */

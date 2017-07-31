@@ -6,11 +6,11 @@ import { ItemDoc, OnBeforeRemove } from './types'
  * Options which the PouchCollection constructor is supplied with
  */
 export
-class StoreOptions<T extends ItemModel, U extends Item<T>>
-implements IStoreOptions<T, U>
+class StoreOptions<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
+implements IStoreOptions<T, U, S>
 {
 
-  constructor(options: IStoreOptions<T, U>) {
+  constructor(options: IStoreOptions<T, U, S>) {
 
     this.loadAttachments = options.loadAttachments || this.loadAttachments
     this.type = options.type || this.type
@@ -37,17 +37,17 @@ implements IStoreOptions<T, U>
   idField: OptionIdField<T>
 
   /** Model factory */
-  factory: OptionFactory<T, U>
+  factory: OptionFactory<T, U, S>
 
   /** Default values for model properties */
   validator: OptionValidator<T>
 
   /** Hook to be evaluated before a store item it removed */
-  onBeforeRemove: OnBeforeRemove<U>
+  onBeforeRemove: OnBeforeRemove<S>
 }
 
 export
-interface IStoreOptions<T extends ItemModel, U extends Item<T>> {
+interface IStoreOptions<T extends ItemModel, U extends Item<T>, S extends Item<any> = U> {
   /**
    * Should attachments be loaded into items automatically
    * In this case all attachments will be 'local' by default
@@ -64,31 +64,32 @@ interface IStoreOptions<T extends ItemModel, U extends Item<T>> {
   idField: OptionIdField<T>
 
   /** Model factory */
-  factory: OptionFactory<T, U>
+  factory: OptionFactory<T, U, S>
 
   /** Default values for model properties */
   validator: OptionValidator<T>
 
   /** Hook to be evaluated before a store item it removed */
-  onBeforeRemove?: OnBeforeRemove<U>
+  onBeforeRemove?: OnBeforeRemove<S>
 }
 
 export
-type OptionLoadAttachments = boolean
+type OptionLoadAttachments = boolean;
 
 /** Every item created received a type property and id in the form of '{$type}::id' */
 export
-type OptionType = string
+type OptionType = string;
 
 /** Model's primary key */
 export
-type OptionIdField<T extends ItemModel> = keyof T
+type OptionIdField<T extends ItemModel> = keyof T;
 
 /** Model factory */
 export
-type OptionFactory<T extends ItemModel, U extends Item<T>> = (doc: ItemDoc<T>, collection: Store<T, U>) => U
+type OptionFactory<T extends ItemModel, U extends Item<T>, S extends Item<any> = U> =
+  (doc: ItemDoc<T>, collection: Store<T, U, S>) => S;
 
 /** Default values for model properties */
 export
-type OptionValidator<T extends ItemModel> = (data: Partial<T>) => T
+type OptionValidator<T extends ItemModel> = (data: Partial<T>) => T;
 

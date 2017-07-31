@@ -12,14 +12,17 @@ import { MapOf, ExistingItemDoc } from './types';
  * @template U Result of transforming incoming model (what we actually store on the colleciton)
  *             U can equal T if we, for example, don't provide neither options.classModel
  *             nor options.classFactory
+ *           S For situations when the items in the store do not satisfy the constraint
+ *             restricting U (e.g. complex factory function), setting S will override
+ *             the constraint
  */
-export declare class Store<T extends ItemModel, U extends Item<T>> {
+export declare class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U> {
     /**
      * Creates new PouchStore
      * It does not subsribe/attach it to any PouchDB database automatically
      * @see PouchStore#subsribe() Use subsribe to do so
      */
-    constructor(options: IStoreOptions<T, U> | StoreOptions<T, U>);
+    constructor(options: IStoreOptions<T, U, S> | StoreOptions<T, U, S>);
     /**
      * Subscribe to pouchdb and start listening to changes feed
      */
@@ -31,20 +34,20 @@ export declare class Store<T extends ItemModel, U extends Item<T>> {
     /**
      * Returns array of all documents sorted by ids
      */
-    readonly all: U[];
+    readonly all: S[];
     /**
      * Returns a map of all documents
      */
-    readonly allMap: MapOf<U>;
+    readonly allMap: MapOf<S>;
     /** Get item by id or index */
-    get(arg: string | number): U | undefined;
+    get(arg: string | number): S | undefined;
     /**
      * Creates a new object
      * It does not include it into the store
      *
      * @see Item#save()
      */
-    create(data: Partial<T>): U;
+    create(data: Partial<T>): S;
     /** Load attachment by name */
     loadAttachment(itemId: string, name: string): Promise<Blob | Buffer>;
     /**
@@ -52,14 +55,14 @@ export declare class Store<T extends ItemModel, U extends Item<T>> {
      *
      * @todo Actually, it is, probably, not supposed to be in a public interface
      */
-    put(item: U): Promise<ExistingItemDoc<T>>;
+    put(item: S): Promise<ExistingItemDoc<T>>;
     /** Puts an attachment to the database */
     putAttachment(itemId: string, name: string, file: Blob | Buffer, contentType: string): Promise<void>;
     /**
      * Remove item from the store
      * It will be saved with { _deleted: true } in PouchDB
      */
-    remove(item: U): Promise<any>;
+    remove(item: S): Promise<any>;
     remove(itemId: string): Promise<any>;
     private _fetchAll();
     private _subscribeToChanges();
@@ -69,7 +72,7 @@ export declare class Store<T extends ItemModel, U extends Item<T>> {
     private _addDoc(doc);
     private _removeItem(doc);
     private _id(item);
-    protected _options: StoreOptions<T, U>;
+    protected _options: StoreOptions<T, U, S>;
     protected _db: PouchDB.Database<T> | null;
     private _changes;
     private _subscribed;

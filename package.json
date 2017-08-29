@@ -42,7 +42,7 @@
     "pouchdb-adapter-memory": "^6.3.4",
     "sinon": "^2.3.8",
     "source-map-support": "^0.4.15",
-    "typescript": "^2.4.2"
+    "typescript": "^2.5.1"
   },
   "peerDependencies": {
     "mobx": "^3.0.0",

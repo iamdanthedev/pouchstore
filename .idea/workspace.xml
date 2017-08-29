@@ -5,54 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mocks/img.jpg" afterPath="$PROJECT_DIR$/test/mocks/img.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mocks/img.large.jpg" afterPath="$PROJECT_DIR$/test/mocks/img.large.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/danthedev.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/danthedev.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pouchstore.iml" afterPath="$PROJECT_DIR$/.idea/pouchstore.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/typescript-compiler.xml" afterPath="$PROJECT_DIR$/.idea/typescript-compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.npmignore" afterPath="$PROJECT_DIR$/.npmignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.vscode/launch.json" afterPath="$PROJECT_DIR$/.vscode/launch.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Session.vim" afterPath="$PROJECT_DIR$/Session.vim" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Item.d.ts" afterPath="$PROJECT_DIR$/lib/Item.d.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Item.js" afterPath="$PROJECT_DIR$/lib/Item.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Item.js.map" afterPath="$PROJECT_DIR$/lib/Item.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Store.d.ts" afterPath="$PROJECT_DIR$/lib/Store.d.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Store.js" afterPath="$PROJECT_DIR$/lib/Store.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Store.js.map" afterPath="$PROJECT_DIR$/lib/Store.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/StoreOptions.d.ts" afterPath="$PROJECT_DIR$/lib/StoreOptions.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/StoreOptions.js" afterPath="$PROJECT_DIR$/lib/StoreOptions.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/StoreOptions.js.map" afterPath="$PROJECT_DIR$/lib/StoreOptions.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/index.d.ts" afterPath="$PROJECT_DIR$/lib/index.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/index.js" afterPath="$PROJECT_DIR$/lib/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/index.js.map" afterPath="$PROJECT_DIR$/lib/index.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/types.d.ts" afterPath="$PROJECT_DIR$/lib/types.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/types.js" afterPath="$PROJECT_DIR$/lib/types.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/types.js.map" afterPath="$PROJECT_DIR$/lib/types.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/utils.d.ts" afterPath="$PROJECT_DIR$/lib/utils.d.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/utils.js" afterPath="$PROJECT_DIR$/lib/utils.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/utils.js.map" afterPath="$PROJECT_DIR$/lib/utils.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Item.ts" afterPath="$PROJECT_DIR$/src/Item.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Store.ts" afterPath="$PROJECT_DIR$/src/Store.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/StoreOptions.ts" afterPath="$PROJECT_DIR$/src/StoreOptions.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.ts" afterPath="$PROJECT_DIR$/src/index.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils.ts" afterPath="$PROJECT_DIR$/src/utils.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/makeLib.js" afterPath="$PROJECT_DIR$/tasks/makeLib.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="$PROJECT_DIR$/test/Item.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Store.spec.ts" afterPath="$PROJECT_DIR$/test/Store.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mocha.opts" afterPath="$PROJECT_DIR$/test/mocha.opts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mocks/todo.ts" afterPath="$PROJECT_DIR$/test/mocks/todo.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="$PROJECT_DIR$/tsconfig.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -74,7 +33,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.3705036">
+    <splitter split-orientation="horizontal" split-proportion="0.49836066">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
@@ -100,8 +59,8 @@
           <file leaf-file-name="Item.spec.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="18">
-                  <caret line="182" column="6" lean-forward="false" selection-start-line="182" selection-start-column="6" selection-end-line="182" selection-end-column="6" />
+                <state relative-caret-position="504">
+                  <caret line="28" column="57" lean-forward="false" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
                   <folding>
                     <element signature="e#0#36#0" expanded="true" />
                   </folding>
@@ -123,11 +82,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Item.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Item.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Item.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="216">
-                  <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                  <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
                   <folding>
                     <element signature="e#204#282#0" expanded="true" />
                   </folding>
@@ -135,11 +94,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="36">
-                  <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+                <state relative-caret-position="522">
+                  <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
                   <folding />
                 </state>
               </provider>
@@ -148,8 +107,8 @@
           <file leaf-file-name="Store.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Store.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="144">
-                  <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+                <state relative-caret-position="216">
+                  <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
                   <folding>
                     <element signature="e#0#59#0" expanded="true" />
                   </folding>
@@ -226,10 +185,10 @@
         <option value="$PROJECT_DIR$/test/mocha.opts" />
         <option value="$PROJECT_DIR$/test/PouchBaseModel.spec.ts" />
         <option value="$PROJECT_DIR$/test/Item.spec.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/Store.ts" />
         <option value="$PROJECT_DIR$/src/Item.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -306,6 +265,22 @@
               <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
+              <item name="tasks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="mocks" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -336,6 +311,7 @@
     <property name="add_unversioned_files" value="$PROJECT_DIR$/src/PouchStore.ts&#10;/home/danthedev/Projects/pouchstore/node_modules/@types/pouchdb-core/index.d.ts" />
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
+    <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -412,11 +388,11 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.test" />
-        <item index="1" class="java.lang.String" itemvalue="npm.build:watch" />
-        <item index="2" class="java.lang.String" itemvalue="npm.test:debug" />
-        <item index="3" class="java.lang.String" itemvalue="npm.build" />
-        <item index="4" class="java.lang.String" itemvalue="npm.build:lib" />
+        <item index="0" class="java.lang.String" itemvalue="npm.build:lib" />
+        <item index="1" class="java.lang.String" itemvalue="npm.test" />
+        <item index="2" class="java.lang.String" itemvalue="npm.build:watch" />
+        <item index="3" class="java.lang.String" itemvalue="npm.test:debug" />
+        <item index="4" class="java.lang.String" itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -458,7 +434,7 @@
       <workItem from="1502275488763" duration="2878000" />
       <workItem from="1502943324591" duration="36000" />
       <workItem from="1502943403840" duration="949000" />
-      <workItem from="1503984877208" duration="140000" />
+      <workItem from="1503984877208" duration="633000" />
     </task>
     <task id="LOCAL-00001" summary="+ refactoring&#10;+ tests">
       <created>1500919525395</created>
@@ -586,11 +562,18 @@
       <option name="project" value="LOCAL" />
       <updated>1501345864485</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="changed node debug log id to 'pouchstore'">
+      <created>1503985071274</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1503985071274</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83226000" />
+    <option name="totallyTimeSpent" value="83719000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -605,26 +588,26 @@
     <frame x="0" y="-4" width="1920" height="1059" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16488223" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12619808" sideWeight="0.6691087" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31477517" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12619808" sideWeight="0.33089134" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13660619" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36155483" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="529" y="189" width="1283" height="683" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1521739" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.16488223" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12619808" sideWeight="0.6691087" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13660619" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40438873" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22447917" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="529" y="189" width="1283" height="683" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.248394" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40438873" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -652,7 +635,8 @@
     <MESSAGE value="+ fixed bug with Item.set" />
     <MESSAGE value="+ version" />
     <MESSAGE value="gitignore update" />
-    <option name="LAST_COMMIT_MESSAGE" value="gitignore update" />
+    <MESSAGE value="changed node debug log id to 'pouchstore'" />
+    <option name="LAST_COMMIT_MESSAGE" value="changed node debug log id to 'pouchstore'" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -678,13 +662,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/mocha/lib/interfaces/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1695">
-          <caret line="113" column="18" lean-forward="false" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -965,40 +942,50 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+    <entry file="file://$PROJECT_DIR$/src/Item.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="182" column="6" lean-forward="false" selection-start-line="182" selection-start-column="6" selection-end-line="182" selection-end-column="6" />
+        <state relative-caret-position="216">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="e#204#282#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/node_modules/mobx/lib/mobx.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Store.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        <state relative-caret-position="216">
+          <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.ts">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        <state relative-caret-position="522">
+          <caret line="48" column="21" lean-forward="false" selection-start-line="48" selection-start-column="21" selection-end-line="48" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="28" column="57" lean-forward="false" selection-start-line="28" selection-start-column="57" selection-end-line="28" selection-end-column="57" />
           <folding>
-            <element signature="e#204#282#0" expanded="true" />
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

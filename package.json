@@ -1,6 +1,6 @@
 {
   "name": "pouchstore",
-  "version": "0.1.35",
+  "version": "0.1.36",
   "description": "PouchDB to Mobx Store",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -27,8 +27,8 @@
     "@types/debug": "0.0.29",
     "@types/faker": "^4.1.0",
     "@types/lodash.clone": "^4.5.2",
-    "@types/mocha": "^2.2.41",
-    "@types/node": "^8.0.14",
+    "@types/mocha": "^2.2.42",
+    "@types/node": "^8.0.25",
     "@types/pouchdb": "^6.1.1",
     "@types/sinon": "^2.3.3",
     "chai": "^4.1.0",
@@ -38,14 +38,15 @@
     "mobx": "^3.2.2",
     "mocha": "^3.4.2",
     "nyc": "^11.0.3",
+    "pouchdb": "^6.3.4",
     "pouchdb-adapter-memory": "^6.3.4",
     "sinon": "^2.3.8",
     "source-map-support": "^0.4.15",
     "typescript": "^2.4.2"
   },
   "peerDependencies": {
-    "mobx": "^3.2.1",
-    "pouchdb": "^6.3.4"
+    "mobx": "^3.0.0",
+    "pouchdb": "^6.0.0"
   },
   "dependencies": {
     "debug": "^2.6.8",

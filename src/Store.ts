@@ -1,4 +1,4 @@
-import { computed, observable, ObservableMap } from 'mobx'
+import { computed, observable, ObservableMap } from 'mobx';
 
 import { StoreOptions, IStoreOptions } from './StoreOptions'
 import { Item, ItemModel } from './Item'
@@ -6,7 +6,7 @@ import { isNil } from './utils'
 import { MapOf, ItemDoc, ExistingItemDoc, NewItemDoc } from './types'
 
 const uuid = require('uuid')
-const log = require('debug')('PouchStore')
+const log = require('debug')('pouchstore')
 
 
 /**

@@ -8,14 +8,15 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 .gitignore
-badd +1 src/Item.ts
-badd +1 src/Store.ts
-badd +1 src/StoreOptions.ts
+badd +0 src/Item.ts
+badd +0 src/Store.ts
+badd +73 src/StoreOptions.ts
 badd +37 src/types.ts
-badd +1 ~/Projects/pouchstore/package.json
+badd +3 package.json
+badd +0 .gitignore
 argglobal
 silent! argdel *
+set stal=2
 edit src/StoreOptions.ts
 set splitbelow splitright
 wincmd _ | wincmd |
@@ -33,12 +34,12 @@ set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe 'vert 1resize ' . ((&columns * 62 + 94) / 188)
-exe '2resize ' . ((&lines * 44 + 28) / 56)
-exe 'vert 2resize ' . ((&columns * 76 + 94) / 188)
-exe '3resize ' . ((&lines * 8 + 28) / 56)
-exe 'vert 3resize ' . ((&columns * 76 + 94) / 188)
-exe 'vert 4resize ' . ((&columns * 48 + 94) / 188)
+exe 'vert 1resize ' . ((&columns * 90 + 135) / 271)
+exe '2resize ' . ((&lines * 56 + 34) / 69)
+exe 'vert 2resize ' . ((&columns * 110 + 135) / 271)
+exe '3resize ' . ((&lines * 10 + 34) / 69)
+exe 'vert 3resize ' . ((&columns * 110 + 135) / 271)
+exe 'vert 4resize ' . ((&columns * 69 + 135) / 271)
 argglobal
 setlocal fdm=indent
 setlocal fde=0
@@ -50,7 +51,9 @@ setlocal fdn=20
 setlocal fen
 13
 normal! zo
-let s:l = 9 - ((6 * winheight(0) + 26) / 53)
+15
+normal! zo
+let s:l = 9 - ((7 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -58,62 +61,68 @@ normal! zt
 normal! 079|
 wincmd w
 argglobal
-edit src/StoreOptions.ts
-setlocal fdm=indent
+edit src/Store.ts
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=7
+setlocal fdl=3
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 22) / 44)
+25
+normal! zo
+103
+normal! zo
+130
+normal! zo
+228
+normal! zo
+let s:l = 24 - ((23 * winheight(0) + 28) / 56)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+24
+normal! 072|
 wincmd w
 argglobal
-edit src/StoreOptions.ts
-setlocal fdm=indent
+enew
+setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=7
+setlocal fdl=3
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 4) / 8)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-1
-normal! 0
 wincmd w
 argglobal
-edit src/StoreOptions.ts
-setlocal fdm=indent
+edit src/Item.ts
+setlocal fdm=syntax
 setlocal fde=0
 setlocal fmr={{{,}}}
 setlocal fdi=#
-setlocal fdl=7
+setlocal fdl=3
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 26) / 53)
+39
+normal! zo
+307
+normal! zo
+let s:l = 311 - ((41 * winheight(0) + 33) / 67)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+311
+normal! 013|
 wincmd w
-exe 'vert 1resize ' . ((&columns * 62 + 94) / 188)
-exe '2resize ' . ((&lines * 44 + 28) / 56)
-exe 'vert 2resize ' . ((&columns * 76 + 94) / 188)
-exe '3resize ' . ((&lines * 8 + 28) / 56)
-exe 'vert 3resize ' . ((&columns * 76 + 94) / 188)
-exe 'vert 4resize ' . ((&columns * 48 + 94) / 188)
+exe 'vert 1resize ' . ((&columns * 90 + 135) / 271)
+exe '2resize ' . ((&lines * 56 + 34) / 69)
+exe 'vert 2resize ' . ((&columns * 110 + 135) / 271)
+exe '3resize ' . ((&lines * 10 + 34) / 69)
+exe 'vert 3resize ' . ((&columns * 110 + 135) / 271)
+exe 'vert 4resize ' . ((&columns * 69 + 135) / 271)
 tabedit .gitignore
 set splitbelow splitright
 set nosplitbelow
@@ -129,18 +138,19 @@ setlocal fdl=7
 setlocal fml=1
 setlocal fdn=20
 setlocal fen
-let s:l = 1 - ((0 * winheight(0) + 26) / 53)
+let s:l = 7 - ((6 * winheight(0) + 33) / 66)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-1
-normal! 0
+7
+normal! 05|
 tabnext 2
+set stal=1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
 unlet! s:wipebuf
-set winheight=1 winwidth=1 shortmess=aoO
+set winheight=1 winwidth=20 shortmess=filnxtToO
 let s:sx = expand("<sfile>:p:r")."x.vim"
 if file_readable(s:sx)
   exe "source " . fnameescape(s:sx)

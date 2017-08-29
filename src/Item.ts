@@ -19,7 +19,7 @@ import { Attachment, ItemDoc, NewItemDoc, ExistingItemDoc  } from './types'
 
 const clone = require('lodash.clone')
 const uuid = require('uuid')
-const log = require('debug')('App:Modules:PouchStore:Item')
+const log = require('debug')('pouchstore')
 
 
 /**

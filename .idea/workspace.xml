@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -55,8 +53,8 @@
           <file leaf-file-name="Item.spec.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
+                <state relative-caret-position="90">
+                  <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
                   <folding>
                     <element signature="e#0#36#0" expanded="true" />
                   </folding>
@@ -414,7 +412,7 @@
       <workItem from="1502275488763" duration="2878000" />
       <workItem from="1502943324591" duration="36000" />
       <workItem from="1502943403840" duration="949000" />
-      <workItem from="1503984877208" duration="815000" />
+      <workItem from="1503984877208" duration="2888000" />
     </task>
     <task id="LOCAL-00001" summary="+ refactoring&#10;+ tests">
       <created>1500919525395</created>
@@ -556,11 +554,18 @@
       <option name="project" value="LOCAL" />
       <updated>1503985528356</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="updated typescript">
+      <created>1503985702275</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1503985702275</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="83901000" />
+    <option name="totallyTimeSpent" value="85974000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -624,7 +629,8 @@
     <MESSAGE value="gitignore update" />
     <MESSAGE value="changed node debug log id to 'pouchstore'" />
     <MESSAGE value="+version" />
-    <option name="LAST_COMMIT_MESSAGE" value="+version" />
+    <MESSAGE value="updated typescript" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated typescript" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -945,17 +951,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="49" lean-forward="false" selection-start-line="9" selection-start-column="49" selection-end-line="9" selection-end-column="49" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -974,6 +970,16 @@
           <caret line="12" column="47" lean-forward="false" selection-start-line="12" selection-start-column="47" selection-end-line="12" selection-end-column="47" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="8" column="8" lean-forward="false" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

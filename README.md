@@ -1,2 +1,2 @@
 # PouchStore
-## A missing link between PouchDB and MobX
+## A bridge between PouchDB and MobX

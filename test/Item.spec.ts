@@ -15,6 +15,41 @@ const mocksDir = path.resolve(__dirname, 'mocks');
 
 describe('Item', () => {
 
+
+  let todoDB: PouchDB.Database<ITodo>;
+  let todoStore: Store<ITodo, Item<ITodo>>;
+  let secondStore: Store<ITodo, Item<ITodo>>;
+
+  function prepareSuite()
+  {
+    before(async () => {
+      todoDB = new PouchDB('TodoStore', { adapter: 'memory' });
+      await todoDB.destroy(); // make sure it will be empty
+      todoDB = new PouchDB('TodoStore', { adapter: 'memory' });
+
+      todoStore = new Store<ITodo, Item<ITodo>>({
+        type: 'todo',
+        idField: 'id',
+        validator: TodoValidator,
+        factory: (doc, collection) => new Item(doc, collection),
+      });
+
+      secondStore = new Store<ITodo, Item<ITodo>>({
+        type: 'todo',
+        idField: 'id',
+        validator: TodoValidator,
+        factory: (doc, collection) => new Item(doc, collection),
+      });
+
+      todoStore.subscribe(todoDB);
+      secondStore.subscribe(todoDB);
+    });
+
+    after(() => {
+      return todoDB.destroy();
+    })
+  }
+
   describe('Record#1 from data', () => {
 
     let todoDB: PouchDB.Database<ITodo>
@@ -295,4 +330,169 @@ describe('Item', () => {
 
   })
 
+  describe('Multiple attachments (start from a new doc)', () => {
+
+    prepareSuite();
+
+    const img1 = fs.readFileSync(path.resolve(mocksDir, 'img1.png'));
+    const img2 = fs.readFileSync(path.resolve(mocksDir, 'img2.png'));
+    const img3 = fs.readFileSync(path.resolve(mocksDir, 'img3.png'));
+    const img4 = fs.readFileSync(path.resolve(mocksDir, 'img4.png'));
+    
+    let todo: Item<ITodo>;
+    let todo2: Item<ITodo>;
+
+    it('should create new doc', () => {
+      todo = todoStore.create({
+        id: 'item',
+        title: 'test'
+      })
+
+      expect(todo).to.exist;
+    });
+
+    it('should attach 2 files', () => {
+      todo.attach('img1.png', img1, 'image/png');
+      todo.attach('img2.png', img2, 'image/png');
+
+      expect(todo.attachments).all.keys('img1.png', 'img2.png');
+    });
+
+    it('should save', () => {
+      return todo.save();
+    });
+
+    timeout(1);
+
+    it('should get a replica of the doc', () => {
+      todo2 = secondStore.get('item');
+      expect(todo2).to.exist;
+    });
+
+    it('replica should have 2 attachments', () => {
+      expect(todo2.attachments).all.keys('img1.png', 'img2.png');
+    })
+
+    it('doc should still have 2 attachments', () => {
+      expect(todo.attachments).all.keys('img1.png', 'img2.png');
+    });
+
+    it('should attach 2 more files', () => {
+      todo.attach('img3.png', img3, 'image/png');
+      todo.attach('img4.png', img4, 'image/png');
+
+      expect(todo.attachments).all.keys('img1.png', 'img2.png', 'img3.png', 'img4.png');
+    });
+
+    it('replica should still have 2 attachments', () => {
+      expect(todo2.attachments).all.keys('img1.png', 'img2.png');
+    })
+
+    it('should save', () => {
+      return todo.save();
+    });
+
+    it('should have 4 attachments', () => {
+      expect(todo.attachments).all.keys('img1.png', 'img2.png', 'img3.png', 'img4.png');
+    });
+
+    it('replica should have the doc w/ 4 attachments', () => {
+      expect(todo2.attachments).all.keys('img1.png', 'img2.png', 'img3.png', 'img4.png');
+    });
+
+    it('should remove 1 attachment', () => {
+      todo.detach('img1.png');
+      expect(todo.attachments).all.keys('img2.png', 'img3.png', 'img4.png');
+    });
+
+    it('replica should still have the doc w/ 4 attachments', () => {
+      expect(todo2.attachments).all.keys('img1.png', 'img2.png', 'img3.png', 'img4.png');
+    });
+
+    it('should save', () => {
+      return todo.save();
+    });
+
+    it('should have 3 attachments', () => {
+      expect(todo.attachments).all.keys('img2.png', 'img3.png', 'img4.png');
+    });
+
+    it('replica should still have the doc w/ 4 attachments', () => {
+      expect(todo2.attachments).all.keys('img2.png', 'img3.png', 'img4.png');
+    })
+
+  });
+
+  describe('Multiple attachments (start from an existing doc', () => {
+
+    prepareSuite();
+
+    const img1 = fs.readFileSync(path.resolve(mocksDir, 'img1.png'));
+    const img2 = fs.readFileSync(path.resolve(mocksDir, 'img2.png'));
+    const img3 = fs.readFileSync(path.resolve(mocksDir, 'img3.png'));
+    const img4 = fs.readFileSync(path.resolve(mocksDir, 'img4.png'));
+
+    let todo: Item<ITodo>;
+    let todo2: Item<ITodo>;
+
+    it('should put new doc into pouchdb', () => {
+      const doc: PouchDB.Core.PutDocument<ITodo> = {
+        _id: 'todo::doc1',
+        id: 'doc1',
+        title: 'test doc',
+        type: 'todo',
+        desc: 'test test',
+        _attachments: {
+          'img1.png': {
+            content_type: 'image/png',
+            data: img1
+          },
+          'img2.png': {
+            content_type: 'image/png',
+            data: img2
+          },
+        }
+      } as any;
+
+      return todoDB.put(doc);
+    });
+
+    it('should get doc from the store', () => {
+      todo = todoStore.get('doc1');
+
+      expect(todo).to.exist;
+    });
+
+    it('should have 2 attachments', () => {
+      expect(todo.attachments).all.keys('img1.png', 'img2.png');
+    });
+
+    it('should get attachments which are not stubs and size should match', async () => {
+      try
+      {
+        const att1 = await todo.loadAttachment('img1.png');
+        expect(att1).to.exist;
+        expect((att1.data as Buffer).byteLength).to.eq(img1.byteLength);
+        expect(att1.stub).to.not.exist;
+      }
+      catch (e)
+      {
+        assert.fail(null, null, e);
+      }
+
+    });
+
+    it('should save', () => {
+      return todo.save();
+    });
+
+  });
+
 })
+
+export function timeout(seconds: number) {
+  it(`waiting for timeout (${seconds} seconds)`, function(done) {
+    this.timeout(seconds * 1000 + 1000);
+    setTimeout(() => done(), seconds * 1000);
+  });
+}

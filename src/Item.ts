@@ -204,7 +204,8 @@ export class Item<T extends ItemModel, S = {}> {
 
   /**
    * Returns attachment by name.
-   * Local loadAttachments will have data prop of type string | Blob | Buffer
+   * Local attachments will have a 'data' property of type string | Blob | Buffer
+   * Remote attachments will have a 'stub' property
    */
 	getAttachment(name: string): Attachment | undefined {
 		log('getAttachment() %s', name)
@@ -245,10 +246,11 @@ export class Item<T extends ItemModel, S = {}> {
 		return this._collection.loadAttachment(this._doc._id, name)
 			.then((data) => {
 
-				const newAtt = clone(att)
-				newAtt.data = data
+				const attWithData = clone(att);
+				attWithData.data = data;
+        delete attWithData.stub;
 
-				return Promise.resolve(att)
+				return Promise.resolve(attWithData);
 			})
 			.catch(err => Promise.reject('Could not load attachment' + err ))
 	}

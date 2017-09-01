@@ -154,8 +154,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
 
   /**
    * Puts an object to the underlying db
-   *
-   * @todo Actually, it is, probably, not supposed to be in a public interface
+   * TODO: implement put(items: S[])
    */
   put(item: S): Promise<ExistingItemDoc<T>>
   {
@@ -165,9 +164,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
       return Promise.reject('DB is not defined');
 
     const db = this._db;
-
     const doc = item.$doc;
-
     const _id = this._id(doc);
     const id = doc[this._options.idField];
 
@@ -179,12 +176,13 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
       this._setItem(item);
 
 
+    doc._attachments = item.attachments;
+
     // TODO: should unset previously set object in case of error
     return db.put(doc)
       .then(() => db.get(_id))
       .then((doc: ExistingItemDoc<T>) => Promise.resolve(doc))
       .catch(err => Promise.reject(err));
-
   }
 
   /** Puts an attachment to the database */

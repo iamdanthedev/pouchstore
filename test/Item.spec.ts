@@ -244,14 +244,13 @@ describe('Item', () => {
       expect(todo).to.exist
     })
 
-
     it('Record#1.attach & Record#1.getAttachment works', () => {
       todo.attach('pic1', file, fileType);
       const att = todo.getAttachment('pic1');
 
-      expect(att).to.exist;
-      expect(att.content_type).eq(fileType);
-      expect(att.data).eq(file);
+      expect(att!).to.exist;
+      expect(att!.content_type).eq(fileType);
+      expect(att!.data).eq(file);
     })
 
     it('Record#1.hasAttachment works', () => {
@@ -260,8 +259,8 @@ describe('Item', () => {
     })
 
     it('$doc should have attachment', () => {
-      expect(todo.$doc._attachments['pic1']).to.exist;
-      expect(todo.$doc._attachments['pic1'].data).eq(file);
+      expect(todo.attachments['pic1']).to.exist;
+      expect(todo.attachments['pic1'].data).eq(file);
     });
 
     it('should save item', () => {
@@ -285,8 +284,10 @@ describe('Item', () => {
 
     it('Record#1.loadAttachmentAsURL works')
 
-    it('Should detach')
-
+    it('Should detach', () => {
+      todo.detach('pic1');
+      expect(todo.hasAttachment('pic1')).be.undefined;
+    })
 
     after(() => {
       return todoDB.destroy()

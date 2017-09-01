@@ -1,6 +1,6 @@
 import { ItemModel } from './Item'
 
-export type Attachment = PouchDB.Core.AttachmentResponse
+export type Attachment = PouchDB.Core.AttachmentResponse;
 
 export type Attachments = PouchDB.Core.Attachments
 

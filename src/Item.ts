@@ -14,7 +14,7 @@ import {
 
 import { isNewDocument, isNil } from './utils'
 import { Store } from './Store'
-import { Attachment, ItemDoc, Attachments } from './types'
+import { Attachment, ItemDoc, Attachments, MapOf } from './types'
 
 
 const clone = require('lodash.clone')
@@ -27,11 +27,6 @@ const log = require('debug')('pouchstore')
  */
 export interface ItemModel {
   type: string;
-  _attachments?: Attachments;
-}
-
-export type WithAttachments<T> = T & {
-  _attachments: Attachments;
 }
 
 
@@ -64,10 +59,8 @@ export class Item<T extends ItemModel, S = {}> {
    * Returns **a copy** of an underlying PouchDB doc
    */
 	@computed
-	get $doc(): WithAttachments<T> {
-		return Object.assign({}, toJS(this._doc), {
-		  _attachments: this._attachmentsMap.toJS(),
-    });
+	get $doc(): T {
+		return Object.assign({}, toJS(this._doc));
 	}
 
   /** If the item has been changed after load/last save */
@@ -163,7 +156,7 @@ export class Item<T extends ItemModel, S = {}> {
 	@action
 	attach(name: string, data: Blob | Buffer, contentType: string): void {
 
-		this._attachmentsMap.set(name, {
+		this._attachmentMap.set(name, {
 			content_type: contentType,
 			data: data,
 			digest: uuid(), // FIXME: this is a hack
@@ -179,7 +172,7 @@ export class Item<T extends ItemModel, S = {}> {
    */
 	@action
 	detach(name: string) {
-		this._attachmentsMap.delete(name)
+		this._attachmentMap.delete(name)
 	}
 
 	/**
@@ -201,8 +194,8 @@ export class Item<T extends ItemModel, S = {}> {
 	hasAttachment(name: string): string | undefined {
 		log('hasAttachment() %s', name)
 
-		if (this._attachmentsMap.has(name)) {
-			const att = this._attachmentsMap.get(name)
+		if (this._attachmentMap.has(name)) {
+			const att = this._attachmentMap.get(name)
 
 			if (att)
 				return att.digest
@@ -216,8 +209,14 @@ export class Item<T extends ItemModel, S = {}> {
 	getAttachment(name: string): Attachment | undefined {
 		log('getAttachment() %s', name)
 
-		return this._attachmentsMap.get(name)
+		return this._attachmentMap.get(name)
 	}
+
+	@computed
+	get attachments(): MapOf<Attachment>
+  {
+    return this._attachmentMap.toJS();
+  }
 
   /** Returns true if attachment is stored on the model */
 	isLocalAttachment(name: string): boolean | undefined {
@@ -276,7 +275,7 @@ export class Item<T extends ItemModel, S = {}> {
 
 		if (att.data) {
 			//locally present attachment
-			// we don't keep this attachment in this._attachmentsMap to save memory
+			// we don't keep this attachment in this._attachmentMap to save memory
 			return Promise.resolve(URL.createObjectURL(att.data))
 
 		} else if (!localOnly) {
@@ -298,15 +297,18 @@ export class Item<T extends ItemModel, S = {}> {
 	/** Updates _attachmentMap */
 	@action
 	protected _updateAttachmentsMap() {
-		this._attachmentsMap.clear()
+		this._attachmentMap.clear();
 
-		const doc = this._doc
+		const doc = this._doc;
 
 		if (isNil(doc._attachments))
-			return
+			return;
 
 		for (var key in doc._attachments)
-			this._attachmentsMap.set(key, doc._attachments[key])
+		{
+		  const attachment = Object.assign({}, doc._attachments[key], { dirty: false });
+      this._attachmentMap.set(key, attachment);
+    }
 	}
 
 	/** Sets the whole underlying doc, some of its properties or a single property */
@@ -339,8 +341,7 @@ export class Item<T extends ItemModel, S = {}> {
 		return this
 	}
 
-	protected _attachmentsMap: ObservableMap<PouchDB.Core.AttachmentResponse> =
-		observable.map([], '_attachmentsMap')
+	protected _attachmentMap: AttachmentMap = observable.map([], '_attachmentMap')
 
 	protected _collection: Store<T, Item<T>> & S
 
@@ -352,3 +353,6 @@ export class Item<T extends ItemModel, S = {}> {
 	@observable
 	private	_dirty: boolean = false
 }
+
+export
+type AttachmentMap = ObservableMap<Attachment>;

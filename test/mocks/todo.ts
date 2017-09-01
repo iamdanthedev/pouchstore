@@ -22,16 +22,15 @@ function TodoValidator(data: Partial<ITodo>): ITodo {
   }
 }
 
-export
-const todos: ITodo[] = [...Array(500).keys()].map((v) => {
+export function genTodos(num: number): ITodo[]
+{
+  return [...Array(num).keys()].map((v) => ({
+      type: 'todo',
+      id: uuid(),
+      title: faker.lorem.sentence(),
+      desc: faker.lorem.sentences(40),
+    } as ITodo)
+  )
+}
 
-  const todo: ITodo = {
-    type: 'todo',
-    id: uuid(),
-    title: faker.lorem.sentence(),
-    desc: faker.lorem.sentences(40),
-  }
-
-  return todo
-
-})
+export const todos = genTodos(500);

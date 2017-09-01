@@ -3,7 +3,7 @@ import { Store, Item } from '../src'
 import * as PouchDB from 'pouchdb'
 import * as chai from 'chai'
 
-import { ITodo, TodoValidator, todos } from './mocks/todo'
+import { ITodo, TodoValidator, todos, genTodos } from './mocks/todo'
 
 
 const fs = require('fs')
@@ -47,7 +47,7 @@ describe('Store', () => {
 			expect(todoStore).to.be.instanceOf(Store)
 		})
 
-		it('Add many items to store', () => {
+		it('Add 500 items to store sequentially', () => {
 			for(var data of todos) {
 				const item = todoStore.create(data)
 				item.save()

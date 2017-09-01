@@ -1,22 +1,19 @@
 import { Store, Item } from '../src'
+
 import * as PouchDB from 'pouchdb'
 import * as chai from 'chai'
 import * as faker from 'faker'
+import fs = require('fs');
+import path = require('path');
+const { assert, expect } = chai
 
 import { ITodo, TodoValidator, todos } from './mocks/todo'
 
-const fs = require('fs')
-const uuid = require('uuid')
-const chaiAsPromised = require('chai-as-promised')
-const { assert, expect } = chai
-
 PouchDB.plugin(require('pouchdb-adapter-memory'))
-chai.use(chaiAsPromised)
 
-const mocksDir = __dirname + '/../../test/mocks/'
+const mocksDir = path.resolve(__dirname, 'mocks');
 
 describe('Item', () => {
-
 
   describe('Record#1 from data', () => {
 
@@ -201,6 +198,7 @@ describe('Item', () => {
     })
 
 
+
     after(() => {
       return todoDB.destroy()
     })
@@ -208,18 +206,21 @@ describe('Item', () => {
 
   describe('Attachments', () => {
 
-    let todoDB: PouchDB.Database<ITodo>
-    let todoStore: Store<ITodo, Item<ITodo>>
+    let todoDB: PouchDB.Database<ITodo>;
+    let todoStore: Store<ITodo, Item<ITodo>>;
+    let todo: Item<ITodo>;
 
-    let todo: Item<ITodo>
+    const file1Path = path.resolve(mocksDir, 'img.jpg');
+    const file = fs.readFileSync(file1Path);
+    const fileType = 'image/jpeg';
 
     before(() => {
-      todoDB = new PouchDB('TodoStore', { adapter: 'memory' })
+      todoDB = new PouchDB('TodoStore', { adapter: 'memory' });
     })
 
     it('DB should be empty', () => {
       return todoDB.allDocs().then((resp) => {
-        expect(resp.total_rows).to.eq(0)
+        expect(resp.total_rows).to.eq(0);
       })
     })
 
@@ -243,36 +244,44 @@ describe('Item', () => {
       expect(todo).to.exist
     })
 
-    let file: Buffer | Blob
-    let fileType: 'image/jpeg'
-
-    it('File#1 loaded', (done) => {
-      fs.readFile(mocksDir + 'img.jpg', (err: any, data: Buffer) => {
-        file = data
-        assert(file)
-        done()
-      })
-
-    })
 
     it('Record#1.attach & Record#1.getAttachment works', () => {
-      todo.attach('pic1', file, fileType)
-      const att = todo.getAttachment('pic1')
+      todo.attach('pic1', file, fileType);
+      const att = todo.getAttachment('pic1');
 
-      if (!att)
-        return assert.fail('Could not get the attachment')
-
-      assert(att.content_type === fileType)
-      assert(att.data === file)
+      expect(att).to.exist;
+      expect(att.content_type).eq(fileType);
+      expect(att.data).eq(file);
     })
 
     it('Record#1.hasAttachment works', () => {
       expect(todo.hasAttachment('pic1')).to.exist
-      expect(todo.hasAttachment('doesn not exist!')).to.be.undefined
+      expect(todo.hasAttachment('does not not exist!')).to.be.undefined
     })
 
+    it('$doc should have attachment', () => {
+      expect(todo.$doc._attachments['pic1']).to.exist;
+      expect(todo.$doc._attachments['pic1'].data).eq(file);
+    });
 
-    it('Record#1.loadAttachment')
+    it('should save item', () => {
+      return todo.save();
+    });
+
+    it('should load item w/ attachment stub', async () => {
+      try
+      {
+        const item = await todoDB.get(`todo::${todo.get('id')}`);
+        expect(item).to.exist;
+        expect(item._attachments['pic1']).to.exist;
+        expect(item._attachments['pic1'].length).eq(file.byteLength);
+        expect(item._attachments['pic1'].stub).is.true;
+      }
+      catch (e)
+      {
+        expect.fail(null, null, e);
+      }
+    });
 
     it('Record#1.loadAttachmentAsURL works')
 

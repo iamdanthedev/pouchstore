@@ -1,12 +1,11 @@
 import { computed, observable, ObservableMap } from 'mobx';
 
-import { StoreOptions, IStoreOptions } from './StoreOptions'
-import { Item, ItemModel } from './Item'
-import { isNil } from './utils'
-import { MapOf, ItemDoc, ExistingItemDoc, NewItemDoc } from './types'
+import { StoreOptions, IStoreOptions } from './StoreOptions';
+import { Item, ItemModel } from './Item';
+import { isNil } from './utils';
+import { MapOf, ItemDoc, ExistingItemDoc, NewItemDoc } from './types';
 
-const uuid = require('uuid')
-const log = require('debug')('pouchstore')
+const log = require('debug')('pouchstore');
 
 
 /**
@@ -158,32 +157,33 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
    *
    * @todo Actually, it is, probably, not supposed to be in a public interface
    */
-  put(item: S): Promise<ExistingItemDoc<T>> {
-    log(`${this._options.type} update() %o`, { item })
+  put(item: S): Promise<ExistingItemDoc<T>>
+  {
+    log(`${this._options.type} update() %o`, { item });
 
     if (!this._db)
-      return Promise.reject('DB is not defined')
+      return Promise.reject('DB is not defined');
 
-    const db = this._db
+    const db = this._db;
 
-    const doc = item.$doc
+    const doc = item.$doc;
 
-    const _id = this._id(doc)
-    const id = doc[this._options.idField]
+    const _id = this._id(doc);
+    const id = doc[this._options.idField];
 
     if (!!!_id || !!!id)
-      return Promise.reject('"_id" and "id" properties must be set on an object before putting it into the DB')
+      return Promise.reject('"_id" and "id" properties must be set on an object before putting it into the DB');
 
     // at first, we should add the item to _items collection to prevent duplicating
     if (!this._items.has(id))
-      this._setItem(item)
+      this._setItem(item);
 
 
-    // now put it into the bucket
+    // TODO: should unset previously set object in case of error
     return db.put(doc)
       .then(() => db.get(_id))
       .then((doc: ExistingItemDoc<T>) => Promise.resolve(doc))
-      .catch(err => Promise.reject(err))
+      .catch(err => Promise.reject(err));
 
   }
 

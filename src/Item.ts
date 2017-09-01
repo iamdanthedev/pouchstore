@@ -14,7 +14,7 @@ import {
 
 import { isNewDocument, isNil } from './utils'
 import { Store } from './Store'
-import { Attachment, ItemDoc, NewItemDoc, ExistingItemDoc  } from './types'
+import { Attachment, ItemDoc, Attachments } from './types'
 
 
 const clone = require('lodash.clone')
@@ -25,9 +25,13 @@ const log = require('debug')('pouchstore')
 /**
  * Base models interface
  */
-export
-interface ItemModel {
-  type: string
+export interface ItemModel {
+  type: string;
+  _attachments?: Attachments;
+}
+
+export type WithAttachments<T> = T & {
+  _attachments: Attachments;
 }
 
 
@@ -60,8 +64,10 @@ export class Item<T extends ItemModel, S = {}> {
    * Returns **a copy** of an underlying PouchDB doc
    */
 	@computed
-	get $doc() {
-		return Object.assign({}, toJS(this._doc))
+	get $doc(): WithAttachments<T> {
+		return Object.assign({}, toJS(this._doc), {
+		  _attachments: this._attachmentsMap.toJS(),
+    });
 	}
 
   /** If the item has been changed after load/last save */
@@ -141,13 +147,14 @@ export class Item<T extends ItemModel, S = {}> {
 
 	/** Save this item in the store. This will update the PouchDB database */
   @action
-  save(): Promise<void> {
+  save(): Promise<void>
+  {
     return this.$collection.put(this)
       .then((doc) => {
-        this._doc = doc
-        this._dirty = false
+        this._doc = doc;
+        this._dirty = false;
 
-        return Promise.resolve()
+        return Promise.resolve();
       })
       .catch(err => Promise.reject(err))
   }
@@ -159,7 +166,7 @@ export class Item<T extends ItemModel, S = {}> {
 		this._attachmentsMap.set(name, {
 			content_type: contentType,
 			data: data,
-			digest: uuid(), // this is a cheat!
+			digest: uuid(), // FIXME: this is a hack
 		})
 
 		this._dirty = true

@@ -2,6 +2,8 @@
   <dictionary name="danthedev">
     <words>
       <w>pouchstore</w>
+      <w>tsconfig</w>
+      <w>unsubscribe</w>
     </words>
   </dictionary>
 </component>

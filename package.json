@@ -14,12 +14,12 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "build:lib": "tsc && node tasks/makeLib.js",
-    "test": "nyc mocha",
-    "test:debug": "node $NODE_DEBUG_OPTION node_modules/mocha/bin/_mocha",
-    "test:watch": "mocha -w"
+    "test": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha $NODE_DEBUG_OPTION",
+    "test:watch": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha --watch"
   },
   "author": "Daniel Khoroshko",
-  "license": "Public Domain",
+  "license": "Apache Public License v2",
+  "repository": "https://bitbucket.org/rasdaniil/pouchstore",
   "devDependencies": {
     "@types/bluebird": "^3.5.8",
     "@types/chai": "^4.0.1",
@@ -42,6 +42,7 @@
     "pouchdb-adapter-memory": "^6.3.4",
     "sinon": "^2.3.8",
     "source-map-support": "^0.4.15",
+    "ts-node": "^3.3.0",
     "typescript": "^2.5.1"
   },
   "peerDependencies": {

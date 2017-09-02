@@ -35,9 +35,8 @@ export declare class Item<T extends ItemModel, S = {}> {
     readonly $collection: Store<T, Item<T, {}>, Item<T, {}>> & S;
     /**
      * Returns **a copy** of an underlying PouchDB doc
-     * Attachments are not included and should be accessed via Item#attachments
      */
-    readonly $doc: T;
+    readonly $doc: ItemDoc<T>;
     /** If the item has been changed after load/last save */
     readonly isDirty: boolean;
     /** If the item has never been saved */
@@ -69,12 +68,12 @@ export declare class Item<T extends ItemModel, S = {}> {
      *                                                           *
      *************************************************************/
     /** Attaches a file to the document */
-    attach(name: string, data: Blob | Buffer, contentType: string): void;
+    attach(name: string, data: Blob | Buffer, contentType: string): boolean;
     /**
      * Removes attachment
      * This is the same as calling PouchStore#put(item)
      */
-    detach(name: string): void;
+    detach(name: string): boolean;
     /**
      * Checks if attachment exists
      * Return attachment digest (for mobx observers - to track changes)

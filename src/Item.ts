@@ -10,16 +10,16 @@ import {
 	observable,
 	ObservableMap,
 	toJS,
-} from 'mobx'
+} from 'mobx';
 
 import { isNewDocument, isNil } from './utils'
 import { Store } from './Store'
 import { Attachment, ItemDoc, Attachments, MapOf } from './types'
 
+const md5 = require('pouchdb-md5');
 const clone = require('lodash.clone')
 const uuid = require('uuid')
 const log = require('debug')('pouchstore')
-
 
 /**
  * Base models interface
@@ -49,7 +49,12 @@ export class Item<T extends ItemModel, S = {}> {
 
 		this._protectedFields = ['_id', '_rev', 'id']
 
-		this._set(doc, true)
+    const putDoc = Object.assign({}, doc);
+
+		if (!putDoc._attachments)
+		  putDoc._attachments = {};
+
+		this._set(putDoc, true)
 	}
 
   /**
@@ -177,16 +182,25 @@ export class Item<T extends ItemModel, S = {}> {
 
   /** Attaches a file to the document */
   @action
-  attach(name: string, data: Blob | Buffer, contentType: string): void {
+  attach(name: string, data: Blob | Buffer, contentType: string): boolean
+  {
+    if (!!!name)
+      return false;
 
-    this._attachmentMap.set(name, {
+    const attachments = this._doc._attachments ? this._doc._attachments : {};
+
+    // const digest = md5.binaryMd5(data)
+    const digest = uuid(); // FIXME: a hacky way to not calc md5 hash
+
+    attachments[name] = {
       content_type: contentType,
-      data: data,
-      digest: uuid(), // FIXME: this is a hack
-    })
+      digest: digest,
+      data: data
+    }
 
-    this._dirty = true
+    this.set('_attachments', attachments);
 
+    return true;
   }
 
   /**
@@ -194,8 +208,21 @@ export class Item<T extends ItemModel, S = {}> {
    * This is the same as calling PouchStore#put(item)
    */
   @action
-  detach(name: string) {
-    this._attachmentMap.delete(name)
+  detach(name: string): boolean
+  {
+    if (!!!name)
+      return false;
+
+    const attachments = this._doc._attachments ? this._doc._attachments : {};
+
+    if (!attachments[name])
+      return false;
+
+    delete attachments[name];
+
+    this.set('_attachments', attachments);
+
+    return true;
   }
 
   /**
@@ -232,7 +259,7 @@ export class Item<T extends ItemModel, S = {}> {
 	@computed
 	get attachments(): MapOf<Attachment>
   {
-    return this._attachmentMap.toJS();
+    return this.$doc._attachments ? this.$doc._attachments : {};
   }
 
   /** Returns true if attachment is stored on the model */

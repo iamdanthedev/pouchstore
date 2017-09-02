@@ -62,10 +62,9 @@ export class Item<T extends ItemModel, S = {}> {
 
   /**
    * Returns **a copy** of an underlying PouchDB doc
-   * Attachments are not included and should be accessed via Item#attachments
    */
 	@computed
-	get $doc(): T {
+	get $doc(): ItemDoc<T> {
 		return Object.assign({}, toJS(this._doc));
 	}
 

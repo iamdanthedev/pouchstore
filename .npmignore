@@ -1,6 +1,9 @@
 # Created by .ignore support plugin (hsz.mobi)
 .vscode
 .nyc_output
+.directory
+.editorconfig
+.gitignore
 build
 coverage
 node_modules

@@ -3,5 +3,6 @@
 .nyc_output
 node_modules
 build
+lib
 *.swp
 *.swo

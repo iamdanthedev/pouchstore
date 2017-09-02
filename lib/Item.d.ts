@@ -1,5 +1,5 @@
-/// <reference types="pouchdb-core" />
 /// <reference types="node" />
+/// <reference types="pouchdb-core" />
 /**
  * Base Model for Objects
  * It puts the actual PouchDB document into a protected _doc property,
@@ -8,7 +8,7 @@
  */
 import { ObservableMap } from 'mobx';
 import { Store } from './Store';
-import { Attachment, ItemDoc, NewItemDoc } from './types';
+import { Attachment, ItemDoc, MapOf } from './types';
 /**
  * Base models interface
  */
@@ -17,10 +17,16 @@ export interface ItemModel {
 }
 /**
  * Items that PouchStores consist of should be an object of or inherit Item
- *
  * It provides basic ways of working with Pouchstore items
  */
 export declare class Item<T extends ItemModel, S = {}> {
+    /**
+     * Create a new pouchstore item object.
+     * Usually you would want to create new items via Store#create() method
+     *
+     * @param {ItemDoc<T extends ItemModel>} doc
+     * @param {Store<T extends ItemModel, Item<T extends ItemModel>> & S} collection
+     */
     constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>> & S);
     /**
      * Return a PouchDB collection this item belongs to
@@ -29,10 +35,9 @@ export declare class Item<T extends ItemModel, S = {}> {
     readonly $collection: Store<T, Item<T, {}>, Item<T, {}>> & S;
     /**
      * Returns **a copy** of an underlying PouchDB doc
+     * Attachments are not included and should be accessed via Item#attachments
      */
-    readonly $doc: NewItemDoc<T> | PouchDB.Core.ExistingDocument<T & {
-        _attachments?: PouchDB.Core.Attachments | undefined;
-    }>;
+    readonly $doc: T;
     /** If the item has been changed after load/last save */
     readonly isDirty: boolean;
     /** If the item has never been saved */
@@ -53,6 +58,16 @@ export declare class Item<T extends ItemModel, S = {}> {
     set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K], dontDirty?: boolean): this;
     /** Save this item in the store. This will update the PouchDB database */
     save(): Promise<void>;
+    /**
+   * Remove this item from the store.
+   * This is the same as calling PouchStore#remove(item)
+   */
+    remove(): Promise<void>;
+    /*************************************************************
+     *                                                           *
+     *                        ATTACHMENTS                        *
+     *                                                           *
+     *************************************************************/
     /** Attaches a file to the document */
     attach(name: string, data: Blob | Buffer, contentType: string): void;
     /**
@@ -61,20 +76,22 @@ export declare class Item<T extends ItemModel, S = {}> {
      */
     detach(name: string): void;
     /**
-   * Remove this item from the store.
-   * This is the same as calling PouchStore#remove(item)
-   */
-    remove(): Promise<void>;
-    /**
      * Checks if attachment exists
      * Return attachment digest (for mobx observers - to track changes)
      */
     hasAttachment(name: string): string | undefined;
     /**
      * Returns attachment by name.
-     * Local loadAttachments will have data prop of type string | Blob | Buffer
+     * Local attachments will have a 'data' property of type string | Blob | Buffer
+     * Remote attachments will have a 'stub' property
      */
     getAttachment(name: string): Attachment | undefined;
+    /**
+     * Returns all attachments. Local attachments have data prop
+     * Remote ones have stub = true
+     * @returns {MapOf<Attachment>}
+     */
+    readonly attachments: MapOf<Attachment>;
     /** Returns true if attachment is stored on the model */
     isLocalAttachment(name: string): boolean | undefined;
     /** Loads attachment irrespectively of whether it is local or remote */
@@ -83,15 +100,22 @@ export declare class Item<T extends ItemModel, S = {}> {
      * Loads attachment and returns a WebAPI URL Object string
      *
      * **Important**: Don't forget to release the object created with URL.revokeObjectURL(str)
+     * https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL
      */
     loadAttachmentAsURL(name: string, localOnly?: boolean): Promise<string | null>;
+    /*************************************************************
+     *                                                           *
+     *                        PRIVATE                            *
+     *                                                           *
+     *************************************************************/
     /** Updates _attachmentMap */
     protected _updateAttachmentsMap(): void;
     /** Sets the whole underlying doc, some of its properties or a single property */
     protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>, dontDirty: boolean): this;
-    protected _attachmentsMap: ObservableMap<PouchDB.Core.AttachmentResponse>;
+    protected _attachmentMap: AttachmentMap;
     protected _collection: Store<T, Item<T>> & S;
     protected _doc: ItemDoc<T>;
     protected _protectedFields: Array<(keyof ItemDoc<T>) | 'id'>;
     private _dirty;
 }
+export declare type AttachmentMap = ObservableMap<Attachment>;

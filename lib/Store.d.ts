@@ -52,8 +52,7 @@ export declare class Store<T extends ItemModel, U extends Item<T>, S extends Ite
     loadAttachment(itemId: string, name: string): Promise<Blob | Buffer>;
     /**
      * Puts an object to the underlying db
-     *
-     * @todo Actually, it is, probably, not supposed to be in a public interface
+     * TODO: implement put(items: S[])
      */
     put(item: S): Promise<ExistingItemDoc<T>>;
     /** Puts an attachment to the database */

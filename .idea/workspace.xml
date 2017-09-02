@@ -7,7 +7,6 @@
     <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Item.ts" afterPath="$PROJECT_DIR$/src/Item.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="$PROJECT_DIR$/test/Item.spec.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -29,7 +28,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.51889765">
+    <splitter split-orientation="horizontal" split-proportion="0.46522948">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="index.ts" pinned="false" current-in-tab="false">
@@ -128,23 +127,42 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Item.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Item.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Item.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3846">
-                  <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+                <state relative-caret-position="2312">
+                  <caret line="319" column="38" lean-forward="false" selection-start-line="319" selection-start-column="38" selection-end-line="319" selection-end-column="38" />
                   <folding>
-                    <element signature="e#204#282#0" expanded="true" />
+                    <element signature="n#!!block;n#constructor#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#$collection#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#$doc#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#isDirty#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#isNew#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#get#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#set#2;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#save#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#remove#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#attach#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#detach#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#hasAttachment#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#getAttachment#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#attachments#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#isLocalAttachment#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#loadAttachment#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!doc;n#loadAttachmentAsURL#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#loadAttachmentAsURL#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#_updateAttachmentsMap#0;n#Item#0" expanded="false" />
+                    <element signature="n#!!block;n#_set#0;n#Item#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Store.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Store.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Store.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="218" column="0" lean-forward="true" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+                <state relative-caret-position="-102">
+                  <caret line="223" column="2" lean-forward="false" selection-start-line="223" selection-start-column="2" selection-end-line="223" selection-end-column="2" />
                   <folding>
                     <element signature="e#0#59#0" expanded="true" />
                   </folding>
@@ -271,8 +289,8 @@
         <option value="$PROJECT_DIR$/test/Store.spec.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/test/Item.spec.ts" />
-        <option value="$PROJECT_DIR$/src/Item.ts" />
         <option value="$PROJECT_DIR$/src/Store.ts" />
+        <option value="$PROJECT_DIR$/src/Item.ts" />
       </list>
     </option>
   </component>
@@ -508,7 +526,7 @@
       <workItem from="1502943324591" duration="36000" />
       <workItem from="1502943403840" duration="949000" />
       <workItem from="1503984877208" duration="2888000" />
-      <workItem from="1504276240314" duration="14399000" />
+      <workItem from="1504276240314" duration="15605000" />
     </task>
     <task id="LOCAL-00001" summary="+ refactoring&#10;+ tests">
       <created>1500919525395</created>
@@ -671,11 +689,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504288142217</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="+ more tests">
+      <created>1504295103335</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1504295103335</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100373000" />
+    <option name="totallyTimeSpent" value="101579000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -699,7 +724,7 @@
       <window_info id="Code comment" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25569358" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08945687" sideWeight="0.6583851" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08945687" sideWeight="0.6583851" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24741201" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
@@ -743,7 +768,8 @@
     <MESSAGE value="updated typescript" />
     <MESSAGE value="fix: Item: _attachments not being passed into $doc&#10;+ test" />
     <MESSAGE value="attachments should be access via item.attachments" />
-    <option name="LAST_COMMIT_MESSAGE" value="attachments should be access via item.attachments" />
+    <MESSAGE value="+ more tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ more tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -756,7 +782,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/Item.ts</url>
-          <line>252</line>
+          <line>269</line>
           <properties />
           <option name="timeStamp" value="50" />
         </line-breakpoint>
@@ -1122,16 +1148,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3846">
-          <caret line="244" column="0" lean-forward="true" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-          <folding>
-            <element signature="e#204#282#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-541">
@@ -1180,10 +1196,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Store.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="218" column="0" lean-forward="true" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+        <state relative-caret-position="-102">
+          <caret line="223" column="2" lean-forward="false" selection-start-line="223" selection-start-column="2" selection-end-line="223" selection-end-column="2" />
           <folding>
             <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Item.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="319" column="38" lean-forward="false" selection-start-line="319" selection-start-column="38" selection-end-line="319" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#$collection#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#$doc#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#isDirty#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#isNew#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#get#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#set#2;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#save#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#remove#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#attach#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#detach#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#hasAttachment#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#getAttachment#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#attachments#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#isLocalAttachment#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#loadAttachment#0;n#Item#0" expanded="false" />
+            <element signature="n#!!doc;n#loadAttachmentAsURL#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#loadAttachmentAsURL#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#_updateAttachmentsMap#0;n#Item#0" expanded="false" />
+            <element signature="n#!!block;n#_set#0;n#Item#0" expanded="false" />
           </folding>
         </state>
       </provider>

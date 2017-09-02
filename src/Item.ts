@@ -16,7 +16,6 @@ import { isNewDocument, isNil } from './utils'
 import { Store } from './Store'
 import { Attachment, ItemDoc, Attachments, MapOf } from './types'
 
-
 const clone = require('lodash.clone')
 const uuid = require('uuid')
 const log = require('debug')('pouchstore')
@@ -32,11 +31,17 @@ export interface ItemModel {
 
 /**
  * Items that PouchStores consist of should be an object of or inherit Item
- *
  * It provides basic ways of working with Pouchstore items
  */
 export class Item<T extends ItemModel, S = {}> {
 
+  /**
+   * Create a new pouchstore item object.
+   * Usually you would want to create new items via Store#create() method
+   *
+   * @param {ItemDoc<T extends ItemModel>} doc
+   * @param {Store<T extends ItemModel, Item<T extends ItemModel>> & S} collection
+   */
 	constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>> & S) {
 		log('constructor() %o', { doc })
 
@@ -57,6 +62,7 @@ export class Item<T extends ItemModel, S = {}> {
 
   /**
    * Returns **a copy** of an underlying PouchDB doc
+   * Attachments are not included and should be accessed via Item#attachments
    */
 	@computed
 	get $doc(): T {
@@ -152,29 +158,6 @@ export class Item<T extends ItemModel, S = {}> {
       .catch(err => Promise.reject(err))
   }
 
-  /** Attaches a file to the document */
-	@action
-	attach(name: string, data: Blob | Buffer, contentType: string): void {
-
-		this._attachmentMap.set(name, {
-			content_type: contentType,
-			data: data,
-			digest: uuid(), // FIXME: this is a hack
-		})
-
-		this._dirty = true
-
-	}
-
-  /**
-   * Removes attachment
-   * This is the same as calling PouchStore#put(item)
-   */
-	@action
-	detach(name: string) {
-		this._attachmentMap.delete(name)
-	}
-
 	/**
    * Remove this item from the store.
    * This is the same as calling PouchStore#remove(item)
@@ -186,6 +169,35 @@ export class Item<T extends ItemModel, S = {}> {
 
 		return this.$collection.remove(this)
 	}
+
+  /*************************************************************
+   *                                                           *
+   *                        ATTACHMENTS                        *
+   *                                                           *
+   *************************************************************/
+
+  /** Attaches a file to the document */
+  @action
+  attach(name: string, data: Blob | Buffer, contentType: string): void {
+
+    this._attachmentMap.set(name, {
+      content_type: contentType,
+      data: data,
+      digest: uuid(), // FIXME: this is a hack
+    })
+
+    this._dirty = true
+
+  }
+
+  /**
+   * Removes attachment
+   * This is the same as calling PouchStore#put(item)
+   */
+  @action
+  detach(name: string) {
+    this._attachmentMap.delete(name)
+  }
 
   /**
    * Checks if attachment exists
@@ -213,6 +225,11 @@ export class Item<T extends ItemModel, S = {}> {
 		return this._attachmentMap.get(name)
 	}
 
+  /**
+   * Returns all attachments. Local attachments have data prop
+   * Remote ones have stub = true
+   * @returns {MapOf<Attachment>}
+   */
 	@computed
 	get attachments(): MapOf<Attachment>
   {
@@ -241,7 +258,7 @@ export class Item<T extends ItemModel, S = {}> {
 		if (!isNil(att.data))
 			return Promise.resolve(att)
 
-		// othetwise request it
+		// otherwise request it
 
 		return this._collection.loadAttachment(this._doc._id, name)
 			.then((data) => {
@@ -259,6 +276,7 @@ export class Item<T extends ItemModel, S = {}> {
    * Loads attachment and returns a WebAPI URL Object string
    *
    * **Important**: Don't forget to release the object created with URL.revokeObjectURL(str)
+   * https://developer.mozilla.org/en-US/docs/Web/API/URL/revokeObjectURL
    */
 	loadAttachmentAsURL(name: string, localOnly: boolean = false): Promise<string | null> {
 		log('loadAttachmentAsURL()', { name, localOnly })
@@ -295,6 +313,14 @@ export class Item<T extends ItemModel, S = {}> {
 			return Promise.resolve(null)
 		}
 	}
+
+
+  /*************************************************************
+   *                                                           *
+   *                        PRIVATE                            *
+   *                                                           *
+   *************************************************************/
+
 
 	/** Updates _attachmentMap */
 	@action

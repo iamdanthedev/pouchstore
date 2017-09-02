@@ -78,7 +78,7 @@ export declare class Item<T extends ItemModel, S = {}> {
      * Checks if attachment exists
      * Return attachment digest (for mobx observers - to track changes)
      */
-    hasAttachment(name: string): string | undefined;
+    getAttachmentDigest(name: string): string | undefined;
     /**
      * Returns attachment by name.
      * Local attachments will have a 'data' property of type string | Blob | Buffer
@@ -107,11 +107,8 @@ export declare class Item<T extends ItemModel, S = {}> {
      *                        PRIVATE                            *
      *                                                           *
      *************************************************************/
-    /** Updates _attachmentMap */
-    protected _updateAttachmentsMap(): void;
     /** Sets the whole underlying doc, some of its properties or a single property */
     protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>, dontDirty: boolean): this;
-    protected _attachmentMap: AttachmentMap;
     protected _collection: Store<T, Item<T>> & S;
     protected _doc: ItemDoc<T>;
     protected _protectedFields: Array<(keyof ItemDoc<T>) | 'id'>;

@@ -291,9 +291,9 @@ describe('Item', () => {
       expect(att!.data).eq(file);
     })
 
-    it('Record#1.hasAttachment works', () => {
-      expect(todo.hasAttachment('pic1')).to.exist
-      expect(todo.hasAttachment('does not not exist!')).to.be.undefined
+    it('Record#1.getAttachmentDigest works', () => {
+      expect(todo.getAttachmentDigest('pic1')).to.exist
+      expect(todo.getAttachmentDigest('does not not exist!')).to.be.undefined
     })
 
     it('$doc should have attachment', () => {
@@ -324,7 +324,7 @@ describe('Item', () => {
 
     it('Should detach', () => {
       todo.detach('pic1');
-      expect(todo.hasAttachment('pic1')).be.undefined;
+      expect(todo.getAttachmentDigest('pic1')).be.undefined;
     })
 
     after(() => {
@@ -624,6 +624,36 @@ describe('Item', () => {
 
       it('spy should have been called once', () => {
         expect(spy.callCount).eq(1);
+      });
+
+    });
+
+    describe('attaching a new attachment triggers Item.getAttachmentDigest()', () => {
+
+      prepareReactiveSuite();
+
+      it('should create new doc', () => {
+        todo = todoStore.create({
+          id: 'item',
+          title: 'test'
+        })
+
+        expect(todo).to.exist;
+      });
+
+      createAutorun(() => spy(todo.getAttachmentDigest('img1.png')));
+
+      it('should attach 2 files', () => {
+        expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
+        expect(todo.attach('img2.png', img2, 'image/png')).eq(true);
+
+        expect(todo.attachments).all.keys('img1.png', 'img2.png');
+      });
+
+      timeout(1);
+
+      it('spy should have been called twice', () => {
+        expect(spy.called).is.true; //first empty run also counts :-(
       });
 
     });

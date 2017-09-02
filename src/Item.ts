@@ -70,7 +70,7 @@ export class Item<T extends ItemModel, S = {}> {
    */
 	@computed
 	get $doc(): ItemDoc<T> {
-		return Object.assign({}, toJS(this._doc));
+		return toJS(this._doc);
 	}
 
   /** If the item has been changed after load/last save */
@@ -196,8 +196,10 @@ export class Item<T extends ItemModel, S = {}> {
       content_type: contentType,
       digest: digest,
       data: data
-    }
+    };
 
+    // TODO: would be better to have a attachmentsMap for more fine grained control
+    // TODO: to prevent refreshing all attachments on every change
     this.set('_attachments', attachments);
 
     return true;
@@ -229,15 +231,11 @@ export class Item<T extends ItemModel, S = {}> {
    * Checks if attachment exists
    * Return attachment digest (for mobx observers - to track changes)
    */
-	hasAttachment(name: string): string | undefined {
-		log('hasAttachment() %s', name)
+	getAttachmentDigest(name: string): string | undefined {
+		log('getAttachmentDigest() %s', name)
 
-		if (this._attachmentMap.has(name)) {
-			const att = this._attachmentMap.get(name)
-
-			if (att)
-				return att.digest
-		}
+    if (this._doc._attachments && this._doc._attachments[name])
+      return this._doc._attachments[name].digest;
 	}
 
   /**
@@ -248,7 +246,8 @@ export class Item<T extends ItemModel, S = {}> {
 	getAttachment(name: string): Attachment | undefined {
 		log('getAttachment() %s', name)
 
-		return this._attachmentMap.get(name)
+    if (this._doc._attachments && this._doc._attachments[name])
+      return this._doc._attachments[name];
 	}
 
   /**
@@ -311,7 +310,7 @@ export class Item<T extends ItemModel, S = {}> {
 			return Promise.reject('WebAPI URL is not avaliable in Node.js')
 
 
-		if (!this.hasAttachment(name))
+		if (!this.getAttachmentDigest(name))
 			return Promise.reject('Attachment does not exist')
 
 		const att = this.getAttachment(name)
@@ -348,33 +347,14 @@ export class Item<T extends ItemModel, S = {}> {
    *************************************************************/
 
 
-	/** Updates _attachmentMap */
-	@action
-	protected _updateAttachmentsMap() {
-		this._attachmentMap.clear();
-
-		const doc = this._doc;
-
-		if (isNil(doc._attachments))
-			return;
-
-		for (var key in doc._attachments)
-		{
-		  const attachment = Object.assign({}, doc._attachments[key], { dirty: false });
-      this._attachmentMap.set(key, attachment);
-    }
-	}
-
 	/** Sets the whole underlying doc, some of its properties or a single property */
 	@action
 	protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>, dontDirty: boolean): this {
 		const doc: Partial<DOC> = clone(data)
 
-
 		// initial set (document is just created)
 		if (!this._doc) {
 			this._doc = data as DOC
-			this._updateAttachmentsMap()
 			return this
 		}
 
@@ -385,8 +365,6 @@ export class Item<T extends ItemModel, S = {}> {
         if (!dontDirty)
   				this._dirty = true
 
-				if (key === '_attachments')
-					this._updateAttachmentsMap()
 			} else {
 				log(`set(): key ${key} is protected and was filtered out`)
 			}
@@ -394,8 +372,6 @@ export class Item<T extends ItemModel, S = {}> {
 
 		return this
 	}
-
-	protected _attachmentMap: AttachmentMap = observable.map([], '_attachmentMap')
 
 	protected _collection: Store<T, Item<T>> & S
 

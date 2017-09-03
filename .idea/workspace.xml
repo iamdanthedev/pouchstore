@@ -11,10 +11,9 @@
   <component name="ChangeListManager">
     <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Store.js" afterPath="$PROJECT_DIR$/lib/Store.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Store.js.map" afterPath="$PROJECT_DIR$/lib/Store.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Store.ts" afterPath="$PROJECT_DIR$/src/Store.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Store.spec.ts" afterPath="$PROJECT_DIR$/test/Store.spec.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,7 +35,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.7705146">
+    <splitter split-orientation="horizontal" split-proportion="0.5333797">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="makeLib.js" pinned="false" current-in-tab="false">
@@ -52,8 +51,8 @@
           <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+                <state relative-caret-position="527">
+                  <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
                   <folding />
                 </state>
               </provider>
@@ -62,8 +61,8 @@
           <file leaf-file-name="Store.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Store.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="85">
-                  <caret line="250" column="11" lean-forward="false" selection-start-line="250" selection-start-column="11" selection-end-line="250" selection-end-column="11" />
+                <state relative-caret-position="1071">
+                  <caret line="266" column="7" lean-forward="false" selection-start-line="266" selection-start-column="7" selection-end-line="266" selection-end-column="7" />
                   <folding>
                     <element signature="e#0#59#0" expanded="true" />
                   </folding>
@@ -83,6 +82,16 @@
                   <folding>
                     <element signature="e#0#36#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="_mocha" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/node_modules/mocha/bin/_mocha">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="374">
+                  <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -229,7 +238,7 @@
       <selected-paths>
         <path>
           <id value="$PROJECT_DIR$/package.json" />
-          <id value="test" />
+          <id value="pub:patch" />
         </path>
       </selected-paths>
     </layout>
@@ -351,41 +360,6 @@
     </option>
   </component>
   <component name="RunManager" selected="npm.test">
-    <configuration name="Item.Attachments - reactive - uploading triggers self" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="TS_NODE_PROJECT" value="test/tsconfig.json" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/Item.spec.ts</test-file>
-      <test-names>
-        <name value="Item" />
-        <name value="Attachments - reactive - uploading triggers self" />
-      </test-names>
-    </configuration>
-    <configuration name="Item.Attachments - reactive - uploading triggers self.attaching a new attachment triggers Item.attachments" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="TS_NODE_PROJECT" value="test/tsconfig.json" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/Item.spec.ts</test-file>
-      <test-names>
-        <name value="Item" />
-        <name value="Attachments - reactive - uploading triggers self" />
-        <name value="attaching a new attachment triggers Item.attachments" />
-      </test-names>
-    </configuration>
     <configuration name="Store" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -425,6 +399,24 @@
       <node-interpreter value="project" />
       <envs />
     </configuration>
+    <configuration name="pub:patch" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="pub:patch" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
+    <configuration name="publish" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="publish" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+    </configuration>
     <configuration name="test" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -446,18 +438,18 @@
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="npm.test:watch" />
       <item index="1" class="java.lang.String" itemvalue="npm.build:lib" />
-      <item index="2" class="java.lang.String" itemvalue="Mocha.Item.Attachments - reactive - uploading triggers self" />
-      <item index="3" class="java.lang.String" itemvalue="Mocha.Item.Attachments - reactive - uploading triggers self.attaching a new attachment triggers Item.attachments" />
-      <item index="4" class="java.lang.String" itemvalue="Mocha.Store" />
-      <item index="5" class="java.lang.String" itemvalue="npm.test" />
+      <item index="2" class="java.lang.String" itemvalue="Mocha.Store" />
+      <item index="3" class="java.lang.String" itemvalue="npm.test" />
+      <item index="4" class="java.lang.String" itemvalue="npm.pub:patch" />
+      <item index="5" class="java.lang.String" itemvalue="npm.publish" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Mocha.Store" />
-        <item index="1" class="java.lang.String" itemvalue="npm.test" />
-        <item index="2" class="java.lang.String" itemvalue="npm.build:lib" />
-        <item index="3" class="java.lang.String" itemvalue="Mocha.Item.Attachments - reactive - uploading triggers self" />
-        <item index="4" class="java.lang.String" itemvalue="Mocha.Item.Attachments - reactive - uploading triggers self.attaching a new attachment triggers Item.attachments" />
+        <item index="0" class="java.lang.String" itemvalue="npm.pub:patch" />
+        <item index="1" class="java.lang.String" itemvalue="npm.publish" />
+        <item index="2" class="java.lang.String" itemvalue="Mocha.Store" />
+        <item index="3" class="java.lang.String" itemvalue="npm.test" />
+        <item index="4" class="java.lang.String" itemvalue="npm.build:lib" />
       </list>
     </recent_temporary>
   </component>
@@ -502,7 +494,7 @@
       <workItem from="1503984877208" duration="2888000" />
       <workItem from="1504276240314" duration="27955000" />
       <workItem from="1504421672269" duration="148000" />
-      <workItem from="1504432072995" duration="2804000" />
+      <workItem from="1504432072995" duration="3375000" />
     </task>
     <task id="LOCAL-00001" summary="+ refactoring&#10;+ tests">
       <created>1500919525395</created>
@@ -714,16 +706,17 @@
       <option name="project" value="LOCAL" />
       <updated>1504353380908</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="updated Store.remove() and package.json scripts">
+      <created>1504450013131</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1504450013131</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Store - 2017.09.03 at 17h 03m 35s.xml">
-      <configuration name="Store" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Store - 2017.09.03 at 17h 08m 12s.xml">
-      <configuration name="Store" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Store - 2017.09.03 at 17h 08m 17s.xml">
       <configuration name="Store" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -748,9 +741,15 @@
     <history-entry file="Store - 2017.09.03 at 17h 45m 54s.xml">
       <configuration name="Store" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="Store - 2017.09.03 at 17h 46m 56s.xml">
+      <configuration name="Store" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Store - 2017.09.03 at 17h 46m 58s.xml">
+      <configuration name="Store" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118513000" />
+    <option name="totallyTimeSpent" value="119084000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -770,7 +769,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08945687" sideWeight="0.3519669" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2342918" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="529" y="189" width="1283" height="683" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3146998" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25569358" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.090521835" sideWeight="0.64803314" order="0" side_tool="false" content_ui="combo" />
@@ -800,7 +799,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="+ tests&#10;+ switched to spaces!" />
     <MESSAGE value="added readme" />
     <MESSAGE value="npm work" />
     <MESSAGE value="in progess" />
@@ -825,7 +823,8 @@
     <MESSAGE value="+ fixed working with attachments&#10;+ tests" />
     <MESSAGE value="+ 'publish' npm task" />
     <MESSAGE value="fixed 'publish' npm task" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed 'publish' npm task" />
+    <MESSAGE value="updated Store.remove() and package.json scripts" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated Store.remove() and package.json scripts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -877,13 +876,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/mocha/lib/interfaces/bdd.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="774">
-          <caret line="43" column="26" lean-forward="false" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/mocha/lib/interfaces/common.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2034">
@@ -1178,13 +1170,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Store.ts">
+    <entry file="file://$PROJECT_DIR$/node_modules/mocha/bin/_mocha">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="250" column="11" lean-forward="false" selection-start-line="250" selection-start-column="11" selection-end-line="250" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#59#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="374">
+          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1198,10 +1188,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Store.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1071">
+          <caret line="266" column="7" lean-forward="false" selection-start-line="266" selection-start-column="7" selection-end-line="266" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#59#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="16" lean-forward="false" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
+        <state relative-caret-position="527">
+          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
           <folding />
         </state>
       </provider>

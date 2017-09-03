@@ -17,7 +17,6 @@
     "test": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha $NODE_DEBUG_OPTION",
     "test:watch": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha --watch",
     "pub:patch": "npm test && npm run build:lib && node node_modules/version-bump-prompt/bin/bump.js --patch --commit --push && npm publish",
-    "publish": "npm publish"
   },
   "author": "Daniel Khoroshko",
   "license": "Apache Public License v2",

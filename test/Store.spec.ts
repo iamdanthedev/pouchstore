@@ -86,9 +86,11 @@ describe('Store', () => {
 			if (!item)
 				return assert.fail('Could not get item')
 
-			todoStore.remove(item).then(() => {
-        expect(todoStore.get(id)).to.be.undefined
-			})
+			return todoStore.remove(item)
+        .then(() => {
+          expect(todoStore.get(id)).to.be.undefined
+  			})
+        .catch(e => expect.fail(null, null, e));
 		})
 
 		it('Store#remove(itemId)')

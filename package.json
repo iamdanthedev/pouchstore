@@ -16,7 +16,8 @@
     "build:lib": "tsc && node tasks/makeLib.js",
     "test": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha $NODE_DEBUG_OPTION",
     "test:watch": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha --watch",
-    "publish": "npm run build:lib && npm publish --registry=https://registry.npmjs.org"
+    "pub:patch": "npm test && npm run build:lib && node node_modules/version-bump-prompt/bin/bump.js --patch --commit --push && npm publish",
+    "publish": "npm publish --registry=https://registry.npmjs.org"
   },
   "author": "Daniel Khoroshko",
   "license": "Apache Public License v2",

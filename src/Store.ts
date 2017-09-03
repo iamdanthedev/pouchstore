@@ -270,6 +270,8 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
 
         const docs = [...extraDocs, putDoc]
 
+        this._removeItem(item.$doc)
+
         return db.bulkDocs(docs)
       })
       .then(response => Promise.resolve(response))

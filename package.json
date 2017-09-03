@@ -1,6 +1,6 @@
 {
   "name": "pouchstore",
-  "version": "0.1.39",
+  "version": "0.1.40",
   "description": "PouchDB to Mobx Store",
   "main": "lib/index.js",
   "module": "lib/index.js",

@@ -1,6 +1,6 @@
 {
   "name": "pouchstore",
-  "version": "0.1.41",
+  "version": "0.1.42",
   "description": "PouchDB to Mobx Store",
   "main": "lib/index.js",
   "module": "lib/index.js",
@@ -16,7 +16,7 @@
     "build:lib": "tsc && node tasks/makeLib.js",
     "test": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha $NODE_DEBUG_OPTION",
     "test:watch": "TS_NODE_PROJECT='test/tsconfig.json' nyc mocha --watch",
-    "pub:patch": "npm test && npm run build:lib && node node_modules/version-bump-prompt/bin/bump.js --patch --commit --push && npm publish",
+    "pub:patch": "npm test && npm run build:lib && node node_modules/version-bump-prompt/bin/bump.js --patch --commit --push && npm publish"
   },
   "author": "Daniel Khoroshko",
   "license": "Apache Public License v2",

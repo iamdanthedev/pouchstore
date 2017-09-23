@@ -9,8 +9,6 @@ import sinon = require('sinon');
 const { assert, expect } = chai
 
 import { ITodo, TodoValidator, todos } from './mocks/todo'
-import { autorun, IReactionDisposer } from 'mobx';
-import { create } from 'domain';
 
 PouchDB.plugin(require('pouchdb-adapter-memory'))
 
@@ -286,9 +284,9 @@ describe('Item', () => {
       todo.attach('pic1', file, fileType);
       const att = todo.getAttachment('pic1');
 
-      expect(att!).to.exist;
-      expect(att!.content_type).eq(fileType);
-      expect(att!.data).eq(file);
+      expect(att).to.exist;
+      expect(att.content_type).eq(fileType);
+      expect(att.data).eql(file);
     })
 
     it('Record#1.getAttachmentDigest works', () => {
@@ -298,7 +296,7 @@ describe('Item', () => {
 
     it('$doc should have attachment', () => {
       expect(todo.attachments['pic1']).to.exist;
-      expect(todo.attachments['pic1'].data).eq(file);
+      expect(todo.attachments['pic1'].data).eql(file);
     });
 
     it('should save item', () => {
@@ -491,175 +489,175 @@ describe('Item', () => {
 
   });
 
-  describe('Attachments - reactive - uploading triggers self', () => {
-
-    const img1 = fs.readFileSync(path.resolve(mocksDir, 'img1.png'));
-    const img2 = fs.readFileSync(path.resolve(mocksDir, 'img2.png'));
-    const img3 = fs.readFileSync(path.resolve(mocksDir, 'img3.png'));
-    const img4 = fs.readFileSync(path.resolve(mocksDir, 'img4.png'));
-
-    let todo: Item<ITodo>;
-    let runner: IReactionDisposer;
-
-    const spy = sinon.spy();
-
-    function prepareReactiveSuite() {
-      prepareSuite();
-
-      after(() => {
-        spy.reset();
-        runner();
-      })
-    }
-
-    function createAutorun(callback: () => any)
-    {
-      it('should create autorun', () => {
-        runner = autorun(() => {
-            callback();
-        });
-
-        expect(runner).to.exist;
-      });
-    }
-
-
-    describe('attaching a new attachment triggers Item.attachments', () => {
-
-      prepareReactiveSuite();
-
-      it('should create new doc', () => {
-        todo = todoStore.create({
-          id: 'item',
-          title: 'test'
-        })
-
-        expect(todo).to.exist;
-      });
-
-      createAutorun(() => spy(todo.$doc._attachments));
-
-      it('should attach 2 files', () => {
-        expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
-        expect(todo.attach('img2.png', img2, 'image/png')).eq(true);
-
-        expect(todo.attachments).all.keys('img1.png', 'img2.png');
-      });
-
-      timeout(1);
-
-      it('spy should have been called twice', () => {
-        expect(spy.callCount).eq(2 + 1); //first empty run also counts :-(
-      });
-
-    });
-
-    describe('re-attaching an attachment triggers Item.attachments', () => {
-
-      prepareReactiveSuite();
-
-      it('should create new doc', () => {
-        todo = todoStore.create({
-          id: 'item',
-          title: 'test'
-        })
-
-        expect(todo).to.exist;
-      });
-
-      createAutorun(() => spy(todo.$doc._attachments));
-
-      it('should attach 1 file', () => {
-        expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
-        expect(todo.attachments).all.keys('img1.png');
-      });
-
-      it('spy should have been called once', () => {
-        expect(spy.callCount).eq(1 + 1);
-        spy.reset();
-      });
-
-      it('should re-attach 1 file', () => {
-        expect(todo.attach('img1.png', img2, 'image/png')).eq(true);
-        expect(todo.attachments).all.keys('img1.png');
-      });
-
-
-      it('spy should have been called once', () => {
-        expect(spy.callCount).eq(1);
-      });
-
-    });
-
-    describe('removing an attachment triggers Item.attachments', () => {
-
-      prepareReactiveSuite();
-
-      it('should create new doc', () => {
-        todo = todoStore.create({
-          id: 'item',
-          title: 'test'
-        })
-
-        expect(todo).to.exist;
-      });
-
-      createAutorun(() => spy(todo.$doc._attachments));
-
-      it('should attach 1 file', () => {
-        expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
-        expect(todo.attachments).all.keys('img1.png');
-      });
-
-      it('spy should have been called once', () => {
-        expect(spy.callCount).eq(1 + 1);
-        spy.reset();
-      });
-
-      it('should remove 1 file', () => {
-        expect(todo.attach('img1.png', img2, 'image/png')).eq(true);
-        expect(todo.attachments).all.keys('img1.png');
-      });
-
-
-      it('spy should have been called once', () => {
-        expect(spy.callCount).eq(1);
-      });
-
-    });
-
-    describe('attaching a new attachment triggers Item.getAttachmentDigest()', () => {
-
-      prepareReactiveSuite();
-
-      it('should create new doc', () => {
-        todo = todoStore.create({
-          id: 'item',
-          title: 'test'
-        })
-
-        expect(todo).to.exist;
-      });
-
-      createAutorun(() => spy(todo.getAttachmentDigest('img1.png')));
-
-      it('should attach 2 files', () => {
-        expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
-        expect(todo.attach('img2.png', img2, 'image/png')).eq(true);
-
-        expect(todo.attachments).all.keys('img1.png', 'img2.png');
-      });
-
-      timeout(1);
-
-      it('spy should have been called twice', () => {
-        expect(spy.called).is.true; //first empty run also counts :-(
-      });
-
-    });
-  })
-
-})
+//   describe('Attachments - reactive - uploading triggers self', () => {
+//
+//     const img1 = fs.readFileSync(path.resolve(mocksDir, 'img1.png'));
+//     const img2 = fs.readFileSync(path.resolve(mocksDir, 'img2.png'));
+//     const img3 = fs.readFileSync(path.resolve(mocksDir, 'img3.png'));
+//     const img4 = fs.readFileSync(path.resolve(mocksDir, 'img4.png'));
+//
+//     let todo: Item<ITodo>;
+//     let runner: IReactionDisposer;
+//
+//     const spy = sinon.spy();
+//
+//     function prepareReactiveSuite() {
+//       prepareSuite();
+//
+//       after(() => {
+//         spy.reset();
+//         runner();
+//       })
+//     }
+//
+//     function createAutorun(callback: () => any)
+//     {
+//       it('should create autorun', () => {
+//         runner = autorun(() => {
+//             callback();
+//         });
+//
+//         expect(runner).to.exist;
+//       });
+//     }
+//
+//
+//     describe('attaching a new attachment triggers Item.attachments', () => {
+//
+//       prepareReactiveSuite();
+//
+//       it('should create new doc', () => {
+//         todo = todoStore.create({
+//           id: 'item',
+//           title: 'test'
+//         })
+//
+//         expect(todo).to.exist;
+//       });
+//
+//       createAutorun(() => spy(todo.$doc._attachments));
+//
+//       it('should attach 2 files', () => {
+//         expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
+//         expect(todo.attach('img2.png', img2, 'image/png')).eq(true);
+//
+//         expect(todo.attachments).all.keys('img1.png', 'img2.png');
+//       });
+//
+//       timeout(1);
+//
+//       it('spy should have been called twice', () => {
+//         expect(spy.callCount).eq(2 + 1); //first empty run also counts :-(
+//       });
+//
+//     });
+//
+//     describe('re-attaching an attachment triggers Item.attachments', () => {
+//
+//       prepareReactiveSuite();
+//
+//       it('should create new doc', () => {
+//         todo = todoStore.create({
+//           id: 'item',
+//           title: 'test'
+//         })
+//
+//         expect(todo).to.exist;
+//       });
+//
+//       createAutorun(() => spy(todo.$doc._attachments));
+//
+//       it('should attach 1 file', () => {
+//         expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
+//         expect(todo.attachments).all.keys('img1.png');
+//       });
+//
+//       it('spy should have been called once', () => {
+//         expect(spy.callCount).eq(1 + 1);
+//         spy.reset();
+//       });
+//
+//       it('should re-attach 1 file', () => {
+//         expect(todo.attach('img1.png', img2, 'image/png')).eq(true);
+//         expect(todo.attachments).all.keys('img1.png');
+//       });
+//
+//
+//       it('spy should have been called once', () => {
+//         expect(spy.callCount).eq(1);
+//       });
+//
+//     });
+//
+//     describe('removing an attachment triggers Item.attachments', () => {
+//
+//       prepareReactiveSuite();
+//
+//       it('should create new doc', () => {
+//         todo = todoStore.create({
+//           id: 'item',
+//           title: 'test'
+//         })
+//
+//         expect(todo).to.exist;
+//       });
+//
+//       createAutorun(() => spy(todo.$doc._attachments));
+//
+//       it('should attach 1 file', () => {
+//         expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
+//         expect(todo.attachments).all.keys('img1.png');
+//       });
+//
+//       it('spy should have been called once', () => {
+//         expect(spy.callCount).eq(1 + 1);
+//         spy.reset();
+//       });
+//
+//       it('should remove 1 file', () => {
+//         expect(todo.attach('img1.png', img2, 'image/png')).eq(true);
+//         expect(todo.attachments).all.keys('img1.png');
+//       });
+//
+//
+//       it('spy should have been called once', () => {
+//         expect(spy.callCount).eq(1);
+//       });
+//
+//     });
+//
+//     describe('attaching a new attachment triggers Item.getAttachmentDigest()', () => {
+//
+//       prepareReactiveSuite();
+//
+//       it('should create new doc', () => {
+//         todo = todoStore.create({
+//           id: 'item',
+//           title: 'test'
+//         })
+//
+//         expect(todo).to.exist;
+//       });
+//
+//       createAutorun(() => spy(todo.getAttachmentDigest('img1.png')));
+//
+//       it('should attach 2 files', () => {
+//         expect(todo.attach('img1.png', img1, 'image/png')).eq(true);
+//         expect(todo.attach('img2.png', img2, 'image/png')).eq(true);
+//
+//         expect(todo.attachments).all.keys('img1.png', 'img2.png');
+//       });
+//
+//       timeout(1);
+//
+//       it('spy should have been called twice', () => {
+//         expect(spy.called).is.true; //first empty run also counts :-(
+//       });
+//
+//     });
+//   })
+//
+});
 
 export function timeout(seconds: number) {
   it(`waiting for timeout (${seconds} seconds)`, function(done) {

@@ -4,20 +4,11 @@
  * so that classes derived from **PouchBaseModel** can access the document
  * inside their getters
  */
-import {
-	action,
-	computed,
-	observable,
-	ObservableMap,
-	toJS,
-} from 'mobx';
-
 import { isNewDocument, isNil } from './utils'
 import { Store } from './Store'
 import { Attachment, ItemDoc, Attachments, MapOf } from './types'
 
-const md5 = require('pouchdb-md5');
-const clone = require('lodash.clone')
+const clone = require('lodash.clonedeep');
 const uuid = require('uuid')
 const log = require('debug')('pouchstore')
 
@@ -68,19 +59,16 @@ export class Item<T extends ItemModel, S = {}> {
   /**
    * Returns **a copy** of an underlying PouchDB doc
    */
-	@computed
 	get $doc(): ItemDoc<T> {
-		return toJS(this._doc);
+		return clone(this._doc);
 	}
 
   /** If the item has been changed after load/last save */
-	@computed
 	get isDirty(): boolean {
 		return this._dirty
 	}
 
   /** If the item has never been saved */
-	@computed
 	get isNew(): boolean {
 		return isNewDocument(this._doc)
 	}
@@ -105,7 +93,6 @@ export class Item<T extends ItemModel, S = {}> {
 	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K], dontDirty?: boolean): this
 
   /** @internal */
-	@action
 	set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(docOrProp: K | DOC | Partial<DOC>, ...args: any[]): this {
 		log('set()', { docOrProp, args })
 
@@ -149,7 +136,6 @@ export class Item<T extends ItemModel, S = {}> {
 	}
 
 	/** Save this item in the store. This will update the PouchDB database */
-  @action
   save(): Promise<void>
   {
     return this.$collection.put(this)
@@ -166,7 +152,6 @@ export class Item<T extends ItemModel, S = {}> {
    * Remove this item from the store.
    * This is the same as calling PouchStore#remove(item)
    */
-	@action
 	remove(): Promise<void> {
 		if (this.isNew)
 			return Promise.reject('Item was never saved')
@@ -181,7 +166,6 @@ export class Item<T extends ItemModel, S = {}> {
    *************************************************************/
 
   /** Attaches a file to the document */
-  @action
   attach(name: string, data: Blob | Buffer, contentType: string): boolean
   {
     if (!!!name)
@@ -209,7 +193,6 @@ export class Item<T extends ItemModel, S = {}> {
    * Removes attachment
    * This is the same as calling PouchStore#put(item)
    */
-  @action
   detach(name: string): boolean
   {
     if (!!!name)
@@ -255,7 +238,6 @@ export class Item<T extends ItemModel, S = {}> {
    * Remote ones have stub = true
    * @returns {MapOf<Attachment>}
    */
-	@computed
 	get attachments(): MapOf<Attachment>
   {
     return this.$doc._attachments ? this.$doc._attachments : {};
@@ -348,7 +330,6 @@ export class Item<T extends ItemModel, S = {}> {
 
 
 	/** Sets the whole underlying doc, some of its properties or a single property */
-	@action
 	protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>, dontDirty: boolean): this {
 		const doc: Partial<DOC> = clone(data)
 
@@ -375,14 +356,9 @@ export class Item<T extends ItemModel, S = {}> {
 
 	protected _collection: Store<T, Item<T>> & S
 
-	@observable.deep
 	protected _doc: ItemDoc<T>
 
 	protected _protectedFields: Array<(keyof ItemDoc<T>) | 'id'>
 
-	@observable
 	private	_dirty: boolean = false
 }
-
-export
-type AttachmentMap = ObservableMap<Attachment>;

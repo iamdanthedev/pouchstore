@@ -1,5 +1,3 @@
-import { computed, observable, ObservableMap } from 'mobx';
-
 import { StoreOptions, IStoreOptions } from './StoreOptions';
 import { Item, ItemModel } from './Item';
 import { isNil } from './utils';
@@ -79,18 +77,16 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
   /**
    * Returns array of all documents sorted by ids
    */
-  @computed
   get all(): S[] {
     if (!this._subscribed)
       log(`${this._options.type} attempt to access unsubscribed collection items'`)
 
-    return this._items.values().slice()
+    return Array.from(this._items).map(([key, value]) => value);
   }
 
   /**
    * Returns a map of all documents
    */
-  @computed
   get allMap(): MapOf<S> {
     const result: MapOf<S> = {}
     this.all.forEach(item => result[item.$doc[this._options.idField]] = item)
@@ -99,6 +95,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
   }
 
   /** Get item by id or index */
+  // TODO: remove access by index (useless?)
   get(arg: string | number): S | undefined {
     if (!this._subscribed)
       log(`${this._options.type} error: attempt to access unsubscribed collection items`)
@@ -109,7 +106,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
       result = this._items.get(arg)
     } else if (typeof arg === 'number') {
       if (arg < this._items.size) {
-        result = this._items.values()[arg]
+        result = this.all[arg]
       } else {
         log(`${this._options.type} error: index out of bounds`)
       }
@@ -261,7 +258,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
           return Promise.reject('Operation rejected in onBeforeRemove hook')
 
         if (Array.isArray(resp))
-          extraDocs.push(resp)
+          extraDocs.push(...resp)
 
         return db.get(_id)
       })
@@ -413,6 +410,6 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
   private _subscribed: boolean = false
 
   /** Collection of items */
-  @observable
-  private _items: ObservableMap<S> = observable.map<S>()
+  // private _items: ObservableMap<S> = observable.map<S>()
+  private _items = new Map<string, S>()
 }

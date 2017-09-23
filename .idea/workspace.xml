@@ -6,14 +6,19 @@
     </enabled-run-configurations>
   </component>
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/Store.ts" line="1" />
+    <bookmark url="file://$PROJECT_DIR$/src/Store.ts" line="0" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/danthedev.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/danthedev.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Store.js" afterPath="$PROJECT_DIR$/lib/Store.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/Store.js.map" afterPath="$PROJECT_DIR$/lib/Store.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Item.ts" afterPath="$PROJECT_DIR$/src/Item.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Store.ts" afterPath="$PROJECT_DIR$/src/Store.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="$PROJECT_DIR$/test/Item.spec.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,25 +40,109 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5333797">
+    <splitter split-orientation="horizontal" split-proportion="0.54242">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="makeLib.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tasks/makeLib.js">
+          <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+                <state relative-caret-position="119">
+                  <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/package.json">
+          <file leaf-file-name="Item.spec.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="527">
-                  <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
-                  <folding />
+                <state relative-caret-position="494">
+                  <caret line="319" column="0" lean-forward="true" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#605#1373#0" expanded="false" />
+                    <element signature="e#630#1310#0" expanded="false" />
+                    <element signature="e#869#1022#0" expanded="false" />
+                    <element signature="e#1076#1229#0" expanded="false" />
+                    <element signature="e#1330#1368#0" expanded="false" />
+                    <element signature="e#1414#5736#0" expanded="false" />
+                    <element signature="e#1547#1617#0" expanded="false" />
+                    <element signature="e#1655#1759#0" expanded="false" />
+                    <element signature="e#1702#1752#0" expanded="false" />
+                    <element signature="e#1802#2096#0" expanded="false" />
+                    <element signature="e#1852#2005#0" expanded="false" />
+                    <element signature="e#2164#2235#0" expanded="false" />
+                    <element signature="e#2288#2439#0" expanded="false" />
+                    <element signature="e#2485#2624#0" expanded="false" />
+                    <element signature="e#2528#2618#0" expanded="false" />
+                    <element signature="e#2666#2707#0" expanded="false" />
+                    <element signature="e#2752#2796#0" expanded="false" />
+                    <element signature="e#2840#2935#0" expanded="false" />
+                    <element signature="e#2976#3018#0" expanded="false" />
+                    <element signature="e#3061#3105#0" expanded="false" />
+                    <element signature="e#3191#3431#0" expanded="false" />
+                    <element signature="e#3335#3425#0" expanded="false" />
+                    <element signature="e#3464#3580#0" expanded="false" />
+                    <element signature="e#3623#3728#0" expanded="false" />
+                    <element signature="e#3827#3980#0" expanded="false" />
+                    <element signature="e#4024#4133#0" expanded="false" />
+                    <element signature="e#4177#4482#0" expanded="false" />
+                    <element signature="e#4290#4475#0" expanded="false" />
+                    <element signature="e#4549#4605#0" expanded="false" />
+                    <element signature="e#4651#4761#0" expanded="false" />
+                    <element signature="e#4817#5036#0" expanded="false" />
+                    <element signature="e#4864#5029#0" expanded="false" />
+                    <element signature="e#5114#5345#0" expanded="false" />
+                    <element signature="e#5387#5419#0" expanded="false" />
+                    <element signature="e#5465#5673#0" expanded="false" />
+                    <element signature="e#5694#5731#0" expanded="false" />
+                    <element signature="e#6044#6115#0" expanded="false" />
+                    <element signature="e#6153#6258#0" expanded="false" />
+                    <element signature="e#6200#6251#0" expanded="false" />
+                    <element signature="e#6301#6595#0" expanded="false" />
+                    <element signature="e#6351#6504#0" expanded="false" />
+                    <element signature="e#6663#6734#0" expanded="false" />
+                    <element signature="e#6800#7004#0" expanded="false" />
+                    <element signature="e#7058#7199#0" expanded="false" />
+                    <element signature="e#7394#7427#0" expanded="false" />
+                    <element signature="e#7489#7865#0" expanded="false" />
+                    <element signature="e#7507#7791#0" expanded="false" />
+                    <element signature="e#7814#7859#0" expanded="false" />
+                    <element signature="e#7945#8040#0" expanded="false" />
+                    <element signature="e#8059#8096#0" expanded="false" />
+                    <element signature="e#8169#10803#0" expanded="false" />
+                    <element signature="e#8572#8692#0" expanded="false" />
+                    <element signature="e#8604#8655#0" expanded="false" />
+                    <element signature="e#8734#8907#0" expanded="false" />
+                    <element signature="e#8939#8972#0" expanded="false" />
+                    <element signature="e#9041#9117#0" expanded="false" />
+                    <element signature="e#9171#9244#0" expanded="false" />
+                    <element signature="e#9299#9371#0" expanded="false" />
+                    <element signature="e#9418#9615#0" expanded="false" />
+                    <element signature="e#9675#9748#0" expanded="false" />
+                    <element signature="e#9779#9812#0" expanded="false" />
+                    <element signature="e#9858#9954#0" expanded="false" />
+                    <element signature="e#10019#10116#0" expanded="false" />
+                    <element signature="e#10163#10278#0" expanded="false" />
+                    <element signature="e#10349#10446#0" expanded="false" />
+                    <element signature="e#10478#10511#0" expanded="false" />
+                    <element signature="e#10557#10641#0" expanded="false" />
+                    <element signature="e#10712#10797#0" expanded="false" />
+                    <element signature="e#10876#12457#0" expanded="false" />
+                    <element signature="e#11285#11747#0" expanded="false" />
+                    <element signature="e#11338#11702#0" expanded="false" />
+                    <element signature="e#11485#11694#0" expanded="false" />
+                    <element signature="e#11509#11584#0" expanded="false" />
+                    <element signature="e#11608#11683#0" expanded="false" />
+                    <element signature="e#11797#11870#0" expanded="false" />
+                    <element signature="e#11916#11988#0" expanded="false" />
+                    <element signature="e#12079#12385#0" expanded="false" />
+                    <element signature="e#12097#12310#0" expanded="false" />
+                    <element signature="e#12333#12378#0" expanded="false" />
+                    <element signature="e#12417#12450#0" expanded="false" />
+                    <element signature="n#!!block;n#timeout#0" expanded="false" />
+                    <element signature="e#17248#17340#0" expanded="false" />
+                    <marker date="1506146532552" expanded="true" signature="17132:17137" ph="{...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -61,11 +150,21 @@
           <file leaf-file-name="Store.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Store.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1071">
-                  <caret line="266" column="7" lean-forward="false" selection-start-line="266" selection-start-column="7" selection-end-line="266" selection-end-column="7" />
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding>
-                    <element signature="e#0#59#0" expanded="true" />
+                    <element signature="e#0#61#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Store.js" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/lib/Store.js">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="5287">
+                  <caret line="311" column="24" lean-forward="false" selection-start-line="311" selection-start-column="24" selection-end-line="311" selection-end-column="24" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -74,11 +173,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Store.spec.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Store.spec.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Store.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="169">
-                  <caret line="82" column="22" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+                <state relative-caret-position="645">
+                  <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#36#0" expanded="true" />
                   </folding>
@@ -96,13 +195,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Item.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Item.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Item.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="476">
-                  <caret line="173" column="30" lean-forward="false" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
+                <state relative-caret-position="782">
+                  <caret line="228" column="2" lean-forward="false" selection-start-line="228" selection-start-column="2" selection-end-line="228" selection-end-column="2" />
                   <folding>
-                    <element signature="e#204#283#0" expanded="true" />
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#204#250#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -209,11 +309,11 @@
         <option value="$PROJECT_DIR$/test/tsconfig.json" />
         <option value="$PROJECT_DIR$/.npmignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/test/Store.spec.ts" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/Store.ts" />
         <option value="$PROJECT_DIR$/src/Item.ts" />
         <option value="$PROJECT_DIR$/test/Item.spec.ts" />
-        <option value="$PROJECT_DIR$/test/Store.spec.ts" />
-        <option value="$PROJECT_DIR$/src/Store.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
       </list>
     </option>
   </component>
@@ -245,6 +345,9 @@
   </component>
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="width" value="1920" />
@@ -305,7 +408,7 @@
             <path>
               <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -316,7 +419,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pouchstore-mobx" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -336,7 +439,7 @@
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
-    <property name="SearchEverywhereHistoryKey" value="pac&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;pack&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;packa&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;gitig&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/.gitignore&#10;type&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/types.ts&#10;spec&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/Store.spec.ts&#10;package&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="store&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/Store.ts&#10;pac&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;pack&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;packa&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;gitig&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/.gitignore&#10;type&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/types.ts&#10;spec&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/Store.spec.ts&#10;package&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
@@ -360,7 +463,7 @@
     </option>
   </component>
   <component name="RunManager" selected="npm.test">
-    <configuration name="Store" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+    <configuration name="Item.Attachments" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <working-directory>$PROJECT_DIR$</working-directory>
@@ -371,9 +474,10 @@
       <ui>bdd</ui>
       <extra-mocha-options>--require ts-node/register</extra-mocha-options>
       <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/Store.spec.ts</test-file>
+      <test-file>$PROJECT_DIR$/test/Item.spec.ts</test-file>
       <test-names>
-        <name value="Store" />
+        <name value="Item" />
+        <name value="Attachments" />
       </test-names>
     </configuration>
     <configuration default="true" type="mocha-javascript-test-runner" factoryName="Mocha">
@@ -390,11 +494,11 @@
       <test-directory />
       <recursive>false</recursive>
     </configuration>
-    <configuration name="build:lib" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build:lib" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -437,19 +541,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="npm.test:watch" />
-      <item index="1" class="java.lang.String" itemvalue="npm.build:lib" />
-      <item index="2" class="java.lang.String" itemvalue="Mocha.Store" />
-      <item index="3" class="java.lang.String" itemvalue="npm.test" />
-      <item index="4" class="java.lang.String" itemvalue="npm.pub:patch" />
-      <item index="5" class="java.lang.String" itemvalue="npm.publish" />
+      <item index="1" class="java.lang.String" itemvalue="npm.test" />
+      <item index="2" class="java.lang.String" itemvalue="npm.pub:patch" />
+      <item index="3" class="java.lang.String" itemvalue="npm.publish" />
+      <item index="4" class="java.lang.String" itemvalue="Mocha.Item.Attachments" />
+      <item index="5" class="java.lang.String" itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.pub:patch" />
-        <item index="1" class="java.lang.String" itemvalue="npm.publish" />
-        <item index="2" class="java.lang.String" itemvalue="Mocha.Store" />
-        <item index="3" class="java.lang.String" itemvalue="npm.test" />
-        <item index="4" class="java.lang.String" itemvalue="npm.build:lib" />
+        <item index="0" class="java.lang.String" itemvalue="npm.build" />
+        <item index="1" class="java.lang.String" itemvalue="npm.test" />
+        <item index="2" class="java.lang.String" itemvalue="Mocha.Item.Attachments" />
+        <item index="3" class="java.lang.String" itemvalue="npm.pub:patch" />
+        <item index="4" class="java.lang.String" itemvalue="npm.publish" />
       </list>
     </recent_temporary>
   </component>
@@ -494,7 +598,8 @@
       <workItem from="1503984877208" duration="2888000" />
       <workItem from="1504276240314" duration="27955000" />
       <workItem from="1504421672269" duration="148000" />
-      <workItem from="1504432072995" duration="3375000" />
+      <workItem from="1504432072995" duration="7037000" />
+      <workItem from="1506142815884" duration="3745000" />
     </task>
     <task id="LOCAL-00001" summary="+ refactoring&#10;+ tests">
       <created>1500919525395</created>
@@ -713,18 +818,25 @@
       <option name="project" value="LOCAL" />
       <updated>1504450013131</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="version bump">
+      <created>1504450575804</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1504450575804</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Store - 2017.09.03 at 17h 08m 17s.xml">
-      <configuration name="Store" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Item_Attachments - 2017.09.23 at 08h 59m 41s.xml">
+      <configuration name="Item.Attachments" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Store - 2017.09.03 at 17h 08m 22s.xml">
-      <configuration name="Store" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Item_Attachments - 2017.09.23 at 09h 00m 11s.xml">
+      <configuration name="Item.Attachments" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Store - 2017.09.03 at 17h 08m 58s.xml">
-      <configuration name="Store" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Item_Attachments - 2017.09.23 at 09h 00m 32s.xml">
+      <configuration name="Item.Attachments" configurationId="mocha-javascript-test-runner" />
     </history-entry>
     <history-entry file="Store - 2017.09.03 at 17h 09m 19s.xml">
       <configuration name="Store" configurationId="mocha-javascript-test-runner" />
@@ -749,7 +861,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="119084000" />
+    <option name="totallyTimeSpent" value="126491000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -761,22 +873,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1056" extended-state="6" />
+    <frame x="0" y="-24" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08945687" sideWeight="0.3519669" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.090521835" sideWeight="0.36666667" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2342918" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="529" y="189" width="1283" height="683" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31414142" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25569358" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.090521835" sideWeight="0.64803314" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25555557" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.090521835" sideWeight="0.6333333" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4068323" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4060606" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -786,6 +898,29 @@
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24741201" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08945687" sideWeight="0.3519669" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2342918" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="529" y="189" width="1283" height="683" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Code comment" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3296875" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25569358" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.090521835" sideWeight="0.64803314" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24741201" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4068323" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -799,7 +934,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added readme" />
     <MESSAGE value="npm work" />
     <MESSAGE value="in progess" />
     <MESSAGE value="+ massive refactoring" />
@@ -824,79 +958,40 @@
     <MESSAGE value="+ 'publish' npm task" />
     <MESSAGE value="fixed 'publish' npm task" />
     <MESSAGE value="updated Store.remove() and package.json scripts" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated Store.remove() and package.json scripts" />
+    <MESSAGE value="version bump" />
+    <option name="LAST_COMMIT_MESSAGE" value="version bump" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/Item.spec.ts</url>
-          <line>545</line>
-          <option name="timeStamp" value="58" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Store.ts</url>
-          <line>226</line>
-          <properties />
-          <option name="timeStamp" value="61" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Store.ts</url>
-          <line>268</line>
-          <properties />
-          <option name="timeStamp" value="62" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test/Store.spec.ts</url>
           <line>82</line>
-          <properties />
           <option name="timeStamp" value="63" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Store.ts</url>
-          <line>277</line>
-          <properties lambdaOrdinal="0" />
-          <option name="timeStamp" value="64" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Store.ts</url>
-          <line>276</line>
-          <properties lambdaOrdinal="0" />
-          <option name="timeStamp" value="65" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/test/Store.spec.ts</url>
           <line>90</line>
-          <properties />
           <option name="timeStamp" value="66" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/test/Item.spec.ts</url>
+          <line>288</line>
+          <properties />
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="67" />
+      <option name="time" value="73" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/mocha/lib/interfaces/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2034">
-          <caret line="113" column="18" lean-forward="false" selection-start-line="113" selection-start-column="18" selection-end-line="113" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="4" lean-forward="false" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Store.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="15" column="39" lean-forward="true" selection-start-line="15" selection-start-column="39" selection-end-line="15" selection-end-column="39" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -913,8 +1008,89 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#36#0" expanded="false" />
-            <marker date="1504352961066" expanded="true" signature="16766:16769" ph="{...}" />
+            <element signature="e#605#1373#0" expanded="false" />
+            <element signature="e#630#1310#0" expanded="false" />
+            <element signature="e#869#1022#0" expanded="false" />
+            <element signature="e#1076#1229#0" expanded="false" />
+            <element signature="e#1330#1368#0" expanded="false" />
+            <element signature="e#1414#5736#0" expanded="false" />
+            <element signature="e#1547#1617#0" expanded="false" />
+            <element signature="e#1655#1759#0" expanded="false" />
+            <element signature="e#1702#1752#0" expanded="false" />
+            <element signature="e#1802#2096#0" expanded="false" />
+            <element signature="e#1852#2005#0" expanded="false" />
+            <element signature="e#2164#2235#0" expanded="false" />
+            <element signature="e#2288#2439#0" expanded="false" />
+            <element signature="e#2485#2624#0" expanded="false" />
+            <element signature="e#2528#2618#0" expanded="false" />
+            <element signature="e#2666#2707#0" expanded="false" />
+            <element signature="e#2752#2796#0" expanded="false" />
+            <element signature="e#2840#2935#0" expanded="false" />
+            <element signature="e#2976#3018#0" expanded="false" />
+            <element signature="e#3061#3105#0" expanded="false" />
+            <element signature="e#3191#3431#0" expanded="false" />
+            <element signature="e#3335#3425#0" expanded="false" />
+            <element signature="e#3464#3580#0" expanded="false" />
+            <element signature="e#3623#3728#0" expanded="false" />
+            <element signature="e#3827#3980#0" expanded="false" />
+            <element signature="e#4024#4133#0" expanded="false" />
+            <element signature="e#4177#4482#0" expanded="false" />
+            <element signature="e#4290#4475#0" expanded="false" />
+            <element signature="e#4549#4605#0" expanded="false" />
+            <element signature="e#4651#4761#0" expanded="false" />
+            <element signature="e#4817#5036#0" expanded="false" />
+            <element signature="e#4864#5029#0" expanded="false" />
+            <element signature="e#5114#5345#0" expanded="false" />
+            <element signature="e#5387#5419#0" expanded="false" />
+            <element signature="e#5465#5673#0" expanded="false" />
+            <element signature="e#5694#5731#0" expanded="false" />
+            <element signature="e#6044#6115#0" expanded="false" />
+            <element signature="e#6153#6258#0" expanded="false" />
+            <element signature="e#6200#6251#0" expanded="false" />
+            <element signature="e#6301#6595#0" expanded="false" />
+            <element signature="e#6351#6504#0" expanded="false" />
+            <element signature="e#6663#6734#0" expanded="false" />
+            <element signature="e#6800#7004#0" expanded="false" />
+            <element signature="e#7058#7199#0" expanded="false" />
+            <element signature="e#7394#7427#0" expanded="false" />
+            <element signature="e#7489#7865#0" expanded="false" />
+            <element signature="e#7507#7791#0" expanded="false" />
+            <element signature="e#7814#7859#0" expanded="false" />
+            <element signature="e#7945#8040#0" expanded="false" />
+            <element signature="e#8059#8096#0" expanded="false" />
+            <element signature="e#8169#10803#0" expanded="false" />
+            <element signature="e#8572#8692#0" expanded="false" />
+            <element signature="e#8604#8655#0" expanded="false" />
+            <element signature="e#8734#8907#0" expanded="false" />
+            <element signature="e#8939#8972#0" expanded="false" />
+            <element signature="e#9041#9117#0" expanded="false" />
+            <element signature="e#9171#9244#0" expanded="false" />
+            <element signature="e#9299#9371#0" expanded="false" />
+            <element signature="e#9418#9615#0" expanded="false" />
+            <element signature="e#9675#9748#0" expanded="false" />
+            <element signature="e#9779#9812#0" expanded="false" />
+            <element signature="e#9858#9954#0" expanded="false" />
+            <element signature="e#10019#10116#0" expanded="false" />
+            <element signature="e#10163#10278#0" expanded="false" />
+            <element signature="e#10349#10446#0" expanded="false" />
+            <element signature="e#10478#10511#0" expanded="false" />
+            <element signature="e#10557#10641#0" expanded="false" />
+            <element signature="e#10712#10797#0" expanded="false" />
+            <element signature="e#10876#12457#0" expanded="false" />
+            <element signature="e#11285#11747#0" expanded="false" />
+            <element signature="e#11338#11702#0" expanded="false" />
+            <element signature="e#11485#11694#0" expanded="false" />
+            <element signature="e#11509#11584#0" expanded="false" />
+            <element signature="e#11608#11683#0" expanded="false" />
+            <element signature="e#11797#11870#0" expanded="false" />
+            <element signature="e#11916#11988#0" expanded="false" />
+            <element signature="e#12079#12385#0" expanded="false" />
+            <element signature="e#12097#12310#0" expanded="false" />
+            <element signature="e#12333#12378#0" expanded="false" />
+            <element signature="e#12417#12450#0" expanded="false" />
+            <element signature="n#!!block;n#timeout#0" expanded="false" />
+            <element signature="e#17248#17340#0" expanded="false" />
+            <marker date="1506146532552" expanded="true" signature="17132:17137" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -1106,14 +1282,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2686">
           <caret line="164" column="45" lean-forward="false" selection-start-line="164" selection-start-column="45" selection-end-line="164" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1013">
-          <caret line="4826" column="8" lean-forward="false" selection-start-line="4826" selection-start-column="8" selection-end-line="4826" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -1133,32 +1301,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11186">
-          <caret line="660" column="0" lean-forward="false" selection-start-line="660" selection-start-column="0" selection-end-line="660" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#36#0" expanded="false" />
-            <marker date="1504352961066" expanded="true" signature="16766:16769" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/mocha.opts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="173" column="30" lean-forward="false" selection-start-line="173" selection-start-column="30" selection-end-line="173" selection-end-column="30" />
-          <folding>
-            <element signature="e#204#283#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1166,7 +1312,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1180,29 +1325,156 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Store.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="82" column="22" lean-forward="false" selection-start-line="82" selection-start-column="22" selection-end-line="82" selection-end-column="22" />
+        <state relative-caret-position="645">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
           <folding>
             <element signature="e#0#36#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/Store.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5287">
+          <caret line="311" column="24" lean-forward="false" selection-start-line="311" selection-start-column="24" selection-end-line="311" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Store.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1071">
-          <caret line="266" column="7" lean-forward="false" selection-start-line="266" selection-start-column="7" selection-end-line="266" selection-end-column="7" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#59#0" expanded="true" />
+            <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
+        <state relative-caret-position="119">
+          <caret line="7" column="8" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="5301" column="15" lean-forward="false" selection-start-line="5301" selection-start-column="15" selection-end-line="5301" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Item.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="782">
+          <caret line="228" column="2" lean-forward="false" selection-start-line="228" selection-start-column="2" selection-end-line="228" selection-end-column="2" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#204#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/faker/lib/locales/ru/address/country.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="98">
+          <caret line="60" column="10" lean-forward="false" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="319" column="0" lean-forward="true" selection-start-line="319" selection-start-column="0" selection-end-line="319" selection-end-column="0" />
+          <folding>
+            <element signature="e#605#1373#0" expanded="false" />
+            <element signature="e#630#1310#0" expanded="false" />
+            <element signature="e#869#1022#0" expanded="false" />
+            <element signature="e#1076#1229#0" expanded="false" />
+            <element signature="e#1330#1368#0" expanded="false" />
+            <element signature="e#1414#5736#0" expanded="false" />
+            <element signature="e#1547#1617#0" expanded="false" />
+            <element signature="e#1655#1759#0" expanded="false" />
+            <element signature="e#1702#1752#0" expanded="false" />
+            <element signature="e#1802#2096#0" expanded="false" />
+            <element signature="e#1852#2005#0" expanded="false" />
+            <element signature="e#2164#2235#0" expanded="false" />
+            <element signature="e#2288#2439#0" expanded="false" />
+            <element signature="e#2485#2624#0" expanded="false" />
+            <element signature="e#2528#2618#0" expanded="false" />
+            <element signature="e#2666#2707#0" expanded="false" />
+            <element signature="e#2752#2796#0" expanded="false" />
+            <element signature="e#2840#2935#0" expanded="false" />
+            <element signature="e#2976#3018#0" expanded="false" />
+            <element signature="e#3061#3105#0" expanded="false" />
+            <element signature="e#3191#3431#0" expanded="false" />
+            <element signature="e#3335#3425#0" expanded="false" />
+            <element signature="e#3464#3580#0" expanded="false" />
+            <element signature="e#3623#3728#0" expanded="false" />
+            <element signature="e#3827#3980#0" expanded="false" />
+            <element signature="e#4024#4133#0" expanded="false" />
+            <element signature="e#4177#4482#0" expanded="false" />
+            <element signature="e#4290#4475#0" expanded="false" />
+            <element signature="e#4549#4605#0" expanded="false" />
+            <element signature="e#4651#4761#0" expanded="false" />
+            <element signature="e#4817#5036#0" expanded="false" />
+            <element signature="e#4864#5029#0" expanded="false" />
+            <element signature="e#5114#5345#0" expanded="false" />
+            <element signature="e#5387#5419#0" expanded="false" />
+            <element signature="e#5465#5673#0" expanded="false" />
+            <element signature="e#5694#5731#0" expanded="false" />
+            <element signature="e#6044#6115#0" expanded="false" />
+            <element signature="e#6153#6258#0" expanded="false" />
+            <element signature="e#6200#6251#0" expanded="false" />
+            <element signature="e#6301#6595#0" expanded="false" />
+            <element signature="e#6351#6504#0" expanded="false" />
+            <element signature="e#6663#6734#0" expanded="false" />
+            <element signature="e#6800#7004#0" expanded="false" />
+            <element signature="e#7058#7199#0" expanded="false" />
+            <element signature="e#7394#7427#0" expanded="false" />
+            <element signature="e#7489#7865#0" expanded="false" />
+            <element signature="e#7507#7791#0" expanded="false" />
+            <element signature="e#7814#7859#0" expanded="false" />
+            <element signature="e#7945#8040#0" expanded="false" />
+            <element signature="e#8059#8096#0" expanded="false" />
+            <element signature="e#8169#10803#0" expanded="false" />
+            <element signature="e#8572#8692#0" expanded="false" />
+            <element signature="e#8604#8655#0" expanded="false" />
+            <element signature="e#8734#8907#0" expanded="false" />
+            <element signature="e#8939#8972#0" expanded="false" />
+            <element signature="e#9041#9117#0" expanded="false" />
+            <element signature="e#9171#9244#0" expanded="false" />
+            <element signature="e#9299#9371#0" expanded="false" />
+            <element signature="e#9418#9615#0" expanded="false" />
+            <element signature="e#9675#9748#0" expanded="false" />
+            <element signature="e#9779#9812#0" expanded="false" />
+            <element signature="e#9858#9954#0" expanded="false" />
+            <element signature="e#10019#10116#0" expanded="false" />
+            <element signature="e#10163#10278#0" expanded="false" />
+            <element signature="e#10349#10446#0" expanded="false" />
+            <element signature="e#10478#10511#0" expanded="false" />
+            <element signature="e#10557#10641#0" expanded="false" />
+            <element signature="e#10712#10797#0" expanded="false" />
+            <element signature="e#10876#12457#0" expanded="false" />
+            <element signature="e#11285#11747#0" expanded="false" />
+            <element signature="e#11338#11702#0" expanded="false" />
+            <element signature="e#11485#11694#0" expanded="false" />
+            <element signature="e#11509#11584#0" expanded="false" />
+            <element signature="e#11608#11683#0" expanded="false" />
+            <element signature="e#11797#11870#0" expanded="false" />
+            <element signature="e#11916#11988#0" expanded="false" />
+            <element signature="e#12079#12385#0" expanded="false" />
+            <element signature="e#12097#12310#0" expanded="false" />
+            <element signature="e#12333#12378#0" expanded="false" />
+            <element signature="e#12417#12450#0" expanded="false" />
+            <element signature="n#!!block;n#timeout#0" expanded="false" />
+            <element signature="e#17248#17340#0" expanded="false" />
+            <marker date="1506146532552" expanded="true" signature="17132:17137" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

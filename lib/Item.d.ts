@@ -1,12 +1,5 @@
 /// <reference types="node" />
 /// <reference types="pouchdb-core" />
-/**
- * Base Model for Objects
- * It puts the actual PouchDB document into a protected _doc property,
- * so that classes derived from **PouchBaseModel** can access the document
- * inside their getters
- */
-import { ObservableMap } from 'mobx';
 import { Store } from './Store';
 import { Attachment, ItemDoc, MapOf } from './types';
 /**
@@ -114,4 +107,3 @@ export declare class Item<T extends ItemModel, S = {}> {
     protected _protectedFields: Array<(keyof ItemDoc<T>) | 'id'>;
     private _dirty;
 }
-export declare type AttachmentMap = ObservableMap<Attachment>;

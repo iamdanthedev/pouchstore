@@ -2,6 +2,7 @@ import { StoreOptions, IStoreOptions } from './StoreOptions';
 import { Item, ItemModel } from './Item';
 import { isNil } from './utils';
 import { MapOf, ItemDoc, ExistingItemDoc, NewItemDoc } from './types';
+import { DB } from './DB';
 
 const log = require('debug')('pouchstore');
 
@@ -23,29 +24,39 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
 
   /**
    * Creates new PouchStore
-   * It does not subsribe/attach it to any PouchDB database automatically
+   * It does not subscribe/attach it to any PouchDB database automatically
    * @see PouchStore#subsribe() Use subsribe to do so
    */
-  constructor(options: IStoreOptions<T, U, S> | StoreOptions<T, U, S>) {
+  constructor(options: IStoreOptions<T, U, S>, db: DB) {
 
     if (options instanceof StoreOptions)
       this._options = options
     else
       this._options = new StoreOptions<T, U, S>(options)
 
+    this._db = db;
 
     log(`${this._options.type} constructor() %o`, { options: this._options })
   }
 
   /**
+   * Pouchstore DB the collection belongs to
+   * @returns {DB}
+   */
+  get $db(): DB
+  {
+    return this._db;
+  }
+
+  /**
    * Subscribe to pouchdb and start listening to changes feed
    */
-  subscribe(db: PouchDB.Database<any>): Promise<void> {
+  subscribe(): Promise<void> {
 
-    if (!db)
-      return Promise.reject('Database must be not null')
+    // if (!db)
+    //   return Promise.reject('Database must be not null')
 
-    this._db = db as PouchDB.Database<T>
+    // this._db = db as PouchDB.Database<T>
 
     this._items.clear()
 
@@ -66,7 +77,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
     if (this._changes)
       this._changes.cancel()
 
-    this._db = null
+    // this._db = null
     this._items.clear()
     this._subscribed = false
 
@@ -145,7 +156,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
       return Promise.reject('ItemID or attachment names are not correct')
 
     return this._db
-      ? this._db.getAttachment(itemId, name)
+      ? this._db.$pouchdb.getAttachment(itemId, name)
       : Promise.reject('The store is not attached to any PouchDB')
   }
 
@@ -160,7 +171,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
     if (!this._db)
       return Promise.reject('DB is not defined');
 
-    const db = this._db;
+    const db = this._db.$pouchdb as PouchDB.Database<T>;
     const doc = item.$doc;
     const _id = this._id(doc);
     const id = doc[this._options.idField];
@@ -189,20 +200,20 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
     const item = this.get(itemId)
 
     if (!item)
-      return Promise.reject('Cannot find the specified item')
+      return Promise.reject('Cannot find the specified item');
 
     if (!!!name)
-      return Promise.reject('Attachment name should not be empty')
+      return Promise.reject('Attachment name should not be empty');
 
-    const db = this._db
+    const db = this._db.$pouchdb as PouchDB.Database<T>;
 
-    const _id = this._id(itemId)
+    const _id = this._id(itemId);
 
     if (!db)
       return Promise.reject('Store is not attached to any PouchDB')
 
     if (!!!_id)
-      return Promise.reject('Could not get item\'s id')
+      return Promise.reject('Could not get item\'s id');
 
     return db.get(_id)
       .then((doc: ExistingItemDoc<T>) =>
@@ -229,7 +240,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
       return Promise.reject('Cannot get item')
 
     const _id = this._id(item)
-    const db = this._db
+    const db = this._db.$pouchdb as PouchDB.Database<T>;
 
     if (!db)
       return Promise.reject('Store is not attached to PouchDB')
@@ -279,7 +290,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
   private _fetchAll(): Promise<void> {
     log(`${this._options.type} _fetchAll()`)
 
-    const db = this._db
+    const db = this._db.$pouchdb as PouchDB.Database<T>;
 
     if (!db)
       return Promise.reject('Store is not attached to PouchDB')
@@ -304,7 +315,7 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
   private _subscribeToChanges(): Promise<void> {
     log(`${this._options.type} _subscribeToChanges()`)
 
-    const db = this._db
+    const db = this._db.$pouchdb as PouchDB.Database<T>;
 
     if (!db)
       return Promise.reject('Store is not attached to PouchDB')
@@ -403,7 +414,9 @@ class Store<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
 
   protected _options: StoreOptions<T, U, S>
 
-  protected _db: PouchDB.Database<T> | null
+  // protected _db: PouchDB.Database<T> | null
+
+  protected _db: DB;
 
   private _changes: PouchDB.Core.Changes<T>
 

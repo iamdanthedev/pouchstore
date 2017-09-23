@@ -7,6 +7,7 @@
 import { isNewDocument, isNil } from './utils'
 import { Store } from './Store'
 import { Attachment, ItemDoc, Attachments, MapOf } from './types'
+import { DB } from './DB';
 
 const clone = require('lodash.clonedeep');
 const uuid = require('uuid')
@@ -23,6 +24,7 @@ export interface ItemModel {
 /**
  * Items that PouchStores consist of should be an object of or inherit Item
  * It provides basic ways of working with Pouchstore items
+ * @todo S should be removed in favour of DB.getCollection
  */
 export class Item<T extends ItemModel, S = {}> {
 
@@ -33,7 +35,8 @@ export class Item<T extends ItemModel, S = {}> {
    * @param {ItemDoc<T extends ItemModel>} doc
    * @param {Store<T extends ItemModel, Item<T extends ItemModel>> & S} collection
    */
-	constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>> & S) {
+	constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>> & S)
+  {
 		log('constructor() %o', { doc })
 
 		this._collection = collection
@@ -49,23 +52,36 @@ export class Item<T extends ItemModel, S = {}> {
 	}
 
   /**
+   * Pouchstore DB the item belongs to (via collection)
+   * @returns {DB}
+   */
+	get $db(): DB
+  {
+    return this._collection.$db;
+  }
+
+  /**
    * Return a PouchDB collection this item belongs to
    * Set by the collection which creates an item
+   * @return {Store<T extends ItemModel, Item<T extends ItemModel>> & S}
    */
-	get $collection() {
-		return this._collection
+	get $collection()
+  {
+		return this._collection;
 	}
 
   /**
    * Returns **a copy** of an underlying PouchDB doc
    */
-	get $doc(): ItemDoc<T> {
+	get $doc(): ItemDoc<T>
+  {
 		return clone(this._doc);
 	}
 
   /** If the item has been changed after load/last save */
-	get isDirty(): boolean {
-		return this._dirty
+	get isDirty(): boolean
+  {
+		return this._dirty;
 	}
 
   /** If the item has never been saved */

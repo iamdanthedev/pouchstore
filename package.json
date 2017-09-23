@@ -1,7 +1,7 @@
 {
   "name": "pouchstore",
   "version": "0.1.43",
-  "description": "PouchDB to Mobx Store",
+  "description": "PouchDB Store",
   "publishConfig": {
     "registry": "http://localhost:4873"
   },

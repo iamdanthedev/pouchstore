@@ -1,19 +1,35 @@
-import { ItemModel } from '../../src'
+import { Item, ItemModel, DB } from '../../src';
 
-import * as faker from 'faker'
+import * as faker from 'faker';
+import * as uuid from 'uuid';
 
-const uuid = require('uuid')
-
-export
-interface ITodo extends ItemModel {
-  type: 'todo'
-  id: string
-  title: string
-  desc: string
+export interface ITodo extends ItemModel
+{
+  type: 'todo';
+  id: string;
+  title: string;
+  desc: string;
 }
 
-export
-function TodoValidator(data: Partial<ITodo>): ITodo {
+export class Todo extends Item<ITodo>
+{
+  get id(): string
+  {
+    return this._doc.id;
+  }
+
+  get title(): string
+  {
+    return this._doc.title;
+  }
+
+  get desc(): string
+  {
+    return this._doc.desc;
+  }
+}
+
+export function TodoValidator(data: Partial<ITodo>): ITodo {
   return {
     type: 'todo',
     id: data.id || uuid(),
@@ -34,3 +50,4 @@ export function genTodos(num: number): ITodo[]
 }
 
 export const todos = genTodos(500);
+

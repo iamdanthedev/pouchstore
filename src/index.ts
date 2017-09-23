@@ -1,10 +1,10 @@
 export { DB } from './DB';
 
-export { Store } from './Store';
+export { Collection } from './Collection';
 
 export { Item, ItemModel } from './Item';
 
-export { StoreOptions, IStoreOptions } from './StoreOptions'
+export { CollectionOptions, ICollectionOptions } from './StoreOptions'
 
 export {
   NewItemDoc,

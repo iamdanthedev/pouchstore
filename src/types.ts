@@ -5,12 +5,10 @@ export type Attachment = PouchDB.Core.AttachmentResponse;
 export type Attachments = PouchDB.Core.Attachments
 
 export type MapOf<T> = {
-  [id: string]: T,
-}
+  [id: string]: T;
+};
 
-export
-  type ItemDoc<T extends ItemModel> =
-  (NewItemDoc<T> | ExistingItemDoc<T>)
+export type ItemDoc<T extends ItemModel> = (NewItemDoc<T> | ExistingItemDoc<T>);
 
 export
   type NewItemDoc<T extends ItemModel> =

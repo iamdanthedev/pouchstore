@@ -3,7 +3,7 @@
 // import * as PouchDB from 'pouchdb'
 // import * as chai from 'chai'
 //
-// import { ITodo, TodoValidator, todos, genTodos } from './mocks/todo'
+// import { ITodo, todoValidator, todos, genTodos } from './mocks/todo'
 //
 //
 // const fs = require('fs')
@@ -16,13 +16,13 @@
 //
 // const mocksDir = __dirname + '/../../test/mocks/'
 //
-// describe('Store', () => {
+// describe('Collection', () => {
 //
 //
-// 	describe('Single Store empty', () => {
+// 	describe('Single Collection empty', () => {
 //
 // 		let todoDB: PouchDB.Database<ITodo>
-// 		let todoStore: Store<ITodo, Item<ITodo>>
+// 		let todoStore: Collection<ITodo, Item<ITodo>>
 //
 // 		before(() => {
 // 			todoDB = new PouchDB('TodoStore', { adapter: 'memory'} )
@@ -35,16 +35,16 @@
 //     })
 //
 // 		it('Should create new store', () => {
-// 			todoStore = new Store<ITodo, Item<ITodo>>({
+// 			todoStore = new Collection<ITodo, Item<ITodo>>({
 // 				type: 'todo',
 // 				idField: 'id',
-// 				validator: TodoValidator,
+// 				validator: todoValidator,
 // 				factory: (doc, collection) => new Item(doc, collection)
 // 			})
 //
 // 			todoStore.subscribe(todoDB)
 //
-// 			expect(todoStore).to.be.instanceOf(Store)
+// 			expect(todoStore).to.be.instanceOf(Collection)
 // 		})
 //
 // 		it('Add 500 items to store sequentially', () => {
@@ -54,46 +54,46 @@
 // 			}
 // 		})
 //
-// 		it('Store#all, Store#get', () => {
+// 		it('Collection#all, Collection#getItem', () => {
 // 			const items = todoStore.all
 //
 // 			expect(todoStore.all).to.be.lengthOf(todos.length)
 //
 // 			for(var data of todos) {
-// 				const item = todoStore.get(data.id)
+// 				const item = todoStore.getItem(data.id)
 //
 // 				if (!item)
 // 					return assert.fail('Item does not exist')
 //
-// 				expect(item.get('title')).to.eq(data.title)
-// 				expect(item.get('desc')).to.eq(data.desc)
+// 				expect(item.getItem('title')).to.eq(data.title)
+// 				expect(item.getItem('desc')).to.eq(data.desc)
 // 			}
 // 		})
 //
-// 		it('Store#allMap works', () => {
+// 		it('Collection#allMap works', () => {
 // 			const allMap = todoStore.allMap
 //
 // 			for(var data of todos) {
 // 				expect(allMap[data.id]).to.exist
-// 				expect(allMap[data.id].get('title')).to.eq(data.title)
+// 				expect(allMap[data.id].getItem('title')).to.eq(data.title)
 // 			}
 // 		})
 //
-// 		it('Store#remove(item)', () => {
+// 		it('Collection#remove(item)', () => {
 // 			const id = todos[0].id
-// 			const item = todoStore.get(id)
+// 			const item = todoStore.getItem(id)
 //
 // 			if (!item)
-// 				return assert.fail('Could not get item')
+// 				return assert.fail('Could not getItem item')
 //
 // 			return todoStore.remove(item)
 //         .then(() => {
-//           expect(todoStore.get(id)).to.be.undefined
+//           expect(todoStore.getItem(id)).to.be.undefined
 //   			})
 //         .catch(e => expect.fail(null, null, e));
 // 		})
 //
-// 		it('Store#remove(itemId)')
+// 		it('Collection#remove(itemId)')
 //
 // 		it('changes')
 //

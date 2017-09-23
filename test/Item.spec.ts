@@ -8,7 +8,7 @@
 // import sinon = require('sinon');
 // const { assert, expect } = chai
 //
-// import { ITodo, TodoValidator, todos } from './mocks/todo'
+// import { ITodo, todoValidator, todos } from './mocks/todo'
 //
 // PouchDB.plugin(require('pouchdb-adapter-memory'))
 //
@@ -18,8 +18,8 @@
 //
 //
 //   let todoDB: PouchDB.Database<ITodo>;
-//   let todoStore: Store<ITodo, Item<ITodo>>;
-//   let secondStore: Store<ITodo, Item<ITodo>>;
+//   let todoStore: Collection<ITodo, Item<ITodo>>;
+//   let secondStore: Collection<ITodo, Item<ITodo>>;
 //
 //   function prepareSuite()
 //   {
@@ -28,17 +28,17 @@
 //       await todoDB.destroy(); // make sure it will be empty
 //       todoDB = new PouchDB('TodoStore', { adapter: 'memory' });
 //
-//       todoStore = new Store<ITodo, Item<ITodo>>({
+//       todoStore = new Collection<ITodo, Item<ITodo>>({
 //         type: 'todo',
 //         idField: 'id',
-//         validator: TodoValidator,
+//         validator: todoValidator,
 //         factory: (doc, collection) => new Item(doc, collection),
 //       });
 //
-//       secondStore = new Store<ITodo, Item<ITodo>>({
+//       secondStore = new Collection<ITodo, Item<ITodo>>({
 //         type: 'todo',
 //         idField: 'id',
-//         validator: TodoValidator,
+//         validator: todoValidator,
 //         factory: (doc, collection) => new Item(doc, collection),
 //       });
 //
@@ -54,7 +54,7 @@
 //   describe('Record#1 from data', () => {
 //
 //     let todoDB: PouchDB.Database<ITodo>
-//     let todoStore: Store<ITodo, Item<ITodo>>
+//     let todoStore: Collection<ITodo, Item<ITodo>>
 //
 //     let todo: Item<ITodo>
 //
@@ -69,16 +69,16 @@
 //     })
 //
 //     it('Should create new store', () => {
-//       todoStore = new Store<ITodo, Item<ITodo>>({
+//       todoStore = new Collection<ITodo, Item<ITodo>>({
 //         type: 'todo',
 //         idField: 'id',
-//         validator: TodoValidator,
+//         validator: todoValidator,
 //         factory: (doc, collection) => new Item(doc, collection),
 //       })
 //
 //       todoStore.subscribe(todoDB)
 //
-//       expect(todoStore).to.be.instanceOf(Store)
+//       expect(todoStore).to.be.instanceOf(Collection)
 //     })
 //
 //     const data = todos[0]
@@ -97,7 +97,7 @@
 //
 //     it('Record#1 data should match', () => {
 //       for (var key of Object.keys(data)) {
-//         expect(todo.get(key as keyof ITodo)).to.eq(todos[0][key as keyof ITodo])
+//         expect(todo.getItem(key as keyof ITodo)).to.eq(todos[0][key as keyof ITodo])
 //       }
 //     })
 //
@@ -126,14 +126,14 @@
 //     let item: Item<ITodo> | undefined
 //
 //     it('Record#1 data should match', () => {
-//       item = todoStore.get(data.id)
+//       item = todoStore.getItem(data.id)
 //
 //       if (!item)
 //         return assert.fail('Record is null')
 //
 //
 //       for (var key of Object.keys(data)) {
-//         expect(item.get(key as keyof ITodo)).to.eq(todos[0][key as keyof ITodo])
+//         expect(item.getItem(key as keyof ITodo)).to.eq(todos[0][key as keyof ITodo])
 //       }
 //     })
 //
@@ -159,7 +159,7 @@
 //
 //       item.set('title', title)
 //
-//       expect(item.get('title')).to.be.eq(title)
+//       expect(item.getItem('title')).to.be.eq(title)
 //     })
 //
 //     it('Record#1.isDirty == true', () => {
@@ -175,17 +175,17 @@
 //
 //       return item.save()
 //         .then(() => {
-//           const it = todoStore.get(data.id)
+//           const it = todoStore.getItem(data.id)
 //
 //           if (!it)
 //             return assert.fail('item is undefined')
 //
-//           return expect(it.get('title')).to.be.eq(title)
+//           return expect(it.getItem('title')).to.be.eq(title)
 //         })
 //     })
 //
 //     it('item references the same object as in the store', () => {
-//       expect(item).to.eq(todoStore.get(data.id))
+//       expect(item).to.eq(todoStore.getItem(data.id))
 //     })
 //
 //     it('Record#1.isDirty === false', () => {
@@ -198,7 +198,7 @@
 //     it('Record#1 should be the only one copy', () => {
 //       return todo.save()
 //         .then(() => {
-//           const it = todoStore.get(data.id)
+//           const it = todoStore.getItem(data.id)
 //
 //           if (!it)
 //             return assert.fail('item is undefined')
@@ -215,9 +215,9 @@
 //
 //       item.set(data2)
 //
-//       assert(item.get('id') === data.id)
-//       assert(item.get('title') === data2.title)
-//       assert(item.get('type') === data2.type)
+//       assert(item.getItem('id') === data.id)
+//       assert(item.getItem('title') === data2.title)
+//       assert(item.getItem('type') === data2.type)
 //     })
 //
 //     it('Record#1.save fulfills', () => {
@@ -228,9 +228,9 @@
 //       if (!item)
 //         return assert.fail('Item is undefined')
 //
-//       assert(item.get('id') === data.id)
-//       assert(item.get('title') === data2.title)
-//       assert(item.get('type') === data2.type)
+//       assert(item.getItem('id') === data.id)
+//       assert(item.getItem('title') === data2.title)
+//       assert(item.getItem('type') === data2.type)
 //     })
 //
 //
@@ -243,7 +243,7 @@
 //   describe('Attachments', () => {
 //
 //     let todoDB: PouchDB.Database<ITodo>;
-//     let todoStore: Store<ITodo, Item<ITodo>>;
+//     let todoStore: Collection<ITodo, Item<ITodo>>;
 //     let todo: Item<ITodo>;
 //
 //     const file1Path = path.resolve(mocksDir, 'img.jpg');
@@ -261,16 +261,16 @@
 //     })
 //
 //     it('Should create new store', () => {
-//       todoStore = new Store<ITodo, Item<ITodo>>({
+//       todoStore = new Collection<ITodo, Item<ITodo>>({
 //         type: 'todo',
 //         idField: 'id',
-//         validator: TodoValidator,
+//         validator: todoValidator,
 //         factory: (doc, collection) => new Item(doc, collection),
 //       })
 //
 //       todoStore.subscribe(todoDB)
 //
-//       expect(todoStore).to.be.instanceOf(Store)
+//       expect(todoStore).to.be.instanceOf(Collection)
 //     })
 //
 //     const data = todos[0]
@@ -306,7 +306,7 @@
 //     it('should load item w/ attachment stub', async () => {
 //       try
 //       {
-//         const item = await todoDB.get(`todo::${todo.get('id')}`);
+//         const item = await todoDB.getItem(`todo::${todo.getItem('id')}`);
 //         expect(item).to.exist;
 //         expect(item._attachments['pic1']).to.exist;
 //         expect(item._attachments['pic1'].length).eq(file.byteLength);
@@ -365,8 +365,8 @@
 //
 //     timeout(1);
 //
-//     it('should get a replica of the doc', () => {
-//       todo2 = secondStore.get('item');
+//     it('should getItem a replica of the doc', () => {
+//       todo2 = secondStore.getItem('item');
 //       expect(todo2).to.exist;
 //     });
 //
@@ -458,8 +458,8 @@
 //       return todoDB.put(doc);
 //     });
 //
-//     it('should get doc from the store', () => {
-//       todo = todoStore.get('doc1');
+//     it('should getItem doc from the store', () => {
+//       todo = todoStore.getItem('doc1');
 //
 //       expect(todo).to.exist;
 //     });
@@ -468,7 +468,7 @@
 //       expect(todo.attachments).all.keys('img1.png', 'img2.png');
 //     });
 //
-//     it('should get attachments which are not stubs and size should match', async () => {
+//     it('should getItem attachments which are not stubs and size should match', async () => {
 //       try
 //       {
 //         const att1 = await todo.loadAttachment('img1.png');

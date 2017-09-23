@@ -1,27 +1,28 @@
 import * as PouchDB from 'pouchdb';
-import { Store } from './Store';
+import { Collection } from './Collection';
 import { Item, ItemModel } from './Item';
-import { IStoreOptions } from './StoreOptions';
+import { ICollectionOptions } from './StoreOptions';
 
+/**
+ * Encapsulated PouchDB database and creates collections
+ */
 export class DB {
 
   protected _db: PouchDB.Database;
 
-  protected _collections = new Map<string, Store<any, Item<any>>>();
+  // otherwise we have typechecking problems with DB._collections
+  // tslint:disable-next-line
+  protected _collections: Map<string, Collection<ItemModel, Item<any>>> = new Map();
 
-  static PLUGIN(plugin: PouchDB.Plugin)
-  {
-    PouchDB.plugin(plugin);
-  }
-
-  constructor(name?: string, options?: PouchDB.Configuration.DatabaseConfiguration)
-  {
+  constructor(name?: string, options?: PouchDB.Configuration.DatabaseConfiguration) {
     this._db = new PouchDB(name, options);
 
     if (!this._db)
-    {
       throw new Error('Cannot create pouchdb database');
-    }
+  }
+
+  public static PLUGIN(plugin: PouchDB.Plugin): void {
+    PouchDB.plugin(plugin);
   }
 
   /**
@@ -36,18 +37,18 @@ export class DB {
   /**
    * Creates a new collections
    * @param {string} name
-   * @param {IStoreOptions<T extends ItemModel, U extends Item<T>, S extends Item<any>>} options
-   * @returns {Store<ItemModel, Item<T>, U>}
+   * @param {ICollectionOptions<T extends ItemModel, U extends Item<T>>} options
+   * @returns {Collection<ItemModel, Item<T>, DB>}
    */
-  createCollection<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>(
+  public createCollection<T extends ItemModel, U extends Item<T>>(
     name: string,
-    options: IStoreOptions<T, U, S>
-  )
-  {
+    options: ICollectionOptions<T, U>
+  ): Collection<T, U, this> {
+
     if (this._collections.has(name))
       throw new Error('Collection with this name already exists');
 
-    const collection = new Store(options, this);
+    const collection = new Collection(options, this);
 
     this._collections.set(name, collection);
 
@@ -57,14 +58,10 @@ export class DB {
   /**
    * Returns existing collections by name or null if it doesn't exist
    * @param {string} name
-   * @returns {T}
+   * @returns {undefined | Collection<ItemModel, Item<ItemModel>>}
    */
-  getCollection<T extends Store<any, Item<any>>>(name: string): T | null
-  {
-    if (this._collections.has(name))
-      return this._collections.get(name) as T;
-
-    return null;
+  public getCollection(name: string): Collection<ItemModel, Item<ItemModel>> | undefined {
+    return this._collections.get(name);
   }
 
   /**
@@ -72,18 +69,16 @@ export class DB {
    * @param {boolean} removeFromDB If true removes items from pouchdb (dangerous)
    * @todo not implemented
    */
-  removeCollection(removeFromDB: boolean = false)
-  {
-    console.log('not implemented');
-  }
+  // public removeCollection(removeFromDB: boolean = false): void {
+  //   // console.log('not implemented');
+  // }
 
   /**
    * Makes all collections to fetch initial data and subscribe to changes feed
    * Collections are cleared initially
    */
-  subscribeCollections(): Promise<void>
-  {
-    const promises: Promise<any>[] = [];
+  public subscribeCollections(): Promise<void> {
+    const promises: Promise<void>[] = [];
     this._collections.forEach(collection => promises.push(collection.subscribe()));
 
     return Promise.all(promises)
@@ -94,9 +89,8 @@ export class DB {
   /**
    * Clears collections and stops changes subscription
    */
-  unsubscribeCollections(): Promise<void>
-  {
-    const promises: Promise<any>[] = [];
+  public unsubscribeCollections(): Promise<void> {
+    const promises: Promise<void>[] = [];
     this._collections.forEach(collection => promises.push(collection.unsubscribe()));
 
     return Promise.all(promises)

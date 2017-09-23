@@ -34,8 +34,10 @@
     "@types/node": "^8.0.25",
     "@types/pouchdb": "^6.1.1",
     "@types/sinon": "^2.3.3",
+    "@types/uuid": "^3.4.2",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
+    "danthedev-code-style": "0.0.21",
     "faker": "^4.1.0",
     "fs-extra": "^4.0.0",
     "mocha": "^3.4.2",
@@ -45,6 +47,7 @@
     "sinon": "^2.4.1",
     "source-map-support": "^0.4.15",
     "ts-node": "^3.3.0",
+    "tslint": "^5.7.0",
     "typescript": "^2.5.1",
     "version-bump-prompt": "^3.1.2"
   },

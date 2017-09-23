@@ -1,4 +1,4 @@
-import { Store } from './Store'
+import { Collection } from './Collection'
 import { ItemModel, Item } from './Item'
 import { ItemDoc, OnBeforeRemove } from './types'
 
@@ -6,11 +6,11 @@ import { ItemDoc, OnBeforeRemove } from './types'
  * Options which the PouchCollection constructor is supplied with
  */
 export
-class StoreOptions<T extends ItemModel, U extends Item<T>, S extends Item<any> = U>
-implements IStoreOptions<T, U, S>
+class CollectionOptions<T extends ItemModel, U extends Item<T>>
+implements ICollectionOptions<T, U>
 {
 
-  constructor(options: IStoreOptions<T, U, S>) {
+  constructor(options: ICollectionOptions<T, U>) {
 
     this.loadAttachments = options.loadAttachments || this.loadAttachments
     this.type = options.type || this.type
@@ -37,17 +37,17 @@ implements IStoreOptions<T, U, S>
   idField: OptionIdField<T>
 
   /** Model factory */
-  factory: OptionFactory<T, U, S>
+  factory: OptionFactory<T, U>
 
   /** Default values for model properties */
   validator: OptionValidator<T>
 
   /** Hook to be evaluated before a store item it removed */
-  onBeforeRemove: OnBeforeRemove<S>
+  onBeforeRemove: OnBeforeRemove<U>
 }
 
 export
-interface IStoreOptions<T extends ItemModel, U extends Item<T>, S extends Item<any> = U> {
+interface ICollectionOptions<T extends ItemModel, U extends Item<T>> {
   /**
    * Should attachments be loaded into items automatically
    * In this case all attachments will be 'local' by default
@@ -64,13 +64,13 @@ interface IStoreOptions<T extends ItemModel, U extends Item<T>, S extends Item<a
   idField: OptionIdField<T>
 
   /** Model factory */
-  factory: OptionFactory<T, U, S>
+  factory: OptionFactory<T, U>
 
   /** Default values for model properties */
   validator: OptionValidator<T>
 
   /** Hook to be evaluated before a store item it removed */
-  onBeforeRemove?: OnBeforeRemove<S>
+  onBeforeRemove?: OnBeforeRemove<U>
 }
 
 export
@@ -86,8 +86,8 @@ type OptionIdField<T extends ItemModel> = keyof T;
 
 /** Model factory */
 export
-type OptionFactory<T extends ItemModel, U extends Item<T>, S extends Item<any> = U> =
-  (doc: ItemDoc<T>, collection: Store<T, U, S>) => S;
+type OptionFactory<T extends ItemModel, U extends Item<T>> =
+  (doc: ItemDoc<T>, collection: Collection<T, U>) => U;
 
 /** Default values for model properties */
 export

@@ -15,7 +15,7 @@ export interface ItemModel {
 export declare class Item<T extends ItemModel, S = {}> {
     /**
      * Create a new pouchstore item object.
-     * Usually you would want to create new items via Store#create() method
+     * Usually you would want to create new items via Collection#create() method
      *
      * @param {ItemDoc<T extends ItemModel>} doc
      * @param {Store<T extends ItemModel, Item<T extends ItemModel>> & S} collection

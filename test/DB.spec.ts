@@ -1,6 +1,6 @@
-import { DB, Item, Store } from '../src';
+import { DB, Item, Collection } from '../src';
 import { expect } from 'chai';
-import { genTodos, ITodo, TodoValidator } from './mocks/todo';
+import { genTodos, ITodo, todoValidator } from './mocks/Todo';
 
 DB.PLUGIN(require('pouchdb-adapter-memory'));
 
@@ -35,18 +35,18 @@ describe('DB', () => {
 
     prepareDB();
 
-    let todos: Store<ITodo, Item<ITodo>>;
+    let todos: Collection<ITodo, Item<ITodo>>;
 
     it('should create Todo collection', () => {
       todos = db.createCollection('todos', {
         type: 'todo',
         idField: 'id',
         factory: (doc, collection) => new Item(doc, collection),
-        validator: TodoValidator,
+        validator: todoValidator,
       })
     });
 
-    it('should get collection', () => {
+    it('should getItem collection', () => {
       const col = db.getCollection('todos');
       expect(col).to.exist;
       expect(col).to.eq(todos);
@@ -77,7 +77,7 @@ describe('DB', () => {
   });
 
   describe('extending DB class', () => {
-    
+
   });
 
 })

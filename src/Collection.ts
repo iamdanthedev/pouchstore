@@ -434,8 +434,9 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
   private _id(item: T | U | string): string {
 
-    const typeOfU = (arg: T | U): arg is U => arg.hasOwnProperty('$doc');
-    const typeOfT = (arg: T | U): arg is T => !arg.hasOwnProperty('$doc');
+    // const typeOfU = (arg: T | U): arg is U => arg.hasOwnProperty('$doc');
+    const typeOfU = (arg: T | U): arg is U => '$doc' in arg;
+    const typeOfT = (arg: T | U): arg is T => !typeOfU(arg);
 
     const itemType = this._options.type;
 

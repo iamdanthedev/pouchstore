@@ -2,6 +2,7 @@
   <dictionary name="danthedev">
     <words>
       <w>autorun</w>
+      <w>filetype</w>
       <w>observable.deep</w>
       <w>pouchstore</w>
       <w>tsconfig</w>

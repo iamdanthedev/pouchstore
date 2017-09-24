@@ -17,13 +17,19 @@ export class DB {
   constructor(name?: string, options?: PouchDB.Configuration.DatabaseConfiguration) {
     this._db = new PouchDB(name, options);
 
-    if (!this._db)
+    if (!this._db) {
       throw new Error('Cannot create pouchdb database');
+    }
+
+    this._init();
   }
 
   public static PLUGIN(plugin: PouchDB.Plugin): void {
     PouchDB.plugin(plugin);
   }
+
+  // tslint:disable-next-line
+  protected _init(): void { }
 
   /**
    * Returns pouchdb instance
@@ -45,8 +51,9 @@ export class DB {
     options: ICollectionOptions<T, U>
   ): Collection<T, U, this> {
 
-    if (this._collections.has(name))
+    if (this._collections.has(name)) {
       throw new Error('Collection with this name already exists');
+    }
 
     const collection = new Collection(options, this);
 

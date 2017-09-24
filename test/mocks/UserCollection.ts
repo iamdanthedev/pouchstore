@@ -9,7 +9,7 @@ export class UserCollection extends Collection<IUser, User> {
   constructor(db: DB) {
     super(
       {
-        type: 'todo',
+        type: 'user',
         validator: userValidator,
         factory: (doc, collection) => new User(doc, collection),
         idField: 'id',

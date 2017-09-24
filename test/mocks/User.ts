@@ -42,11 +42,12 @@ export function userValidator(data: Partial<IUser>): IUser {
   };
 }
 
-export function genUser(num: number, todos: ITodo[]): IUser[] {
+export function genUser(num: number, todos: ITodo[] = []): IUser[] {
   return [...Array(num).keys()].map(v => ({
       type: 'user',
       id: uuid(),
       username: faker.helpers.userCard().username,
+      todos: todos.map(t => t.id)
     } as IUser)
   );
 }

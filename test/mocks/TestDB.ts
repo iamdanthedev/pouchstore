@@ -7,13 +7,16 @@ import { UserCollection } from './UserCollection';
  */
 export class TestDB extends DB {
 
-  constructor() {
-    super();
+  public todos: TodoCollection;
+  public users: UserCollection;
 
-    const todos = new TodoCollection(this);
-    const users = new UserCollection(this);
+  protected _init(): void {
 
-    this._collections.set('todos', todos);
-    this._collections.set('users', users);
+    this.todos = new TodoCollection(this);
+    this.users = new UserCollection(this);
+
+    this._collections.set('todos', this.todos);
+    this._collections.set('users', this.users);
   }
+
 }

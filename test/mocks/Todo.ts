@@ -80,4 +80,3 @@ export function genTodos(num: number): ITodo[] {
 }
 
 export const todos = genTodos(500);
-

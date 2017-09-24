@@ -4,14 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/Collection.ts" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="tests refactored">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/StoreOptions.ts" afterPath="$PROJECT_DIR$/src/CollectionOptions.ts" />
+    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Collection.ts" afterPath="$PROJECT_DIR$/src/Collection.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DB.ts" afterPath="$PROJECT_DIR$/src/DB.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.ts" afterPath="$PROJECT_DIR$/src/index.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mocks/Todo.ts" afterPath="$PROJECT_DIR$/test/mocks/Todo.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -87,8 +81,8 @@
           <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="442">
-                  <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+                <state relative-caret-position="1241">
+                  <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
                   <folding>
                     <element signature="e#28#88#0" expanded="true" />
                   </folding>
@@ -791,7 +785,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506263208212</updated>
     </task>
-    <option name="localTasksCounter" value="37" />
+    <task id="LOCAL-00037" summary="StoreOptions.ts -&gt; CollectionOptions.ts">
+      <created>1506286527014</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1506286527014</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -827,7 +828,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174157000" />
+    <option name="totallyTimeSpent" value="174287000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -845,9 +846,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10969116" sideWeight="0.37676767" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.10969116" sideWeight="0.37676767" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17039403" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="529" y="189" width="1283" height="683" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24242425" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24242425" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25555557" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.10969116" sideWeight="0.6232323" order="0" side_tool="false" content_ui="combo" />
@@ -914,7 +915,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="+ improved build/dist procedures" />
     <MESSAGE value="reformat" />
     <MESSAGE value="index.ts -&gt; src/index.ts" />
     <MESSAGE value="added .npmignore" />
@@ -939,7 +939,8 @@
     <MESSAGE value="added DB class and tests" />
     <MESSAGE value="refactored" />
     <MESSAGE value="tests refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests refactored" />
+    <MESSAGE value="StoreOptions.ts -&gt; CollectionOptions.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="StoreOptions.ts -&gt; CollectionOptions.ts" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1292,8 +1293,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="34" column="20" lean-forward="false" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+        <state relative-caret-position="1241">
+          <caret line="81" column="0" lean-forward="false" selection-start-line="81" selection-start-column="0" selection-end-line="81" selection-end-column="0" />
           <folding>
             <element signature="e#28#88#0" expanded="true" />
           </folding>

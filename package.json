@@ -37,7 +37,7 @@
     "@types/uuid": "^3.4.2",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
-    "danthedev-code-style": "0.0.26",
+    "danthedev-code-style": "0.0.27",
     "faker": "^4.1.0",
     "fs-extra": "^4.0.0",
     "mocha": "^3.4.2",
@@ -57,7 +57,9 @@
   },
   "dependencies": {
     "@types/lodash.clonedeep": "^4.5.3",
+    "ajv": "^5.2.2",
     "debug": "^2.6.8",
+    "json-schema-interface": "^0.1.2",
     "lodash.clonedeep": "^4.5.0",
     "uuid": "^3.1.0"
   },

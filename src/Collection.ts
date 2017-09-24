@@ -2,7 +2,7 @@ import * as debug from 'debug';
 
 import { DB } from './DB';
 import { Item, ItemModel } from './Item';
-import { CollectionOptions, ICollectionOptions } from './StoreOptions';
+import { CollectionOptions, ICollectionOptions } from './CollectionOptions';
 import { ExistingItemDoc, ItemDoc, MapOf, NewItemDoc } from './types';
 
 const log = debug('pouchstore');

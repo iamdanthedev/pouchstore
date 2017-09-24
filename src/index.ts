@@ -4,7 +4,7 @@ export { Collection } from './Collection';
 
 export { Item, ItemModel } from './Item';
 
-export { CollectionOptions, ICollectionOptions } from './StoreOptions'
+export { CollectionOptions, ICollectionOptions } from './CollectionOptions'
 
 export {
   NewItemDoc,

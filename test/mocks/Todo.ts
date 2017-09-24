@@ -2,6 +2,7 @@
  * Test todos model
  */
 import { Collection, DB, Item, ItemModel } from '../../src';
+import { JsonSchemaDraft6 } from 'json-schema-interface';
 
 import * as faker from 'faker';
 import * as uuid from 'uuid';
@@ -12,6 +13,36 @@ export interface ITodo extends ItemModel {
   title: string;
   desc: string;
 }
+
+export const todoSchema: JsonSchemaDraft6 = {
+  $id: 'http://github.com/rasdaniil/pouchstore/test#todo',
+  type: 'object',
+  required: ['type', 'id'],
+  properties: {
+
+    type: {
+      type: 'string',
+      const: 'todo',
+    },
+
+    id: {
+      type: 'string',
+      minLength: 36,
+      maxLength: 36,
+    },
+
+    title: {
+      type: 'string',
+      maxLength: 100,
+    },
+
+    desc: {
+      type: 'string',
+      default: 'n/a'
+    }
+
+  },
+};
 
 export class Todo extends Item<ITodo> {
 

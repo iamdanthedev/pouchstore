@@ -1,7 +1,7 @@
 import * as PouchDB from 'pouchdb';
 import { Collection } from './Collection';
 import { Item, ItemModel } from './Item';
-import { ICollectionOptions } from './StoreOptions';
+import { ICollectionOptions } from './CollectionOptions';
 
 /**
  * Encapsulated PouchDB database and creates collections

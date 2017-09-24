@@ -1,7 +1,8 @@
-/// <reference types="node" />
 /// <reference types="pouchdb-core" />
-import { Store } from './Store';
+/// <reference types="node" />
+import { Collection } from './Collection';
 import { Attachment, ItemDoc, MapOf } from './types';
+import { DB } from './DB';
 /**
  * Base models interface
  */
@@ -12,55 +13,75 @@ export interface ItemModel {
  * Items that PouchStores consist of should be an object of or inherit Item
  * It provides basic ways of working with Pouchstore items
  */
-export declare class Item<T extends ItemModel, S = {}> {
+export declare class Item<T extends ItemModel> {
+    protected _collection: Collection<T, Item<T>>;
+    protected _doc: ItemDoc<T>;
+    protected _protectedFields: ((keyof ItemDoc<T>) | 'id')[];
+    private _dirty;
     /**
      * Create a new pouchstore item object.
      * Usually you would want to create new items via Collection#create() method
      *
      * @param {ItemDoc<T extends ItemModel>} doc
-     * @param {Store<T extends ItemModel, Item<T extends ItemModel>> & S} collection
+     * @param {Collection<T extends ItemModel, Item<T extends ItemModel>>} collection
      */
-    constructor(doc: ItemDoc<T>, collection: Store<T, Item<T>> & S);
+    constructor(doc: ItemDoc<T>, collection: Collection<T, Item<T>>);
+    /**
+     * Pouchstore DB the item belongs to (via collection)
+     * @returns {DB}
+     */
+    readonly $db: DB;
     /**
      * Return a PouchDB collection this item belongs to
      * Set by the collection which creates an item
+     * @return {Collection<T extends ItemModel, Item<T extends ItemModel>> & S}
      */
-    readonly $collection: Store<T, Item<T, {}>, Item<T, {}>> & S;
+    readonly $collection: Collection<T, Item<T>>;
     /**
      * Returns **a copy** of an underlying PouchDB doc
      */
     readonly $doc: ItemDoc<T>;
-    /** If the item has been changed after load/last save */
+    /**
+     * If the item has been changed after load/last save
+     */
     readonly isDirty: boolean;
-    /** If the item has never been saved */
+    /**
+     * If the item has never been saved
+     */
     readonly isNew: boolean;
-    /** Get a property of the item */
-    get<K extends keyof T>(property: K): T[K];
+    /**
+     * Get a property of the item
+     */
+    getProp<K extends keyof T>(property: K): T[K];
     /**
      * Updates the item's underlying PouchDB document
      * Changes are not saved
      * @use Item#save()
      */
-    set<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>, dontDirty?: boolean): this;
+    setDoc<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>, dontDirty?: boolean): this;
     /**
      * Updates one property of the item's underlying PouchDB document
      * Changes are not saved
      * @use Item#save()
      */
-    set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K], dontDirty?: boolean): this;
-    /** Save this item in the store. This will update the PouchDB database */
+    setProp<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(prop: K, value: DOC[K], dontDirty?: boolean): this;
+    /**
+     * Save this item in the store. This will update the PouchDB database
+     */
     save(): Promise<void>;
     /**
-   * Remove this item from the store.
-   * This is the same as calling PouchStore#remove(item)
-   */
-    remove(): Promise<void>;
+     * Remove this item from the store.
+     * This is the same as calling PouchStore#remove(item)
+     */
+    remove(): Promise<{}>;
     /*************************************************************
      *                                                           *
      *                        ATTACHMENTS                        *
      *                                                           *
      *************************************************************/
-    /** Attaches a file to the document */
+    /**
+     * Attaches a file to the document
+     */
     attach(name: string, data: Blob | Buffer, contentType: string): boolean;
     /**
      * Removes attachment
@@ -84,9 +105,13 @@ export declare class Item<T extends ItemModel, S = {}> {
      * @returns {MapOf<Attachment>}
      */
     readonly attachments: MapOf<Attachment>;
-    /** Returns true if attachment is stored on the model */
+    /**
+     * Returns true if attachment is stored on the model
+     */
     isLocalAttachment(name: string): boolean | undefined;
-    /** Loads attachment irrespectively of whether it is local or remote */
+    /**
+     * Loads attachment irrespectively of whether it is local or remote
+     */
     loadAttachment(name: string): Promise<Attachment>;
     /**
      * Loads attachment and returns a WebAPI URL Object string
@@ -100,10 +125,8 @@ export declare class Item<T extends ItemModel, S = {}> {
      *                        PRIVATE                            *
      *                                                           *
      *************************************************************/
-    /** Sets the whole underlying doc, some of its properties or a single property */
+    /**
+     * Sets the whole underlying doc, some of its properties or a single property
+     */
     protected _set<DOC extends ItemDoc<T>, K extends keyof ItemDoc<T>>(data: DOC | Partial<DOC>, dontDirty: boolean): this;
-    protected _collection: Store<T, Item<T>> & S;
-    protected _doc: ItemDoc<T>;
-    protected _protectedFields: Array<(keyof ItemDoc<T>) | 'id'>;
-    private _dirty;
 }

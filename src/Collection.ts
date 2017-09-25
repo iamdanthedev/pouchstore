@@ -50,7 +50,6 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
     log(`${this._options.type} constructor() %o`, { options: this._options });
   }
 
-
   /**
    * Pouchstore DB the collection belongs to
    * @returns {DB}

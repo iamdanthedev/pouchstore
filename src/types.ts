@@ -1,8 +1,9 @@
-import { ItemModel } from './Item'
+import { ItemModel } from './Item';
+import { JsonSchemaAjv } from 'json-schema-interface';
 
 export type Attachment = PouchDB.Core.AttachmentResponse;
 
-export type Attachments = PouchDB.Core.Attachments
+export type Attachments = PouchDB.Core.Attachments;
 
 export type MapOf<T> = {
   [id: string]: T;
@@ -10,16 +11,13 @@ export type MapOf<T> = {
 
 export type ItemDoc<T extends ItemModel> = (NewItemDoc<T> | ExistingItemDoc<T>);
 
-export
-  type NewItemDoc<T extends ItemModel> =
-  PouchDB.Core.Document<WithAttachments<T>> & { _rev: undefined }
+export type NewItemDoc<T extends ItemModel> =
+  PouchDB.Core.Document<WithAttachments<T>> & { _rev: undefined };
 
-export
-  type ExistingItemDoc<T extends ItemModel> =
-  PouchDB.Core.ExistingDocument<WithAttachments<T>>
+export type ExistingItemDoc<T extends ItemModel> =
+  PouchDB.Core.ExistingDocument<WithAttachments<T>>;
 
-export
-  type WithAttachments<T> = T & { _attachments?: Attachments }
+export type WithAttachments<T> = T & { _attachments?: Attachments };
 
 /**
  * onBeforeRemove callback
@@ -31,8 +29,4 @@ export
  * @returns {void} To proceed the execution
  *
  */
-export
-  type OnBeforeRemove<U> = (item: U) => Promise<ItemDoc<any>[] | false | void>
-
-
-
+export type OnBeforeRemove<U> = (item: U) => Promise<ItemDoc<any>[] | false | void>;

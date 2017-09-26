@@ -1,4 +1,5 @@
 import * as PouchDB from 'pouchdb';
+import * as Ajv from 'ajv';
 import { Collection } from './Collection';
 import { Item, ItemModel } from './Item';
 import { ICollectionOptions } from './CollectionOptions';
@@ -9,6 +10,8 @@ import { ICollectionOptions } from './CollectionOptions';
 export class DB {
 
   protected _db: PouchDB.Database;
+
+  protected _ajv: Ajv.Ajv;
 
   // otherwise we have typechecking problems with DB._collections
   // tslint:disable-next-line
@@ -21,15 +24,14 @@ export class DB {
       throw new Error('Cannot create pouchdb database');
     }
 
+    this._ajv = new Ajv({});
+
     this._init();
   }
 
   public static PLUGIN(plugin: PouchDB.Plugin): void {
     PouchDB.plugin(plugin);
   }
-
-  // tslint:disable-next-line
-  protected _init(): void { }
 
   /**
    * Returns pouchdb instance
@@ -38,6 +40,14 @@ export class DB {
   get $pouchdb(): PouchDB.Database
   {
     return this._db;
+  }
+
+  /**
+   * AJV instance for this db
+   * @returns {ajv.Ajv}
+   */
+  get $ajv(): Ajv.Ajv {
+    return this._ajv;
   }
 
   /**
@@ -71,15 +81,8 @@ export class DB {
     return this._collections.get(name);
   }
 
-  /**
-   * Removes existing collection
-   * @param {boolean} removeFromDB If true removes items from pouchdb (dangerous)
-   * @todo not implemented
-   */
   // public removeCollection(removeFromDB: boolean = false): void {
   //   // console.log('not implemented');
-  // }
-
   /**
    * Makes all collections to fetch initial data and subscribe to changes feed
    * Collections are cleared initially
@@ -104,5 +107,15 @@ export class DB {
       .then(() => Promise.resolve())
       .catch(e => Promise.reject(e));
   }
+
+  // }
+  /**
+   * Removes existing collection
+   * @param {boolean} removeFromDB If true removes items from pouchdb (dangerous)
+   * @todo not implemented
+   */
+
+  // tslint:disable-next-line
+  protected _init(): void { }
 
 }

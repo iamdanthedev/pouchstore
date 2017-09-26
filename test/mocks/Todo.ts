@@ -2,22 +2,23 @@
  * Test todos model
  */
 import { Item, ItemModel } from '../../src';
-import { JsonSchemaAjv } from 'json-schema-interface';
 
 import * as faker from 'faker';
 import * as uuid from 'uuid';
+import { JsonSchema } from '../../src/JsonSchema';
 
 export interface ITodo extends ItemModel {
   type: 'todo';
   id: string;
   title: string;
   desc: string;
+  counter: number;
 }
 
-export const todoSchema: JsonSchemaAjv = {
+export const todoSchema: JsonSchema<ITodo> = {
   $id: 'http://github.com/rasdaniil/pouchstore/test#todo',
   type: 'object',
-  required: ['type', 'id'],
+  required: ['type', 'id', 'title'],
   properties: {
 
     type: {
@@ -28,6 +29,7 @@ export const todoSchema: JsonSchemaAjv = {
     id: {
       type: 'string',
       format: 'uuid',
+      primary: true,
     },
 
     title: {
@@ -37,7 +39,13 @@ export const todoSchema: JsonSchemaAjv = {
 
     desc: {
       type: 'string',
-      default: 'n/a'
+      default: 'n/a',
+    },
+
+    counter: {
+      type: 'number',
+      default: 5,
+      maximum: 50,
     }
 
   },
@@ -65,6 +73,7 @@ export function todoValidator(data: Partial<ITodo>): ITodo {
     id: data.id || uuid(),
     title: data.title || 'New Todo Item',
     desc: data.desc || '',
+    counter: 0
   };
 }
 

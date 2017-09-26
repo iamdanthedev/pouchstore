@@ -1,3 +1,5 @@
+import * as Ajv from 'ajv';
+
 import { Collection } from './Collection';
 import { Item, ItemModel } from './Item';
 import { ItemDoc, OnBeforeRemove } from './types';

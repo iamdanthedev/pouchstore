@@ -1,5 +1,5 @@
 import * as debug from 'debug';
-
+import * as Ajv from 'ajv';
 import { DB } from './DB';
 import { Item, ItemModel } from './Item';
 import { CollectionOptions, ICollectionOptions } from './CollectionOptions';
@@ -131,7 +131,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
   /**
    * Creates a new object
-   * It does not include it into the store
+   * It does not put it into the collection
    *
    * @see Item#save()
    */

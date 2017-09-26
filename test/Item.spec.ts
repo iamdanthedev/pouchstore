@@ -359,6 +359,7 @@ describe('Item', () => {
         title: 'test doc',
         type: 'todo',
         desc: 'test test',
+        counter: 0,
         _attachments: {
           'img1.png': {
             content_type: 'image/png',

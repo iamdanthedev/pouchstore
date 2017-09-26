@@ -9,11 +9,16 @@ import { Collection } from './Collection';
 import { Attachment, ItemDoc, MapOf } from './types';
 import { DB } from './DB';
 
+import * as Ajv from 'ajv';
 import clone = require('lodash.clonedeep');
 import uuid = require('uuid');
 import debug = require('debug');
+import { Thenable } from 'ajv';
 
 const log = debug('pouchstore');
+
+
+export interface str {[key: string]: any}
 
 /**
  * Base models interface
@@ -58,6 +63,37 @@ export class Item<T extends ItemModel> {
     }
 
     this._set(putDoc, true);
+  }
+
+  /**
+   * Checks of the doc object merged with the changes object is valid
+   *
+   * @param {{} | T} currentDoc
+   * @param {Partial<T extends ItemModel> | T} changes
+   * @param {ajv.ValidateFunction} validate
+   * @returns {any | Array<ajv.ErrorObject>}
+   */
+  public static VALIDATE<T extends ItemModel>(
+    currentDoc: T | Partial<T>,
+    changes: T | Partial<T>,
+    validate: Ajv.ValidateFunction
+  ): T | false {
+
+    const newdoc = Object.assign({}, currentDoc, changes);
+
+    const valid = validate(newdoc);
+
+    if (typeof valid !== 'boolean') {
+      throw new Error('validate function returned a promise. use VALIDATE_ASYNC for async validation');
+    }
+
+    if (valid === false) {
+      // tslint:disable:no-non-null-assertion
+      return false;
+    }
+
+    // we expect the validate function to modify the object from type Partial<T> to T
+    return newdoc as T;
   }
 
   /**
@@ -108,15 +144,6 @@ export class Item<T extends ItemModel> {
   }
 
   /**
-   * Updates the item's underlying PouchDB document
-   * Changes are not saved
-   * @use Item#save()
-   */
-  public setDoc<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>, dontDirty: boolean = false): this {
-    return this._set(doc, dontDirty);
-  }
-
-  /**
    * Updates one property of the item's underlying PouchDB document
    * Changes are not saved
    * @use Item#save()
@@ -130,6 +157,15 @@ export class Item<T extends ItemModel> {
     }
 
     return this;
+  }
+
+  /**
+   * Updates the item's underlying PouchDB document
+   * Changes are not saved
+   * @use Item#save()
+   */
+  public setDoc<DOC extends ItemDoc<T>>(doc: DOC | Partial<DOC>, dontDirty: boolean = false): this {
+    return this._set(doc, dontDirty);
   }
 
   /**

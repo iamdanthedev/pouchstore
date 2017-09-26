@@ -3,8 +3,10 @@
     <words>
       <w>autorun</w>
       <w>filetype</w>
+      <w>newdoc</w>
       <w>observable.deep</w>
       <w>pouchstore</w>
+      <w>thenable</w>
       <w>tsconfig</w>
       <w>unsubscribe</w>
       <w>unsubscribed</w>

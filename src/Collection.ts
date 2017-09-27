@@ -2,8 +2,12 @@ import * as debug from 'debug';
 import * as Ajv from 'ajv';
 import { DB } from './DB';
 import { Item, ItemModel } from './Item';
-import { CollectionOptions, ICollectionOptions } from './CollectionOptions';
+import { CollectionOptions } from './CollectionOptions';
 import { ExistingItemDoc, ItemDoc, MapOf, NewItemDoc } from './types';
+import { Schema } from './Schema';
+import uuid = require('uuid');
+import clone = require('lodash.clonedeep');
+import { ValidationError } from './ValidationError';
 
 const log = debug('pouchstore');
 
@@ -25,29 +29,33 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
   protected _db: D;
 
+  protected _schema: Schema<T>;
+
+  protected _lastErrors: Ajv.ErrorObject[];
+
   private _changes: PouchDB.Core.Changes<T>;
 
   private _subscribed: boolean = false;
 
   private _items: Map<string, U> = new Map<string, U>();
 
+  private _log: debug.IDebugger;
+
+
   /**
    * Creates new PouchStore
    * It does not subscribe/attach it to any PouchDB database automatically
    * @see PouchStore#subsribe() Use subsribe to do so
    */
-  constructor(options: ICollectionOptions<T, U>, db: D) {
+  constructor(options: CollectionOptions<T, U>, db: D) {
 
-    if (options instanceof CollectionOptions) {
-      this._options = options;
-    }
-    else {
-      this._options = new CollectionOptions<T, U>(options);
-    }
-
+    this._options = clone(options);
     this._db = db;
+    this._schema = new Schema(db, this._options.schema);
+    this._log = debug(`pouchstore ${this._schema.type}`);
 
-    log(`${this._options.type} constructor() %o`, { options: this._options });
+
+    this._log('constructor() %o', { options: this._options });
   }
 
   /**
@@ -56,6 +64,15 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    */
   get $db(): D {
     return this._db;
+  }
+
+  /**
+   * Last validation errors
+   *
+   * @returns {ajv.ErrorObject[]}
+   */
+  get lastErrors(): Ajv.ErrorObject[] {
+    return this._lastErrors;
   }
 
   /**
@@ -102,7 +119,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    */
   get all(): U[] {
     if (!this._subscribed) {
-      log(`${this._options.type} attempt to access unsubscribed collection items'`);
+      this._log('attempt to access unsubscribed collection items');
     }
 
     return Array.from(this._items).map(([key, value]) => value);
@@ -113,7 +130,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    */
   get allMap(): MapOf<U> {
     const result: MapOf<U> = {};
-    this.all.forEach(item => result[item.$doc[this._options.idField]] = item);
+    this.all.forEach(item => result[item.$doc[this._schema.primaryField]] = item);
 
     return result;
   }
@@ -123,7 +140,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    */
   public getItem(arg: string): U | undefined {
     if (!this._subscribed) {
-      log(`${this._options.type} error: attempt to access unsubscribed collection items`);
+      this._log('error: attempt to access unsubscribed collection items');
     }
 
     return this._items.get(arg);
@@ -131,22 +148,46 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
   /**
    * Creates a new object
+   * Return a new item or undefined if data validation fails
+   * Validation errors are put into Collection.lastErrors
    * It does not put it into the collection
    *
    * @see Item#save()
+   * @see Collection#lastErrors
+   * @param data
+   * @return {U | undefined}
    */
-  public create(data: Partial<T>): U {
-    log(`${this._options.type} create() %o`, { data });
+  public create(data: Partial<T>): U | undefined {
+    this._log('create() %o', { data });
 
-    const item: T = this._options.validator(data);
-    const _id = this._id(item);
+    const defaults = this._schema.defaults;
+    const item: Partial<T> = Object.assign({}, defaults, data);
 
-    const doc: NewItemDoc<T> = Object.assign({}, item, {
-      _id,
-      _rev: undefined,
-    });
+    // set id if missing
+    if (!item[this._schema.primaryField]) {
+      item[this._schema.primaryField] = uuid();
+    }
 
-    return this._instantiate(doc);
+    const _id = this._id(item[this._schema.primaryField] as string);
+
+    try {
+      if (this._schema.validateDoc(item)) {
+        const doc: NewItemDoc<T> = Object.assign({}, item, {
+          _id,
+          _rev: undefined,
+        });
+
+        return this._instantiate(doc);
+      }
+    }
+    catch (e) {
+      if (e instanceof ValidationError) {
+        this._lastErrors = e.errors;
+      }
+      else {
+        throw e;
+      }
+    }
   }
 
   /**
@@ -169,7 +210,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    * @todo: implement put(items: U[])
    */
   public put(item: U): Promise<ExistingItemDoc<T>> {
-    log(`${this._options.type} update() %o`, { item });
+    this._log('update() %o', { item });
 
     if (!this._db) {
       return Promise.reject('DB is not defined');
@@ -177,8 +218,8 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
     const db = this._db.$pouchdb as PouchDB.Database<T>;
     const doc = item.$doc;
-    const _id = this._id(doc);
-    const id = doc[this._options.idField];
+    const id = doc[this._schema.primaryField];
+    const _id = this._id(id);
 
     if (!!!_id || !!!id) {
       return Promise.reject('"_id" and "id" properties must be set on an object before putting it into the DB');
@@ -244,7 +285,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
   public remove(item: U): Promise<{}>;
   public remove(itemId: string): Promise<{}>;
   public remove(arg: string | U): Promise<{}> {
-    log(`${this._options.type} remove() %o`, { item: arg });
+    this._log('remove() %o', { item: arg });
 
     const item = typeof arg === 'string' ? this.getItem(arg) : arg;
 
@@ -256,7 +297,8 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
       return Promise.reject('Cannot remove an unsaved item');
     }
 
-    const _id = this._id(item);
+    const id = item.$doc[this._schema.primaryField];
+    const _id = this._id(id);
     const db = this._db.$pouchdb as PouchDB.Database<{}>;
 
     if (!db) {
@@ -313,7 +355,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
 
   private _fetchAll(): Promise<void> {
-    log(`${this._options.type} _fetchAll()`);
+    this._log('_fetchAll()');
 
     const db = this._db.$pouchdb as PouchDB.Database<T>;
 
@@ -340,7 +382,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
   }
 
   private _subscribeToChanges(): Promise<void> {
-    log(`${this._options.type} _subscribeToChanges()`);
+    this._log('_subscribeToChanges()');
 
     const db = this._db.$pouchdb as PouchDB.Database<T>;
 
@@ -348,6 +390,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
       return Promise.reject('Collection is not attached to PouchDB');
     }
 
+    const type = this._schema.type;
 
     this._changes = db.changes({
       live: true,
@@ -359,7 +402,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
         return doc.type === params.query.type;
       },
       query_params: {
-        type: this._options.type,
+        type,
       },
     })
       .on('change', info => {
@@ -396,19 +439,21 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
 
   private _setItem(item: U): void {
-    const id = item.$doc[this._options.idField];
+    const id = item.$doc[this._schema.primaryField];
+
+    // TODO: validate
 
     if (!!!id) {
-      throw new Error(`${this._options.type} Id field is empty, cannot add to collection`);
+      throw new Error(`${this._schema.type} Id field is empty, cannot add to collection`);
     }
 
     this._items.set(id, item);
   }
 
   private _addDoc(doc: ExistingItemDoc<T>): void {
-    log(`${this._options.type} _setItem() %o`, { doc });
+    this._log('_setItem() %o', { doc });
 
-    const id = doc[this._options.idField];
+    const id = doc[this._schema.primaryField];
 
     if (!!!id) {
       throw new Error('Id field is empty, cannot add to collection');
@@ -422,37 +467,14 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
     else {
       this._setItem(this._instantiate(doc));
     }
-
   }
 
   private _removeItem(doc: T): void {
-    log(`${this._options.type} _removeItem %o`, { doc });
-
-    this._items.delete(doc[this._options.idField]);
+    this._log('_removeItem %o', { doc });
+    this._items.delete(doc[this._schema.primaryField]);
   }
 
-  private _id(item: T | U | string): string {
-
-    // const typeOfU = (arg: T | U): arg is U => arg.hasOwnProperty('$doc');
-    const typeOfU = (arg: T | U): arg is U => '$doc' in arg;
-    const typeOfT = (arg: T | U): arg is T => !typeOfU(arg);
-
-    const itemType = this._options.type;
-
-    let id = null;
-
-    if (typeof item === 'string') {
-      id = item;
-    }
-    else if (typeOfU(item)) {
-      id = item.$doc[this._options.idField];
-    }
-    else if (typeOfT(item)) {
-      id = item[this._options.idField];
-    }
-
-    return `${itemType}::${id}`;
+  private _id(id: string): string {
+    return `${this._schema.type}::${id}`;
   }
-
-
 }

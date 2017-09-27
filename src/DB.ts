@@ -2,7 +2,7 @@ import * as PouchDB from 'pouchdb';
 import * as Ajv from 'ajv';
 import { Collection } from './Collection';
 import { Item, ItemModel } from './Item';
-import { ICollectionOptions } from './CollectionOptions';
+import { CollectionOptions } from './CollectionOptions';
 
 /**
  * Encapsulated PouchDB database and creates collections
@@ -58,7 +58,7 @@ export class DB {
    */
   public createCollection<T extends ItemModel, U extends Item<T>>(
     name: string,
-    options: ICollectionOptions<T, U>
+    options: CollectionOptions<T, U>
   ): Collection<T, U, this> {
 
     if (this._collections.has(name)) {

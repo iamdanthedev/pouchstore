@@ -7,7 +7,7 @@ import { Collection, DB, Item } from '../src';
 import { expect } from 'chai';
 import * as memoryAdapter from 'pouchdb-adapter-memory';
 import * as path from 'path';
-import { genTodos, ITodo, todoValidator } from './mocks/Todo';
+import { genTodos, ITodo, todoSchema, todoValidator } from './mocks/Todo';
 
 DB.PLUGIN(memoryAdapter);
 
@@ -28,10 +28,8 @@ async function prepareDB(subscribe: boolean): Promise<DB> {
 
 function createCollection(db: DB, name: string): Collection<ITodo, Item<ITodo>> {
   return db.createCollection(name, {
-    type: 'todo',
-    idField: 'id',
     factory: (doc, collection) => new Item(doc, collection),
-    validator: todoValidator,
+    schema: todoSchema,
   });
 }
 
@@ -95,10 +93,6 @@ describe('Collection', () => {
         expect(allMap[data.id]).to.exist;
         expect(allMap[data.id].getProp('title')).to.eq(data.title);
       }
-    });
-
-    it('record.save should resolve', () => {
-
     });
 
     it('collection.remove should remove an item', () => {

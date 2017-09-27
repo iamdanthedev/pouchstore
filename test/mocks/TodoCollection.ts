@@ -12,10 +12,8 @@ export class TodoCollection extends Collection<ITodo, Todo> {
   constructor(db: DB) {
     super(
       {
-        type: 'todo',
-        validator: todoValidator,
         factory: (doc, collection) => new Todo(doc, collection),
-        idField: 'id',
+        schema: todoSchema,
       },
       db,
     );

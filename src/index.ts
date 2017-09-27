@@ -1,11 +1,12 @@
-export { DB } from './DB';
-
+/**
+ * Index file
+ */
 export { Collection } from './Collection';
-
+export { CollectionOptions } from './CollectionOptions';
+export { DB } from './DB';
 export { Item, ItemModel } from './Item';
-
-export { CollectionOptions, ICollectionOptions } from './CollectionOptions'
-
+export { JsonSchema, JsonSchemaProperty, JsonSchemaFormats, JsonSchemaSimpleTypes } from './JsonSchema';
+export { Schema } from './Schema';
 export {
   NewItemDoc,
   ExistingItemDoc,
@@ -15,4 +16,6 @@ export {
   Attachments,
   WithAttachments,
   OnBeforeRemove
-} from './types'
+} from './types';
+export { isNewDocument, isNil } from './utils';
+export { ValidationError } from './ValidationError';

@@ -5,8 +5,8 @@
 
 import { Collection, DB, Item } from '../src';
 import { expect } from 'chai';
-import { genTodos, ITodo, todoValidator } from './mocks/Todo';
-import { genUser, IUser, User, userValidator } from './mocks/User';
+import { genTodos, ITodo, todoSchema } from './mocks/Todo';
+import { genUser, IUser, User } from './mocks/User';
 import * as memoryAdapter from 'pouchdb-adapter-memory';
 import { TestDB } from './mocks/TestDB';
 import * as faker from 'faker';
@@ -62,10 +62,8 @@ describe('DB', () => {
 
     it('should create Todo collection', () => {
       todos = db.createCollection('todos', {
-        type: 'todo',
-        idField: 'id',
         factory: (doc, collection) => new Item(doc, collection),
-        validator: todoValidator,
+        schema: todoSchema,
       });
     });
 

@@ -12,7 +12,7 @@ import * as faker from 'faker';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as memoryAdapter from 'pouchdb-adapter-memory';
-import { genTodos, ITodo, Todo, todoValidator } from './mocks/Todo';
+import { genTodos, ITodo, Todo, todoSchema, todoValidator } from './mocks/Todo';
 
 DB.PLUGIN(memoryAdapter);
 
@@ -46,10 +46,8 @@ describe('Item', () => {
 
   function createCollection(name: string): Collection<ITodo, Item<ITodo>> {
     return db.createCollection(name, {
-      type: 'todo',
-      idField: 'id',
       factory: (doc, collection) => new Item(doc, collection),
-      validator: todoValidator,
+      schema: todoSchema,
     });
   }
 
@@ -235,6 +233,7 @@ describe('Item', () => {
 
   describe('multiple attachments (start from a new doc)', () => {
 
+    let todoId: string;
     let todo2: Item<ITodo>;
     let img1;
     let img2;
@@ -242,6 +241,8 @@ describe('Item', () => {
     let img4;
 
     before(async () => {
+      todoId = faker.random.uuid();
+
       img1 = fs.readFileSync(path.resolve(mocksDir, 'img1.png'));
       img2 = fs.readFileSync(path.resolve(mocksDir, 'img2.png'));
       img3 = fs.readFileSync(path.resolve(mocksDir, 'img3.png'));
@@ -255,7 +256,7 @@ describe('Item', () => {
 
     it('should create new doc', () => {
       todo = todos.create({
-        id: 'item',
+        id: todoId,
         title: 'test'
       });
 
@@ -276,7 +277,7 @@ describe('Item', () => {
     timeout(1);
 
     it('should get a replica of the doc', () => {
-      todo2 = todos2.getItem('item');
+      todo2 = todos2.getItem(todoId);
       expect(todo2).to.exist;
     });
 

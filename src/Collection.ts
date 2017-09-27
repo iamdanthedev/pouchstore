@@ -363,13 +363,14 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
       return Promise.reject('Collection is not attached to PouchDB');
     }
 
+    const type = this._schema.type;
 
     const options = {
       include_docs: true,
       attachments: this._options.loadAttachments,
       binary: true,
-      startkey: this._options.type,
-      endkey: `${this._options.type}::\uffff`,
+      startkey: type,
+      endkey: `${type}::\uffff`,
     };
 
     return db.allDocs(options)
@@ -407,7 +408,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
     })
       .on('change', info => {
 
-        log(`${this._options.type} change info`, info);
+        this._log('change info', info);
 
         if (info.doc && !info.deleted) {
           this._addDoc(info.doc as ExistingItemDoc<T>);
@@ -426,13 +427,9 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    * Instantiates a new object depending in modelClass and modelFactory options
    */
   private _instantiate(doc: ItemDoc<T>): U {
-    log('_instantite() %o', { doc });
+    log('_instantiate() %o', { doc });
 
     const { factory } = this._options;
-
-    if (!factory) {
-      throw new Error(`${this._options.type} factory must exist`);
-    }
 
     return factory(doc, this);
   }

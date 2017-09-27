@@ -19,4 +19,8 @@ export class ValidationError extends Error {
     return this._message;
   }
 
+  public get errors(): Ajv.ErrorObject[] {
+    return this._errors;
+  }
+
 }

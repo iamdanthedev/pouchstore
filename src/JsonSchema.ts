@@ -81,7 +81,7 @@ export interface JsonSchemaProperty<P> {
 
 export interface JsonSchema<T extends ItemModel> {
   $ref?: string;
-  $id?: string;
+  $id: string;
   $schema?: string;
   type?: 'object';
   title?: string;

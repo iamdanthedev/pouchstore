@@ -3,7 +3,7 @@
  */
 import * as Ajv from 'ajv';
 import { Collection, DB } from '../../src';
-import { ITodo, Todo, todoSchema, todoValidator } from './Todo';
+import { ITodo, Todo, todoSchema } from './Todo';
 
 const ajv = new Ajv({ useDefaults: true, allErrors: true });
 

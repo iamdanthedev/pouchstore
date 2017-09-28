@@ -12,7 +12,8 @@ import * as faker from 'faker';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as memoryAdapter from 'pouchdb-adapter-memory';
-import { genTodos, ITodo, Todo, todoSchema, todoValidator } from './mocks/Todo';
+import { genTodos, ITodo, todoSchema, todoSchema2 } from './mocks/Todo';
+import { JsonSchema } from '../src/JsonSchema';
 
 DB.PLUGIN(memoryAdapter);
 
@@ -44,10 +45,10 @@ describe('Item', () => {
     return Promise.resolve();
   }
 
-  function createCollection(name: string): Collection<ITodo, Item<ITodo>> {
+  function createCollection(name: string, schema: JsonSchema<ITodo> = todoSchema): Collection<ITodo, Item<ITodo>> {
     return db.createCollection(name, {
+      schema,
       factory: (doc, collection) => new Item(doc, collection),
-      schema: todoSchema,
     });
   }
 
@@ -250,7 +251,7 @@ describe('Item', () => {
 
       await prepareDB(false);
       todos = createCollection('todos');
-      todos2 = createCollection('todos2');
+      todos2 = createCollection('todos2', todoSchema2);
       await db.subscribeCollections();
     });
 

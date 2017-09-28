@@ -34,7 +34,7 @@ export class User extends Item<IUser> {
 }
 
 export const userSchema: JsonSchema<IUser> = {
-  $id: 'http://github.com/rasdaniil/pouchstore/test#user',
+  $id: 'http://github.com/rasdaniil/pouchstore/schema/user.json#',
   type: 'object',
   required: ['type', 'id', 'username'],
   properties: {

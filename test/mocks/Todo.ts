@@ -16,7 +16,7 @@ export interface ITodo extends ItemModel {
 }
 
 export const todoSchema: JsonSchema<ITodo> = {
-  $id: 'http://github.com/rasdaniil/pouchstore/test#todo',
+  $id: 'http://github.com/rasdaniil/pouchstore/schema/todo.json#',
   type: 'object',
   required: ['type', 'id', 'title'],
   properties: {
@@ -51,6 +51,10 @@ export const todoSchema: JsonSchema<ITodo> = {
   },
 };
 
+export const todoSchema2: JsonSchema<ITodo> = Object.assign({}, todoSchema, {
+  $id: 'http://github.com/rasdaniil/pouchstore/schema/todo2.json#',
+});
+
 export class Todo extends Item<ITodo> {
 
   get id(): string {
@@ -66,16 +70,6 @@ export class Todo extends Item<ITodo> {
   }
 }
 
-
-export function todoValidator(data: Partial<ITodo>): ITodo {
-  return {
-    type: 'todo',
-    id: data.id || uuid(),
-    title: data.title || 'New Todo Item',
-    desc: data.desc || '',
-    counter: 0
-  };
-}
 
 export function genTodos(num: number): ITodo[] {
   return [...Array(num).keys()].map(v => ({

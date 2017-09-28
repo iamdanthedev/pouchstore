@@ -13,6 +13,8 @@ export class DB {
 
   protected _ajv: Ajv.Ajv;
 
+  protected _name: string;
+
   // otherwise we have typechecking problems with DB._collections
   // tslint:disable-next-line
   protected _collections: Map<string, Collection<ItemModel, Item<any>>> = new Map();

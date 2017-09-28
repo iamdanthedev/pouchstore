@@ -16,11 +16,13 @@ export class Schema<T extends ItemModel> {
   private _defaults: Partial<T> = {};
   private _primaryField: keyof T;
   private _type: string;
+  private _propValidators: Map<keyof T, Ajv.ValidateFunction> = new Map();
 
 
   constructor(db: DB, schema: JsonSchema<T>) {
     this._db = db;
     this._schema = clone(schema);
+    this._db.$ajv.addSchema(this._schema);
     this._validate = this._db.$ajv.compile(this._schema);
 
     // set and check primary field
@@ -119,22 +121,33 @@ export class Schema<T extends ItemModel> {
       throw new ValidationError(this._validate.errors);
     }
     else {
-      throw new Error('Unknown error occured');
+      throw new Error('Unknown error occurred');
     }
   }
 
   public validateProp<K extends keyof T>(prop: K, value: T[K]): boolean {
-    // const valid = this._validate(value, `.${prop}`);
-    const valid = this._db.$ajv.validate(this._schema.properties[prop], value);
+
+    let validate: Ajv.ValidateFunction;
+
+    if (this._propValidators.has(prop)) {
+      validate = this._propValidators.get(prop) as Ajv.ValidateFunction;
+    }
+    else {
+      const schemaUri = `${this._schema.$id}/properties/${prop}`;
+      validate = this._db.$ajv.getSchema(schemaUri);
+      this._propValidators.set(prop, validate);
+    }
+
+    const valid = validate(value);
 
     if (valid === true) {
       return true;
     }
-    else if (this._db.$ajv.errors) {
-      throw new ValidationError(this._db.$ajv.errors);
+    else if (validate.errors) {
+      throw new ValidationError(validate.errors);
     }
     else {
-      throw new Error('Unknown error occured');
+      throw new Error('Unknown error occurred');
     }
   }
 

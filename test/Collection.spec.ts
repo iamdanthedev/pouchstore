@@ -7,7 +7,7 @@ import { Collection, DB, Item } from '../src';
 import { expect } from 'chai';
 import * as memoryAdapter from 'pouchdb-adapter-memory';
 import * as path from 'path';
-import { genTodos, ITodo, todoSchema, todoValidator } from './mocks/Todo';
+import { genTodos, ITodo, todoSchema } from './mocks/Todo';
 
 DB.PLUGIN(memoryAdapter);
 

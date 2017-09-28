@@ -5,7 +5,7 @@ export { Collection } from './Collection';
 export { CollectionOptions } from './CollectionOptions';
 export { DB } from './DB';
 export { Item, ItemModel } from './Item';
-export { JsonSchema, JsonSchemaProperty, JsonSchemaFormats, JsonSchemaSimpleTypes } from './JsonSchema';
+export { JsonSchema, JsonSchemaFormats, JsonSchemaSimpleTypes } from './JsonSchema';
 export { Schema } from './Schema';
 export {
   NewItemDoc,

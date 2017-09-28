@@ -18,7 +18,6 @@ export class Schema<T extends ItemModel> {
   private _type: string;
   private _propValidators: Map<keyof T, Ajv.ValidateFunction> = new Map();
 
-
   constructor(db: DB, schema: JsonSchema<T>) {
     this._db = db;
     this._schema = clone(schema);
@@ -26,9 +25,12 @@ export class Schema<T extends ItemModel> {
     this._validate = this._db.$ajv.compile(this._schema);
 
     // set and check primary field
-    this._primaryField = Schema.FIND_PRIMARY_KEY(this._schema);
-    if (!this._primaryField) {
+    const primaryField: keyof T | undefined = Schema.FIND_PRIMARY_KEY(this._schema);
+    if (!primaryField) {
       throw new Error('pouchstore: schema has no primary key');
+    }
+    else {
+      this._primaryField = primaryField;
     }
 
     // set and check schema object type
@@ -51,10 +53,13 @@ export class Schema<T extends ItemModel> {
    * @returns {keyof T}
    * @constructor
    */
-  public static FIND_PRIMARY_KEY<T extends ItemModel>(schema: JsonSchema<T>): keyof T {
-    return Object.keys(schema.properties).find((prop: keyof T) => {
-      return schema.properties[prop].primary === true;
-    }) as keyof T;
+  public static FIND_PRIMARY_KEY<T extends ItemModel>(schema: JsonSchema<T>): keyof T | undefined {
+    if (schema.properties) {
+      return Object.keys(schema.properties).find((prop: keyof T) => {
+        // tslint:disable:no-non-null-assertion
+        return schema.properties![prop].primary === true;
+      }) as keyof T;
+    }
   }
 
   /**
@@ -65,7 +70,9 @@ export class Schema<T extends ItemModel> {
    * @constructor
    */
   public static GET_TYPE<T extends ItemModel>(schema: JsonSchema<T>): string | undefined {
-    return schema.properties.type.const || schema.properties.type.default;
+    if (schema.properties) {
+      return schema.properties.type.const || schema.properties.type.default;
+    }
   }
 
   /**
@@ -75,7 +82,7 @@ export class Schema<T extends ItemModel> {
    */
   public static GET_DEFAULTS<T extends ItemModel>(schema: JsonSchema<T>): Partial<T> {
 
-    if (!schema.properties || Object.keys(schema.properties).length === 0) {
+    if (schema.properties === undefined || Object.keys(schema.properties).length === 0) {
       return {};
     }
 
@@ -83,8 +90,8 @@ export class Schema<T extends ItemModel> {
 
     Object.keys(schema.properties).forEach((prop: keyof T) => {
 
-      const constValue = schema.properties[prop].const;
-      const defaultValue = schema.properties[prop].default;
+      const constValue = schema.properties![prop].const; // tslint:disable:no-non-null-assertions
+      const defaultValue = schema.properties![prop].default; // tslint:disable:no-non-null-assertions
 
       if (defaultValue === undefined && constValue === undefined) {
         return;

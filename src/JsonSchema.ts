@@ -46,12 +46,19 @@ export type JsonSchemaSimpleTypes = 'string'
   | 'null'
   | 'integer';
 
-export interface JsonSchemaProperty<P> {
-  primary?: boolean;
-  default?: P;
-  const?: P;
 
+export interface JsonSchema<T extends ItemModel> {
   $ref?: string;
+  $id?: string;
+  $schema?: string;
+  type?: JsonSchemaSimpleTypes | JsonSchemaSimpleTypes[];
+  title?: string;
+  description?: string;
+  required?: (keyof T)[];
+
+  primary?: boolean;
+  default?: T;
+  const?: T;
 
   multipleOf?: number;
   maximum?: number;
@@ -63,33 +70,64 @@ export interface JsonSchemaProperty<P> {
   minLength?: number;
   pattern?: string;
 
-  additionalItems?: boolean | JsonSchemaProperty<P>;
-  items?: JsonSchemaProperty<P> | JsonSchemaProperty<P>[];
+  additionalItems?: boolean | JsonSchema<T>;
+  items?: JsonSchema<T> | JsonSchema<T>[];
   maxItems?: number;
   minItems?: number;
   uniqueItems?: boolean;
 
-  properties?: {[key in keyof P]: JsonSchemaProperty<P[key]>};
+  // tslint:disable:no-any
+  properties?: {[key in keyof T]: JsonSchemaProperty<T[key]> | JsonSchemaProperty<any>};
   maxProperties?: number;
   minProperties?: number;
 
-  enum?: P[];
-  type?: JsonSchemaSimpleTypes | JsonSchemaSimpleTypes[];
+  enum?: T[];
   format?: JsonSchemaFormats;
-  allOf?: JsonSchemaProperty<P>[];
-  anyOf?: JsonSchemaProperty<P>[];
-  oneOf?: JsonSchemaProperty<P>[];
-  not?: JsonSchemaProperty<P>;
+  allOf?: JsonSchema<T>[];
+  anyOf?: JsonSchema<T>[];
+  oneOf?: JsonSchema<T>[];
+  not?: JsonSchema<T>;
 }
 
-export interface JsonSchema<T extends ItemModel> {
+export interface JsonSchemaProperty<T> {
   $ref?: string;
-  $id: string;
+  $id?: string;
   $schema?: string;
-  type?: 'object';
+  type?: JsonSchemaSimpleTypes | JsonSchemaSimpleTypes[];
   title?: string;
   description?: string;
   required?: (keyof T)[];
-  properties: {[key in keyof T]: JsonSchemaProperty<T[key]>};
+
+  primary?: boolean;
+  default?: T;
+  const?: T;
+
+  multipleOf?: number;
+  maximum?: number;
+  exclusiveMaximum?: number;
+  minimum?: number;
+  exclusiveMinimum?: number;
+
+  maxLength?: number;
+  minLength?: number;
+  pattern?: string;
+
+  additionalItems?: boolean | JsonSchemaProperty<T>;
+  items?: JsonSchemaProperty<T> | JsonSchemaProperty<T>[];
+  maxItems?: number;
+  minItems?: number;
+  uniqueItems?: boolean;
+
+  // tslint:disable:no-any
+  properties?: {[key: string]: JsonSchemaProperty<any>};
+  maxProperties?: number;
+  minProperties?: number;
+
+  enum?: T[];
+  format?: JsonSchemaFormats;
+  allOf?: JsonSchemaProperty<T>[];
+  anyOf?: JsonSchemaProperty<T>[];
+  oneOf?: JsonSchemaProperty<T>[];
+  not?: JsonSchemaProperty<T>;
 }
 

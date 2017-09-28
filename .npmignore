@@ -11,5 +11,3 @@ src
 tasks
 test
 tsconfig.json
-.gitignore
-.editorconfig

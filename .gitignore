@@ -1,8 +1,9 @@
 .directory
 .undodir
 .nyc_output
-node_modules
+coverage
 build
+node_modules
 lib
 *.swp
 *.swo

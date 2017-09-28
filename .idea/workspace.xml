@@ -9,74 +9,16 @@
     <bookmark url="file://$PROJECT_DIR$/src/Collection.ts" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="re">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.editorconfig" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.gitignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/code-comments.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/danthedev.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/pouchstore.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/typescript-compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.npmignore" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.vscode/launch.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Item.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Item.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Item.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Store.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Store.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/Store.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/StoreOptions.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/StoreOptions.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/StoreOptions.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/index.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/index.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/types.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/types.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/types.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utils.d.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utils.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/lib/utils.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Collection.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/CollectionOptions.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/DB.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Item.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/JsonSchema.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Schema.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ValidationError.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/index.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/types.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/utils.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/makeLib.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Collection.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/DB.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/Schema.spec.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocha.opts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/TestDB.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/Todo.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/TodoCollection.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/User.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/UserCollection.ts" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/img.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/img.large.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/img1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/img2.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/img3.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/mocks/img4.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/test/tsconfig.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tsconfig.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tslint.json" afterPath="" />
+    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="+ JsonSchemaProperty.$ref">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/000497.log" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/000498.ldb" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/CURRENT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOCK" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOG.old" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/MANIFEST-000495" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JsonSchema.ts" afterPath="$PROJECT_DIR$/src/JsonSchema.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -116,7 +58,7 @@
           <file leaf-file-name="Schema.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Schema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="370">
+                <state relative-caret-position="399">
                   <caret line="132" column="71" lean-forward="false" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
@@ -138,11 +80,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+                <state relative-caret-position="153">
+                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -158,11 +100,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="JsonSchema.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="JsonSchema.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="423">
-                  <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
+                <state relative-caret-position="338">
+                  <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -242,7 +184,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="833">
@@ -276,7 +218,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Collection.spec.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Collection.spec.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="119">
@@ -415,7 +357,6 @@
         <option value="$PROJECT_DIR$/src/Collection.ts" />
         <option value="$PROJECT_DIR$/test/DB.spec.ts" />
         <option value="$PROJECT_DIR$/test/mocks/UserCollection.ts" />
-        <option value="$PROJECT_DIR$/src/JsonSchema.ts" />
         <option value="$PROJECT_DIR$/src/DB.ts" />
         <option value="$PROJECT_DIR$/test/mocks/User.ts" />
         <option value="$PROJECT_DIR$/src/index.ts" />
@@ -426,6 +367,7 @@
         <option value="$PROJECT_DIR$/src/Schema.ts" />
         <option value="$PROJECT_DIR$/.npmignore" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/JsonSchema.ts" />
       </list>
     </option>
   </component>
@@ -516,22 +458,6 @@
               <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="mocks" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -562,7 +488,7 @@
     <property name="JavaScriptPreferStrict" value="false" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="false" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
-    <property name="SearchEverywhereHistoryKey" value="todo.&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/mocks/Todo.ts&#10;spec&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/Schema.spec.ts&#10;item&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/Item.spec.ts&#10;user&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/mocks/User.ts&#10;store&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/Store.ts&#10;pac&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;pack&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;packa&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;gitig&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/.gitignore&#10;type&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/types.ts&#10;package&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json" />
+    <property name="SearchEverywhereHistoryKey" value="jsonsc&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/JsonSchema.ts&#10;todo.&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/mocks/Todo.ts&#10;spec&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/Schema.spec.ts&#10;item&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/Item.spec.ts&#10;user&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/test/mocks/User.ts&#10;store&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/Store.ts&#10;pac&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;pack&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;packa&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json&#10;gitig&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/.gitignore&#10;type&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/src/types.ts&#10;package&#9;FILE&#9;file:///home/danthedev/Projects/pouchstore/package.json" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="node.js.path.for.package.tslint" value="project" />
@@ -1089,9 +1015,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Schema - 2017.09.28 at 06h 40m 00s.xml">
-      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Schema - 2017.09.28 at 06h 40m 29s.xml">
       <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -1113,15 +1036,18 @@
     <history-entry file="Schema - 2017.09.28 at 06h 43m 58s.xml">
       <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="all_tests - 2017.09.28 at 06h 40m 00s.xml">
-      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Schema - 2017.09.28 at 06h 45m 51s.xml">
+      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="all_tests - 2017.09.28 at 06h 40m 29s.xml">
-      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Schema - 2017.09.28 at 06h 45m 55s.xml">
+      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Schema - 2017.09.28 at 07h 58m 28s.xml">
+      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213102000" />
+    <option name="totallyTimeSpent" value="214610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1138,12 +1064,12 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12034079" sideWeight="0.40202022" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.4070707" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="743" y="97" width="1074" height="827" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.55757576" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55757576" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24141414" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.5979798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.5929293" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1263,6 +1189,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,8 +1369,8 @@
         <state relative-caret-position="425">
           <caret line="25" column="17" lean-forward="false" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#204#251#0" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#204#251#0" expanded="false" />
             <marker date="1506541057072" expanded="true" signature="4160:10712" ph="{...}" />
             <marker date="1506541057072" expanded="true" signature="4169:4250" ph="/** Save this item in the store. This will update the PouchDB database ...*/" />
             <marker date="1506541057072" expanded="true" signature="4282:4486" ph="{...}" />
@@ -1629,16 +1556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#28#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="500">
@@ -1666,19 +1583,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
+    <entry file="file://$PROJECT_DIR$/.npmignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="87" column="22" lean-forward="false" selection-start-line="87" selection-start-column="22" selection-end-line="87" selection-end-column="22" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="85">
+          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Schema.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
+        <state relative-caret-position="399">
           <caret line="132" column="71" lean-forward="false" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
@@ -1699,19 +1614,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.npmignore">
+    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-          <folding />
+        <state relative-caret-position="833">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="2" lean-forward="false" selection-start-line="6" selection-start-column="2" selection-end-line="6" selection-end-column="2" />
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

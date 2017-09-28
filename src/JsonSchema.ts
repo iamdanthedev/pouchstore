@@ -51,6 +51,8 @@ export interface JsonSchemaProperty<P> {
   default?: P;
   const?: P;
 
+  $ref?: string;
+
   multipleOf?: number;
   maximum?: number;
   exclusiveMaximum?: number;

@@ -69,6 +69,7 @@ export interface JsonSchemaProperty<P> {
   minItems?: number;
   uniqueItems?: boolean;
 
+  properties?: {[key in keyof P]: JsonSchemaProperty<P[key]>};
   maxProperties?: number;
   minProperties?: number;
 

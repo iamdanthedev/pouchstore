@@ -58,7 +58,7 @@
           <file leaf-file-name="Schema.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Schema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
+                <state relative-caret-position="2244">
                   <caret line="132" column="71" lean-forward="false" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
@@ -84,7 +84,7 @@
             <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="153">
-                  <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+                  <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -103,7 +103,7 @@
           <file leaf-file-name="JsonSchema.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="338">
+                <state relative-caret-position="323">
                   <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
@@ -1011,22 +1011,17 @@
       <option name="project" value="LOCAL" />
       <updated>1506570072259</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="+ JsonSchemaProperty.$ref">
+      <created>1506574756275</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1506574756275</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Schema - 2017.09.28 at 06h 40m 29s.xml">
-      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Schema - 2017.09.28 at 06h 40m 37s.xml">
-      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Schema - 2017.09.28 at 06h 42m 46s.xml">
-      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Schema - 2017.09.28 at 06h 43m 13s.xml">
-      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Schema - 2017.09.28 at 06h 43m 21s.xml">
       <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -1045,9 +1040,21 @@
     <history-entry file="Schema - 2017.09.28 at 07h 58m 28s.xml">
       <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="Schema - 2017.09.28 at 08h 51m 55s.xml">
+      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Schema - 2017.09.28 at 08h 52m 09s.xml">
+      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Schema - 2017.09.28 at 08h 52m 29s.xml">
+      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="Schema - 2017.09.28 at 08h 52m 38s.xml">
+      <configuration name="Schema" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="214610000" />
+    <option name="totallyTimeSpent" value="216346000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1060,6 +1067,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-24" width="1920" height="1080" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
@@ -1069,7 +1077,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.55757576" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24141414" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.5929293" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.5929293" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1131,7 +1139,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="+ version" />
     <MESSAGE value="gitignore update" />
     <MESSAGE value="changed node debug log id to 'pouchstore'" />
     <MESSAGE value="+version" />
@@ -1156,7 +1163,8 @@
     <MESSAGE value="removed old unnecessary settings" />
     <MESSAGE value="refactoring" />
     <MESSAGE value="+ prop validators caching" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ prop validators caching" />
+    <MESSAGE value="+ JsonSchemaProperty.$ref" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ JsonSchemaProperty.$ref" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1591,9 +1599,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Schema.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
+        <state relative-caret-position="2244">
           <caret line="132" column="71" lean-forward="false" selection-start-line="132" selection-start-column="71" selection-end-line="132" selection-end-column="71" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
@@ -1614,27 +1640,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
-          <folding>
-            <element signature="e#28#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
+        <state relative-caret-position="323">
           <caret line="67" column="19" lean-forward="false" selection-start-line="67" selection-start-column="19" selection-end-line="67" selection-end-column="19" />
           <folding>
             <element signature="n#!!doc" expanded="true" />

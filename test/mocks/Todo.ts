@@ -75,7 +75,7 @@ export function genTodos(num: number): ITodo[] {
   return [...Array(num).keys()].map(v => ({
       type: 'todo',
       id: uuid(),
-      title: faker.lorem.sentence(),
+      title: faker.lorem.sentence().slice(0, 99),
       desc: faker.lorem.sentences(40),
     } as ITodo)
   );

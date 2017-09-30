@@ -126,6 +126,7 @@ describe('Collection', () => {
 
   });
 
+
   describe('Collection#bulkCreate()', () => {
 
     before(async () => {
@@ -166,6 +167,25 @@ describe('Collection', () => {
       for (const todo of items) {
         expect(todo.isNew).to.eq(false);
       }
+    });
+
+  });
+
+  describe('Collection#size', () => {
+
+    before(async () => {
+      db = await prepareDB(false);
+      todos = createCollection(db, 'todos');
+      await db.subscribeCollections();
+    });
+
+    it('should create documents', async () => {
+      const result = await todos.bulkCreate(todosData, true);
+      expect(result).to.be.lengthOf(todosData.length);
+    });
+
+    it('size should match', () => {
+      expect(todos.size).to.eq(todosData.length);
     });
 
   });

@@ -113,6 +113,14 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
     return Promise.resolve();
   }
 
+  /**
+   * Returns collection's size
+   *
+   * @returns {number}
+   */
+  get size(): number {
+    return this._items.size;
+  }
 
   /**
    * Returns array of all documents sorted by ids

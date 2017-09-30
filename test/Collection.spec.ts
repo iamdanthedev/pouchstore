@@ -8,6 +8,7 @@ import { expect } from 'chai';
 import * as memoryAdapter from 'pouchdb-adapter-memory';
 import * as path from 'path';
 import { genTodos, ITodo, todoSchema } from './mocks/Todo';
+import { setTimeout } from 'timers';
 
 DB.PLUGIN(memoryAdapter);
 
@@ -63,6 +64,11 @@ describe('Collection', () => {
       try {
         for (const data of todosData) {
           const item = todos.create(data);
+
+          if (!item) {
+            return expect.fail(null, null, 'object is missing');
+          }
+
           await item.save();
         }
       }
@@ -79,6 +85,10 @@ describe('Collection', () => {
     it('data should match', () => {
       for (const data of todosData) {
         const item = todos.getItem(data.id);
+
+        if (!item) {
+          return expect.fail(null, null, 'object is missing');
+        }
 
         expect(item).to.exist;
         expect(item.getProp('title')).to.eq(data.title);
@@ -113,6 +123,50 @@ describe('Collection', () => {
     it('changes');
 
     it('hooks');
+
+  });
+
+  describe('Collection#bulkCreate()', () => {
+
+    before(async () => {
+      db = await prepareDB(false);
+      todos = createCollection(db, 'todos');
+      await db.subscribeCollections();
+    });
+
+    it('should create documents', async () => {
+      const result = await todos.bulkCreate(todosData);
+
+      expect(result).to.be.lengthOf(todosData.length);
+
+      for (const todo of result) {
+        expect(todo.isNew).to.eq(true);
+      }
+    });
+
+  });
+
+  describe('Collection#bulkCreate() with saveItems == true', () => {
+
+    let items: Item<ITodo>[];
+
+    before(async () => {
+      db = await prepareDB(false);
+      todos = createCollection(db, 'todos');
+      await db.subscribeCollections();
+    });
+
+    it('should create documents', async () => {
+      items = await todos.bulkCreate(todosData, true);
+
+      expect(items).to.be.lengthOf(todosData.length);
+    });
+
+    it('every item should have isNew == false', () => {
+      for (const todo of items) {
+        expect(todo.isNew).to.eq(false);
+      }
+    });
 
   });
 

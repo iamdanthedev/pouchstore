@@ -1,12 +1,10 @@
 /**
  * Item class test
  */
-// tslint:disable:no-unused-expression
-// tslint:disable:no-invalid-this
 
 import { Collection, DB, Item } from '../src';
 
-import * as PouchDB from 'pouchdb';
+import PouchDB from 'pouchdb';
 import { expect } from 'chai';
 import * as faker from 'faker';
 import * as fs from 'fs';

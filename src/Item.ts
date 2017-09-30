@@ -6,19 +6,16 @@
  */
 import { isNewDocument, isNil } from './utils';
 import { Collection } from './Collection';
-import { Attachment, ItemDoc, MapOf } from './types';
+import { Attachment, ExistingItemDoc, ItemDoc, MapOf } from './types';
 import { DB } from './DB';
 
 import * as Ajv from 'ajv';
 import clone = require('lodash.clonedeep');
 import uuid = require('uuid');
 import debug = require('debug');
-import { Thenable } from 'ajv';
 
 const log = debug('pouchstore');
 
-
-export interface str {[key: string]: any}
 
 /**
  * Base models interface
@@ -171,15 +168,13 @@ export class Item<T extends ItemModel> {
   /**
    * Save this item in the store. This will update the PouchDB database
    */
-  public save(): Promise<void> {
-    return this.$collection.put(this)
-      .then(doc => {
-        this._doc = doc;
-        this._dirty = false;
+  public async save(): Promise<void> {
 
-        return Promise.resolve();
-      })
-      .catch(err => Promise.reject(err));
+    const doc: ExistingItemDoc<T> = await this.$collection.put(this);
+    this._doc = doc;
+    this._dirty = false;
+
+    return;
   }
 
   /**

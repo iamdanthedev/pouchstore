@@ -10,6 +10,6 @@ function isNil(arg: any): arg is undefined | null {
 }
 
 export
-function isNewDocument<T extends ItemModel>(arg: ItemDoc<T>):arg is NewItemDoc<T> {
+function isNewDocument<T extends ItemModel>(arg: ItemDoc<T>): arg is NewItemDoc<T> {
     return isNil(arg._rev);
 }

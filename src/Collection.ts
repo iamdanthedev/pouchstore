@@ -155,9 +155,10 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    * @see Item#save()
    * @see Collection#lastErrors
    * @param data
-   * @return {U | undefined}
+   * @return {U}
+   * @throws {ValidationError}
    */
-  public create(data: Partial<T>): U | undefined {
+  public create(data: Partial<T>): U {
     this._log('create() %o', { data });
 
     const defaults = this._schema.defaults;
@@ -170,24 +171,40 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
     const _id = this._id(item[this._schema.primaryField] as string);
 
-    try {
-      if (this._schema.validateDoc(item)) {
-        const doc: NewItemDoc<T> = Object.assign({}, item, {
-          _id,
-          _rev: undefined,
-        });
+    if (this._schema.validateDoc(item)) {
+      const doc: NewItemDoc<T> = Object.assign({}, item, {
+        _id,
+        _rev: undefined,
+      });
 
-        return this._instantiate(doc);
+      return this._instantiate(doc);
+    }
+    else {
+      // HACK: this never happens
+      return {} as any as U; // tslint:disable-line
+    }
+  }
+
+  /**
+   * Creates a set of documents in one go
+   *
+   * @param {Partial<T extends ItemModel>[]} data
+   * @param {boolean} saveItems Should items be saved (Item#save()) or just created
+   * @returns {U[]}
+   * @throws {ValidationError}
+   */
+  public async bulkCreate(data: Partial<T>[], saveItems: boolean = false): Promise<U[]> {
+    this._log('bulkCreate() %o', { data, saveItems });
+
+    const items: U[] =  data.map(itemData => this.create(itemData));
+
+    if (saveItems) {
+      for (const item of items) {
+        await item.save();
       }
     }
-    catch (e) {
-      if (e instanceof ValidationError) {
-        this._lastErrors = e.errors;
-      }
-      else {
-        throw e;
-      }
-    }
+
+    return items;
   }
 
   /**

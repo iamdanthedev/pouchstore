@@ -1,8 +1,9 @@
-import * as PouchDB from 'pouchdb';
 import * as Ajv from 'ajv';
 import { Collection } from './Collection';
 import { Item, ItemModel } from './Item';
 import { CollectionOptions } from './CollectionOptions';
+import Pouch from 'pouchdb';
+const PouchDB: typeof Pouch = require('pouchdb'); // tslint:disable-line
 
 /**
  * Encapsulated PouchDB database and creates collections

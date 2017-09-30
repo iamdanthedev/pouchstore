@@ -117,7 +117,7 @@ export class Schema<T extends ItemModel> {
     return this._type;
   }
 
-  public validateDoc(doc: {}): doc is T {
+  public validateDoc(doc: {}): doc is T | never {
 
     const valid = this._validate(doc);
 

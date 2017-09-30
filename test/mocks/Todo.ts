@@ -58,15 +58,15 @@ export const todoSchema2: JsonSchema<ITodo> = Object.assign({}, todoSchema, {
 export class Todo extends Item<ITodo> {
 
   get id(): string {
-    return this._doc.id;
+    return this.getProp('id');
   }
 
   get title(): string {
-    return this._doc.title;
+    return this.getProp('title');
   }
 
   get desc(): string {
-    return this._doc.desc;
+    return this.getProp('desc');
   }
 }
 

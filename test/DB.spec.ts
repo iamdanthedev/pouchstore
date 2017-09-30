@@ -83,6 +83,11 @@ describe('DB', () => {
       const data = genTodos(10);
       data.forEach(todo => {
         const item = todos.create(todo);
+
+        if (!item) {
+          return expect.fail(null, null, 'object is missing');
+        }
+
         promises.push(item.save());
       });
 
@@ -117,10 +122,20 @@ describe('DB', () => {
 
         todos.forEach(t => {
           const todo = testDb.todos.create(t);
+
+          if (!todo) {
+            return expect.fail(null, null, 'object is missing');
+          }
+
           todo.save();
         });
 
         const u = testDb.users.create(user);
+
+        if (!u) {
+          return expect.fail(null, null, 'object is missing');
+        }
+
         u.save();
       }
     });

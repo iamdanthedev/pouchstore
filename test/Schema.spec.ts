@@ -2,7 +2,6 @@
  * Schema class test
  */
 // tslint:disable:no-unused-expression
-// tslint:disable:no-invalid-this
 
 import { expect } from 'chai';
 

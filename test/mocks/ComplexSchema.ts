@@ -36,7 +36,7 @@ const recipeSchema: JsonSchema<Recipe, ExtraFormats> = {
 
     id: {
       type: 'string',
-      format:
+      format: 'id'
     },
 
     title: {

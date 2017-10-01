@@ -37,6 +37,7 @@ export class Schema<T extends ItemModel> {
 
     // get indexes
     this._indexes = Schema.GET_INDEXES(this._schema);
+    this._indexes.push('type'); // type should always be indexes
 
     // set and check schema object type
     const type: string | undefined = Schema.GET_TYPE(this._schema);

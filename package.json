@@ -56,10 +56,12 @@
   },
   "dependencies": {
     "@types/lodash.clonedeep": "^4.5.3",
+    "@types/pouchdb-find": "^6.3.0",
     "ajv": "^5.2.2",
     "debug": "^2.6.8",
     "json-schema-interface": "^0.1.6",
     "lodash.clonedeep": "^4.5.0",
+    "pouchdb-find": "^6.3.4",
     "uuid": "^3.1.0"
   },
   "typings": "lib/index.d.ts"

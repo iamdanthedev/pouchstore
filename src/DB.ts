@@ -3,7 +3,10 @@ import { Collection } from './Collection';
 import { Item, ItemModel } from './Item';
 import { CollectionOptions } from './CollectionOptions';
 import Pouch from 'pouchdb';
+import * as pouchdbFind from 'pouchdb-find';
 const PouchDB: typeof Pouch = require('pouchdb'); // tslint:disable-line
+
+PouchDB.plugin(pouchdbFind);
 
 /**
  * Encapsulated PouchDB database and creates collections
@@ -58,10 +61,10 @@ export class DB {
    * @param {ICollectionOptions<T extends ItemModel, U extends Item<T>>} options
    * @returns {Collection<ItemModel, Item<T>, DB>}
    */
-  public createCollection<T extends ItemModel, U extends Item<T>>(
+  public async createCollection<T extends ItemModel, U extends Item<T>>(
     name: string,
     options: CollectionOptions<T, U>
-  ): Collection<T, U, this> {
+  ): Promise<Collection<T, U, this>> {
 
     if (this._collections.has(name)) {
       throw new Error('Collection with this name already exists');
@@ -69,9 +72,18 @@ export class DB {
 
     const collection = new Collection(options, this);
 
-    this._collections.set(name, collection);
+    await this.registerCollection(name, collection);
 
     return collection;
+  }
+
+  public async registerCollection<T extends ItemModel, U extends Item<T>>(
+    name: string,
+    collection: Collection<T>,
+  ): Promise<void> {
+
+    this._collections.set(name, collection);
+    await this._createIndexes(collection.indexes);
   }
 
   /**
@@ -119,5 +131,16 @@ export class DB {
 
   // tslint:disable-next-line
   protected _init(): void { }
+
+  protected async _createIndexes(indexes: string[]): Promise<void> {
+
+    return this.$pouchdb.createIndex({
+      index: {
+        fields: indexes,
+      }
+    })
+      .then(() => Promise.resolve())
+      .catch(e => Promise.reject(e));
+  }
 
 }

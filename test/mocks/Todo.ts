@@ -13,8 +13,10 @@ export interface ITodo extends ItemModel {
   title: string;
   desc: string;
   counter: number;
+  tags: string[];
   params: {
-    param1: string;
+    color: string;
+    checked: boolean;
   }
 }
 
@@ -52,11 +54,25 @@ export const todoSchema: JsonSchema<ITodo> = {
       maximum: 50,
     },
 
+    tags: {
+      type: 'array',
+      default: [],
+      index: true,
+      items: {
+        type: 'string'
+      }
+    },
+
     params: {
       type: 'object',
       properties: {
-        param1: {
+        color: {
           type: 'string',
+          index: true
+        },
+
+        checked: {
+          type: 'boolean',
           index: true
         }
       }
@@ -82,8 +98,22 @@ export class Todo extends Item<ITodo> {
   get desc(): string {
     return this.getProp('desc');
   }
+
+  get tags(): string[] {
+    return this.getProp('tags');
+  }
 }
 
+export const todoTags = [
+  'hi',
+  'hello',
+  'slim',
+  'shady',
+  'work',
+  'leisure',
+  'ginger',
+  'cooking'
+]
 
 export function genTodos(num: number): ITodo[] {
   return [...Array(num).keys()].map(v => ({
@@ -91,6 +121,12 @@ export function genTodos(num: number): ITodo[] {
       id: uuid(),
       title: faker.lorem.sentence().slice(0, 99),
       desc: faker.lorem.sentences(40),
+      counter: faker.random.number(5),
+      tags: faker.helpers.shuffle(todoTags).slice(0, faker.random.number(todoTags.length - 1)),
+      params: {
+        color: ['red', 'green', 'white', 'blue'][faker.random.number(3)],
+        checked: faker.random.boolean()
+      }
     } as ITodo)
   );
 }

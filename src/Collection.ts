@@ -5,9 +5,9 @@ import { Item, ItemModel } from './Item';
 import { CollectionOptions } from './CollectionOptions';
 import { ExistingItemDoc, ItemDoc, MapOf, NewItemDoc } from './types';
 import { Schema } from './Schema';
-import uuid = require('uuid');
-import clone = require('lodash.clonedeep');
 import { ValidationError } from './ValidationError';
+import clone = require('lodash.clonedeep');
+import uuid = require('uuid');
 
 const log = debug('pouchstore');
 
@@ -64,6 +64,11 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
    */
   get $db(): D {
     return this._db;
+  }
+
+
+  get indexes(): string[] {
+    return this._schema.indexes;
   }
 
   /**
@@ -152,6 +157,37 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
     }
 
     return this._items.get(arg);
+  }
+
+  public async find(req: PouchDB.Find.FindRequest<T>): Promise<ItemDoc<T>[]> {
+    try {
+      const request: PouchDB.Find.FindRequest<T> = {
+        selector: {
+          $and: [
+            { type: this._schema.type }
+          ]
+        },
+        sort: req.sort,
+        limit: req.limit,
+      };
+
+      if (req.selector && request.selector && request.selector.$and) {
+        request.selector.$and.push(req.selector);
+      }
+
+      const response = await this.$db.$pouchdb.find(request) as PouchDB.Find.FindResponse<T> & { warning?: string };
+
+      // if (!!response.warning) {
+      //   return Promise.reject(`Index is missing: ${response.warning}`)
+      // }
+
+      const docs: ItemDoc<T>[] = response.docs as ItemDoc<T>[];
+
+      return docs;
+    }
+    catch (e) {
+      return Promise.reject(e);
+    }
   }
 
   /**

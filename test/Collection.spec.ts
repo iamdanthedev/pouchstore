@@ -7,8 +7,9 @@ import { Collection, DB, Item } from '../src';
 import { expect } from 'chai';
 import * as memoryAdapter from 'pouchdb-adapter-memory';
 import * as path from 'path';
-import { genTodos, ITodo, todoSchema } from './mocks/Todo';
+import { genTodos, ITodo, todoSchema, todoTags } from './mocks/Todo';
 import { setTimeout } from 'timers';
+import { __awaiter } from 'tslib';
 
 DB.PLUGIN(memoryAdapter);
 
@@ -27,8 +28,8 @@ async function prepareDB(subscribe: boolean): Promise<DB> {
   return Promise.resolve(db);
 }
 
-function createCollection(db: DB, name: string): Collection<ITodo, Item<ITodo>> {
-  return db.createCollection(name, {
+async function createCollection(db: DB, name: string): Promise<Collection<ITodo, Item<ITodo>>> {
+  return await db.createCollection(name, {
     factory: (doc, collection) => new Item(doc, collection),
     schema: todoSchema,
   });
@@ -50,14 +51,8 @@ describe('Collection', () => {
 
     before(async () => {
       db = await prepareDB(false);
-      todos = createCollection(db, 'todos');
+      todos = await createCollection(db, 'todos');
       await db.subscribeCollections();
-    });
-
-    it('DB should be empty', () => {
-      return db.$pouchdb.allDocs().then(resp => {
-        expect(resp.total_rows).to.eq(0);
-      });
     });
 
     it('add 500 items to store sequentially', async () => {
@@ -126,12 +121,11 @@ describe('Collection', () => {
 
   });
 
-
   describe('Collection#bulkCreate()', () => {
 
     before(async () => {
       db = await prepareDB(false);
-      todos = createCollection(db, 'todos');
+      todos = await createCollection(db, 'todos');
       await db.subscribeCollections();
     });
 
@@ -153,7 +147,7 @@ describe('Collection', () => {
 
     before(async () => {
       db = await prepareDB(false);
-      todos = createCollection(db, 'todos');
+      todos = await createCollection(db, 'todos');
       await db.subscribeCollections();
     });
 
@@ -175,7 +169,7 @@ describe('Collection', () => {
 
     before(async () => {
       db = await prepareDB(false);
-      todos = createCollection(db, 'todos');
+      todos = await createCollection(db, 'todos');
       await db.subscribeCollections();
     });
 
@@ -187,6 +181,80 @@ describe('Collection', () => {
     it('size should match', () => {
       expect(todos.size).to.eq(todosData.length);
     });
+
+  });
+
+  describe('Collection#find', () => {
+
+    before(async () => {
+      db = await prepareDB(false);
+      todos = await createCollection(db, 'todos');
+      await db.subscribeCollections();
+    });
+
+    it('indexes should exist', async () => {
+      const response = await todos.$db.$pouchdb.getIndexes();
+      expect(response.indexes.length).to.eq(todos.indexes.length);
+    });
+
+    it('add 500 items to store sequentially', async () => {
+      try {
+        for (const data of todosData) {
+          const item = todos.create(data);
+
+          if (!item) {
+            return expect.fail(null, null, 'object is missing');
+          }
+
+          await item.save();
+        }
+      }
+      catch (e) {
+        expect.fail(null, null, e);
+      }
+    });
+
+    it('should find by id', async () => {
+      const docs = await todos.find({
+        selector: {
+          id: { $eq: todosData[0].id }
+        }
+      });
+
+      expect(docs).to.exist;
+      expect(docs.length).to.eq(1);
+    });
+
+    // it('should find by params.color', async () => {
+    //   const docs = await todos.find({
+    //     selector: {
+    //       params: {
+    //         color: 'red'
+    //       }
+    //     }
+    //   });
+    //
+    //   expect(docs).to.exist;
+    //   expect(docs.length).to.eq(1);
+    // });
+
+    // it('should find by tag', async () => {
+    //
+    //   for (const tag of todoTags) {
+    //
+    //     const docs = await todos.find({
+    //       selector: {
+    //         tags: { $in: tag }
+    //       }
+    //     });
+    //
+    //     expect(docs).to.exist;
+    //     expect(docs.length).to.be.gt(0);
+    //
+    //   }
+    //
+    // });
+
 
   });
 

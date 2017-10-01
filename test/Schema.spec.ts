@@ -31,14 +31,14 @@ describe('Schema', () => {
     it('get defaults() should match the schema', () => {
       const defaults = schema.defaults;
 
-      expect(defaults).to.have.all.keys('type', 'desc', 'counter');
+      expect(defaults).to.have.all.keys('type', 'desc', 'tags', 'counter');
       expect(defaults.type).eq(todoSchema.properties.type.const);
       expect(defaults.id).eq(todoSchema.properties.type.default);
       expect(defaults.counter).eq(todoSchema.properties.counter.default);
     });
 
     it('get indexes should match the schema', () => {
-      expect(schema.indexes).to.eql(['id', 'params.param1']);
+      expect(schema.indexes).to.eql(['id', 'tags', 'params.color', 'params.checked']);
     });
 
     it('validating proper document should succeed', () => {

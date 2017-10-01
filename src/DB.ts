@@ -40,8 +40,7 @@ export class DB {
    * Returns pouchdb instance
    * @returns {PouchDB.Database}
    */
-  get $pouchdb(): PouchDB.Database
-  {
+  get $pouchdb(): PouchDB.Database {
     return this._db;
   }
 

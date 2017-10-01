@@ -47,7 +47,7 @@ export type JsonSchemaSimpleTypes = 'string'
   | 'integer';
 
 
-export interface JsonSchema<T extends ItemModel> {
+export interface JsonSchema<T extends ItemModel, F extends JsonSchemaFormats = JsonSchemaFormats> {
   $ref?: string;
   $id?: string;
   $schema?: string;
@@ -70,8 +70,8 @@ export interface JsonSchema<T extends ItemModel> {
   minLength?: number;
   pattern?: string;
 
-  additionalItems?: boolean | JsonSchema<T>;
-  items?: JsonSchema<T> | JsonSchema<T>[];
+  additionalItems?: boolean | JsonSchema<T, F>;
+  items?: JsonSchema<T, F> | JsonSchema<T, F>[];
   maxItems?: number;
   minItems?: number;
   uniqueItems?: boolean;
@@ -83,10 +83,10 @@ export interface JsonSchema<T extends ItemModel> {
 
   enum?: T[];
   format?: JsonSchemaFormats;
-  allOf?: JsonSchema<T>[];
-  anyOf?: JsonSchema<T>[];
-  oneOf?: JsonSchema<T>[];
-  not?: JsonSchema<T>;
+  allOf?: JsonSchema<T, F>[];
+  anyOf?: JsonSchema<T, F>[];
+  oneOf?: JsonSchema<T, F>[];
+  not?: JsonSchema<T, F>;
 }
 
 export interface JsonSchemaProperty<T> {

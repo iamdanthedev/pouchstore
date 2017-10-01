@@ -9,10 +9,12 @@
     <bookmark url="file://$PROJECT_DIR$/src/Collection.ts" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="added second generic param to JsonSchema to accepts custom formats">
+    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DB.ts" afterPath="$PROJECT_DIR$/src/DB.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JsonSchema.ts" afterPath="$PROJECT_DIR$/src/JsonSchema.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-db/CURRENT" afterPath="$PROJECT_DIR$/test-db/CURRENT" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-db/LOG" afterPath="$PROJECT_DIR$/test-db/LOG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-db/LOG.old" afterPath="$PROJECT_DIR$/test-db/LOG.old" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +36,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.4957627">
+    <splitter split-orientation="horizontal" split-proportion="0.69844127">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Item.ts" pinned="false" current-in-tab="false">
@@ -84,8 +86,8 @@
           <file leaf-file-name="JsonSchema.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="459">
-                  <caret line="49" column="47" lean-forward="false" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+                <state relative-caret-position="748">
+                  <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
                   <folding />
                 </state>
               </provider>
@@ -659,8 +661,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
-        <item index="1" class="java.lang.String" itemvalue="npm.pub:patch" />
+        <item index="0" class="java.lang.String" itemvalue="npm.pub:patch" />
+        <item index="1" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
         <item index="2" class="java.lang.String" itemvalue="npm.test" />
         <item index="3" class="java.lang.String" itemvalue="npm.build" />
         <item index="4" class="java.lang.String" itemvalue="Mocha.Item.multiple attachments (start from a new doc)" />
@@ -718,21 +720,7 @@
       <workItem from="1506427035192" duration="2719000" />
       <workItem from="1506455270327" duration="14961000" />
       <workItem from="1506540580209" duration="450000" />
-      <workItem from="1506701178857" duration="19486000" />
-    </task>
-    <task id="LOCAL-00003" summary="added readme">
-      <created>1500966138944</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1500966138944</updated>
-    </task>
-    <task id="LOCAL-00004" summary="npm work">
-      <created>1500996564504</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1500996564504</updated>
+      <workItem from="1506701178857" duration="19890000" />
     </task>
     <task id="LOCAL-00005" summary="in progess">
       <created>1501015261030</created>
@@ -1063,7 +1051,21 @@
       <option name="project" value="LOCAL" />
       <updated>1506758865007</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="added second generic param to JsonSchema to accepts custom formats">
+      <created>1506864982018</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1506864982018</updated>
+    </task>
+    <task id="LOCAL-00053" summary="added second generic param to JsonSchemaProperty to accepts custom formats">
+      <created>1506865057035</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1506865057035</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1099,7 +1101,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250863000" />
+    <option name="totallyTimeSpent" value="251267000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1175,8 +1177,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="+ more tests" />
-    <MESSAGE value="cleaned up" />
     <MESSAGE value="+ fixed working with attachments&#10;+ tests" />
     <MESSAGE value="+ 'publish' npm task" />
     <MESSAGE value="fixed 'publish' npm task" />
@@ -1200,7 +1200,9 @@
     <MESSAGE value="removed mobx dep" />
     <MESSAGE value="+ Collection.bulkCreate()" />
     <MESSAGE value="+ Collection.size" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Collection.size" />
+    <MESSAGE value="added second generic param to JsonSchema to accepts custom formats" />
+    <MESSAGE value="added second generic param to JsonSchemaProperty to accepts custom formats" />
+    <option name="LAST_COMMIT_MESSAGE" value="added second generic param to JsonSchemaProperty to accepts custom formats" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1679,8 +1681,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="49" column="47" lean-forward="false" selection-start-line="49" selection-start-column="47" selection-end-line="49" selection-end-column="47" />
+        <state relative-caret-position="748">
+          <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
           <folding />
         </state>
       </provider>

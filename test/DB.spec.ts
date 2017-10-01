@@ -28,9 +28,9 @@ describe('DB', () => {
   }
 
   async function prepareTestDB(): Promise<void> {
-    testDb = new TestDB('test-db1', { adapter: 'memory' });
+    testDb = new TestDB('./test/test-db1', { adapter: 'memory' });
     await db.$pouchdb.destroy();
-    testDb = new TestDB('test-db1', { adapter: 'memory' });
+    testDb = new TestDB('./test/test-db1', { adapter: 'memory' });
     await testDb.subscribeCollections();
 
     return Promise.resolve();

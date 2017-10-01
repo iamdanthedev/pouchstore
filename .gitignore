@@ -7,3 +7,5 @@ node_modules
 lib
 *.swp
 *.swo
+test/test-db
+test/test-db1

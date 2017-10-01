@@ -9,12 +9,19 @@
     <bookmark url="file://$PROJECT_DIR$/src/Collection.ts" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
+    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="CollectionOptions">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/CURRENT" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOCK" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOG.old" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pouchstore.iml" afterPath="$PROJECT_DIR$/.idea/pouchstore.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/JsonSchema.ts" afterPath="$PROJECT_DIR$/src/JsonSchema.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-db/CURRENT" afterPath="$PROJECT_DIR$/test-db/CURRENT" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-db/LOG" afterPath="$PROJECT_DIR$/test-db/LOG" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test-db/LOG.old" afterPath="$PROJECT_DIR$/test-db/LOG.old" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CollectionOptions.ts" afterPath="$PROJECT_DIR$/src/CollectionOptions.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Collection.spec.ts" afterPath="$PROJECT_DIR$/test/Collection.spec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DB.spec.ts" afterPath="$PROJECT_DIR$/test/DB.spec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="$PROJECT_DIR$/test/Item.spec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Schema.spec.ts" afterPath="$PROJECT_DIR$/test/Schema.spec.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,21 +43,9 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.69844127">
+    <splitter split-orientation="horizontal" split-proportion="0.49340528">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Item.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/Item.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="553">
-                  <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-                  <folding>
-                    <element signature="e#204#251#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/package.json">
               <provider selected="true" editor-type-id="text-editor">
@@ -83,12 +78,51 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="JsonSchema.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="CollectionOptions.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/CollectionOptions.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="425">
+                  <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="JsonSchema.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="748">
-                  <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+                <state relative-caret-position="612">
+                  <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
                   <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Schema.spec.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="187">
+                  <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+                  <folding>
+                    <element signature="e#649#971#0" expanded="false" />
+                    <element signature="e#1033#1334#0" expanded="false" />
+                    <element signature="e#1403#1694#0" expanded="false" />
+                    <element signature="e#1765#2079#0" expanded="false" />
+                    <element signature="e#2148#2424#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Item.spec.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="612">
+                  <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#28#74#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -96,31 +130,36 @@
           <file leaf-file-name="Collection.spec.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+                <state relative-caret-position="306">
+                  <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
                   <folding>
                     <element signature="e#106#152#0" expanded="true" />
-                    <element signature="e#1221#3115#0" expanded="false" />
-                    <element signature="e#1412#1521#0" expanded="false" />
-                    <element signature="e#1583#1896#0" expanded="false" />
-                    <element signature="e#1956#2046#0" expanded="false" />
-                    <element signature="e#2084#2421#0" expanded="false" />
-                    <element signature="e#2486#2685#0" expanded="false" />
-                    <element signature="e#2745#3070#0" expanded="false" />
-                    <element signature="e#3164#3576#0" expanded="false" />
-                    <element signature="e#3647#4152#0" expanded="false" />
-                    <element signature="e#4192#4620#0" expanded="false" />
+                    <element signature="e#1235#3129#0" expanded="false" />
+                    <element signature="e#1426#1535#0" expanded="false" />
+                    <element signature="e#1597#1910#0" expanded="false" />
+                    <element signature="e#1970#2060#0" expanded="false" />
+                    <element signature="e#2098#2435#0" expanded="false" />
+                    <element signature="e#2500#2699#0" expanded="false" />
+                    <element signature="e#2759#3084#0" expanded="false" />
+                    <element signature="e#3178#3590#0" expanded="false" />
+                    <element signature="e#3661#4166#0" expanded="false" />
+                    <element signature="e#4206#4634#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/tsconfig.json">
+          <file leaf-file-name="DB.spec.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding />
+                <state relative-caret-position="510">
+                  <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+                  <folding>
+                    <element signature="e#88#134#0" expanded="true" />
+                    <element signature="e#1883#1930#0" expanded="false" />
+                    <element signature="e#2379#2428#0" expanded="false" />
+                    <marker date="1506869902461" expanded="true" signature="1657:1666" ph="{&quot;schema&quot;: todoSchema...}" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -129,7 +168,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Schema.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Schema.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Schema.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="168">
@@ -163,7 +202,7 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="374">
@@ -179,8 +218,8 @@
           <file leaf-file-name="ComplexSchema.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/mocks/ComplexSchema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="357">
-                  <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+                <state relative-caret-position="646">
+                  <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
                   </folding>
@@ -206,18 +245,6 @@
                 <state relative-caret-position="51">
                   <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
                   <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Item.spec.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="102">
-                  <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
                 </state>
               </provider>
             </entry>
@@ -304,20 +331,14 @@
         <option value="$PROJECT_DIR$/src/Error.ts" />
         <option value="$PROJECT_DIR$/src/types.ts" />
         <option value="$PROJECT_DIR$/src/ValidationError.ts" />
-        <option value="$PROJECT_DIR$/src/CollectionOptions.ts" />
         <option value="/Dummy.txt" />
         <option value="$PROJECT_DIR$/test/mocks/UserCollection.ts" />
         <option value="$PROJECT_DIR$/test/mocks/User.ts" />
         <option value="$PROJECT_DIR$/.npmignore" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/index.ts" />
-        <option value="$PROJECT_DIR$/test/mocks/ComplexSchema.ts" />
         <option value="$PROJECT_DIR$/test/mocks/TodoCollection.ts" />
         <option value="$PROJECT_DIR$/test/mocha.opts" />
-        <option value="$PROJECT_DIR$/test/Schema.spec.ts" />
         <option value="$PROJECT_DIR$/test/tslint.json" />
-        <option value="$PROJECT_DIR$/test/Item.spec.ts" />
-        <option value="$PROJECT_DIR$/test/DB.spec.ts" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/Schema.ts" />
         <option value="$PROJECT_DIR$/src/utils.ts" />
@@ -325,10 +346,16 @@
         <option value="$PROJECT_DIR$/src/Item.ts" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/Collection.ts" />
-        <option value="$PROJECT_DIR$/test/Collection.spec.ts" />
         <option value="$PROJECT_DIR$/test/mocks/Todo.ts" />
         <option value="$PROJECT_DIR$/src/DB.ts" />
         <option value="$PROJECT_DIR$/src/JsonSchema.ts" />
+        <option value="$PROJECT_DIR$/test/mocks/ComplexSchema.ts" />
+        <option value="$PROJECT_DIR$/src/CollectionOptions.ts" />
+        <option value="$PROJECT_DIR$/test/Collection.spec.ts" />
+        <option value="$PROJECT_DIR$/test/DB.spec.ts" />
+        <option value="$PROJECT_DIR$/test/Item.spec.ts" />
+        <option value="$PROJECT_DIR$/test/Schema.spec.ts" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -397,7 +424,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -411,40 +438,28 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pouchstore" type="cbb8eebc:String" user="pouchstore" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="pouchstore" type="cbb8eebc:String" user="pouchstore" />
+              <item name="test" type="cbb8eebc:String" user="test" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -661,9 +676,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.pub:patch" />
-        <item index="1" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
-        <item index="2" class="java.lang.String" itemvalue="npm.test" />
+        <item index="0" class="java.lang.String" itemvalue="npm.test" />
+        <item index="1" class="java.lang.String" itemvalue="npm.pub:patch" />
+        <item index="2" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
         <item index="3" class="java.lang.String" itemvalue="npm.build" />
         <item index="4" class="java.lang.String" itemvalue="Mocha.Item.multiple attachments (start from a new doc)" />
       </list>
@@ -720,28 +735,7 @@
       <workItem from="1506427035192" duration="2719000" />
       <workItem from="1506455270327" duration="14961000" />
       <workItem from="1506540580209" duration="450000" />
-      <workItem from="1506701178857" duration="19890000" />
-    </task>
-    <task id="LOCAL-00005" summary="in progess">
-      <created>1501015261030</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1501015261030</updated>
-    </task>
-    <task id="LOCAL-00006" summary="+ massive refactoring">
-      <created>1501018414636</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1501018414636</updated>
-    </task>
-    <task id="LOCAL-00007" summary="+ improved build/dist procedures">
-      <created>1501247388023</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1501247388023</updated>
+      <workItem from="1506701178857" duration="21700000" />
     </task>
     <task id="LOCAL-00008" summary="reformat">
       <created>1501247881529</created>
@@ -1065,7 +1059,28 @@
       <option name="project" value="LOCAL" />
       <updated>1506865057035</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="bug">
+      <created>1506865384750</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1506865384750</updated>
+    </task>
+    <task id="LOCAL-00055" summary="bug&#10;+ test ExtraFormats">
+      <created>1506865646243</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1506865646243</updated>
+    </task>
+    <task id="LOCAL-00056" summary="prev test bug">
+      <created>1506865665286</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1506865665286</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1101,7 +1116,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251267000" />
+    <option name="totallyTimeSpent" value="253077000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1120,12 +1135,12 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.111821085" sideWeight="0.40202022" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="988" y="85" width="844" height="828" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1544196" sideWeight="0.4070707" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="995" y="128" width="844" height="828" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58181816" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24141414" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.111821085" sideWeight="0.5979798" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1544196" sideWeight="0.5929293" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1177,9 +1192,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="+ fixed working with attachments&#10;+ tests" />
-    <MESSAGE value="+ 'publish' npm task" />
-    <MESSAGE value="fixed 'publish' npm task" />
     <MESSAGE value="updated Store.remove() and package.json scripts" />
     <MESSAGE value="version bump" />
     <MESSAGE value="added DB class and tests" />
@@ -1202,7 +1214,10 @@
     <MESSAGE value="+ Collection.size" />
     <MESSAGE value="added second generic param to JsonSchema to accepts custom formats" />
     <MESSAGE value="added second generic param to JsonSchemaProperty to accepts custom formats" />
-    <option name="LAST_COMMIT_MESSAGE" value="added second generic param to JsonSchemaProperty to accepts custom formats" />
+    <MESSAGE value="bug" />
+    <MESSAGE value="bug&#10;+ test ExtraFormats" />
+    <MESSAGE value="prev test bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="prev test bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1258,34 +1273,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/mocha/bin/_mocha">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/Store.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5049">
-          <caret line="297" column="24" lean-forward="false" selection-start-line="297" selection-start-column="24" selection-end-line="297" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/faker/lib/locales/ru/address/country.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="98">
-          <caret line="60" column="10" lean-forward="false" selection-start-line="60" selection-start-column="10" selection-end-line="60" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-adapter-websql/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="30" column="14" lean-forward="false" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/danthedev-code-style/tslint.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1371,13 +1358,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/CollectionOptions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tslint.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -1397,23 +1377,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/ComplexSchema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="23" column="20" lean-forward="false" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -1453,35 +1416,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding>
-            <element signature="e#642#964#0" expanded="false" />
-            <element signature="e#1026#1327#0" expanded="false" />
-            <element signature="e#1396#1687#0" expanded="false" />
-            <element signature="e#1758#2072#0" expanded="false" />
-            <element signature="e#2141#2417#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/pouchdb/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="7" lean-forward="false" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1506,19 +1445,6 @@
         <state relative-caret-position="119">
           <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="127" column="10" lean-forward="false" selection-start-line="127" selection-start-column="10" selection-end-line="127" selection-end-column="10" />
-          <folding>
-            <element signature="e#88#134#0" expanded="true" />
-            <element signature="e#1869#1916#0" expanded="false" />
-            <element signature="e#2365#2414#0" expanded="false" />
-            <marker date="1506748525264" expanded="true" signature="1643:1652" ph="{&quot;schema&quot;: todoSchema...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1622,37 +1548,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="77" column="46" lean-forward="false" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
-          <folding>
-            <element signature="e#28#72#0" expanded="true" />
-            <element signature="e#361#864#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="24" lean-forward="false" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-          <folding>
-            <element signature="e#106#152#0" expanded="true" />
-            <element signature="e#1221#3115#0" expanded="false" />
-            <element signature="e#1412#1521#0" expanded="false" />
-            <element signature="e#1583#1896#0" expanded="false" />
-            <element signature="e#1956#2046#0" expanded="false" />
-            <element signature="e#2084#2421#0" expanded="false" />
-            <element signature="e#2486#2685#0" expanded="false" />
-            <element signature="e#2745#3070#0" expanded="false" />
-            <element signature="e#3164#3576#0" expanded="false" />
-            <element signature="e#3647#4152#0" expanded="false" />
-            <element signature="e#4192#4620#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/DB.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
@@ -1669,6 +1564,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="77" column="46" lean-forward="false" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+            <element signature="e#361#864#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="94" column="18" lean-forward="false" selection-start-line="94" selection-start-column="18" selection-end-line="94" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Collection.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
@@ -1679,11 +1593,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
+    <entry file="file://$PROJECT_DIR$/src/CollectionOptions.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+        <state relative-caret-position="425">
+          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-adapter-memory/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="15" lean-forward="false" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pouchdb-adapter-leveldb-core/lib/index.es.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/pouchdb-adapter-memory/lib/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="20" column="16" lean-forward="false" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+          <folding>
+            <element signature="e#106#152#0" expanded="true" />
+            <element signature="e#1235#3129#0" expanded="false" />
+            <element signature="e#1426#1535#0" expanded="false" />
+            <element signature="e#1597#1910#0" expanded="false" />
+            <element signature="e#1970#2060#0" expanded="false" />
+            <element signature="e#2098#2435#0" expanded="false" />
+            <element signature="e#2500#2699#0" expanded="false" />
+            <element signature="e#2759#3084#0" expanded="false" />
+            <element signature="e#3178#3590#0" expanded="false" />
+            <element signature="e#3661#4166#0" expanded="false" />
+            <element signature="e#4206#4634#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding>
+            <element signature="e#88#134#0" expanded="true" />
+            <element signature="e#1883#1930#0" expanded="false" />
+            <element signature="e#2379#2428#0" expanded="false" />
+            <marker date="1506869902461" expanded="true" signature="1657:1666" ph="{&quot;schema&quot;: todoSchema...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/ComplexSchema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#28#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/test-db/000003.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="12" lean-forward="false" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+          <folding>
+            <element signature="e#649#971#0" expanded="false" />
+            <element signature="e#1033#1334#0" expanded="false" />
+            <element signature="e#1403#1694#0" expanded="false" />
+            <element signature="e#1765#2079#0" expanded="false" />
+            <element signature="e#2148#2424#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

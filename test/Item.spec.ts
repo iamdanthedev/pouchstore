@@ -32,9 +32,9 @@ describe('Item', () => {
   let mocksDir: string;
 
   async function prepareDB(subscribe: boolean): Promise<void> {
-    db = new DB('test-db', { adapter: 'memory' });
+    db = new DB('./test/test-db', { adapter: 'memory' });
     await db.$pouchdb.destroy();
-    db = new DB('test-db', { adapter: 'memory' });
+    db = new DB('./test/test-db', { adapter: 'memory' });
 
     if (subscribe) {
       await db.subscribeCollections();

@@ -21,7 +21,7 @@ describe('Schema', () => {
 
 
     before(() => {
-      db = new DB('test-db');
+      db = new DB('./test/test-db');
       schema = new Schema(db, todoSchema);
 
       expect(db).to.exist;

@@ -15,10 +15,10 @@ DB.PLUGIN(memoryAdapter);
 
 async function prepareDB(subscribe: boolean): Promise<DB> {
   // create db and destroy
-  let db: DB = new DB('test-db', { adapter: 'memory' });
+  let db: DB = new DB('./test/test-db', { adapter: 'memory' });
   await db.$pouchdb.destroy();
 
-  db = new DB('test-db', { adapter: 'memory' });
+  db = new DB('./test/test-db', { adapter: 'memory' });
 
   if (subscribe) {
     await db.subscribeCollections();

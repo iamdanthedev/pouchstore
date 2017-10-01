@@ -24,7 +24,7 @@ interface CollectionOptions<T extends ItemModel, U extends Item<T>> {
   /**
    * Schema for items in this collection
    */
-  schema: JsonSchema<T>;
+  schema: JsonSchema<T, any>; // tslint:disable-line
 
   /**
    * Hook to be evaluated before a store item it removed

@@ -89,7 +89,7 @@ export interface JsonSchema<T extends ItemModel, F extends JsonSchemaFormats = J
   not?: JsonSchema<T, F>;
 }
 
-export interface JsonSchemaProperty<T> {
+export interface JsonSchemaProperty<T, F extends JsonSchemaFormats = JsonSchemaFormats> {
   $ref?: string;
   $id?: string;
   $schema?: string;
@@ -112,8 +112,8 @@ export interface JsonSchemaProperty<T> {
   minLength?: number;
   pattern?: string;
 
-  additionalItems?: boolean | JsonSchemaProperty<T>;
-  items?: JsonSchemaProperty<T> | JsonSchemaProperty<T>[];
+  additionalItems?: boolean | JsonSchemaProperty<T, F>;
+  items?: JsonSchemaProperty<T, F> | JsonSchemaProperty<T, F>[];
   maxItems?: number;
   minItems?: number;
   uniqueItems?: boolean;
@@ -124,10 +124,10 @@ export interface JsonSchemaProperty<T> {
   minProperties?: number;
 
   enum?: T[];
-  format?: JsonSchemaFormats;
-  allOf?: JsonSchemaProperty<T>[];
-  anyOf?: JsonSchemaProperty<T>[];
-  oneOf?: JsonSchemaProperty<T>[];
-  not?: JsonSchemaProperty<T>;
+  format?: F;
+  allOf?: JsonSchemaProperty<T, F>[];
+  anyOf?: JsonSchemaProperty<T, F>[];
+  oneOf?: JsonSchemaProperty<T, F>[];
+  not?: JsonSchemaProperty<T, F>;
 }
 

@@ -77,7 +77,7 @@ export interface JsonSchema<T extends ItemModel, F = void, ALLFORMATS = JsonSche
   uniqueItems?: boolean;
 
   // tslint:disable:no-any
-  properties?: {[key in keyof T]: JsonSchemaProperty<T[key]> | JsonSchemaProperty<any>};
+  properties?: {[key in keyof T]: JsonSchemaProperty<T[key], F> | JsonSchemaProperty<any, F>};
   maxProperties?: number;
   minProperties?: number;
 

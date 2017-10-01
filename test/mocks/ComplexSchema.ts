@@ -5,6 +5,7 @@ import { JsonSchema } from '../../src/JsonSchema';
 
 interface Recipe {
   type: 'recipe';
+  id: string;
   title: string;
   ingredients: Ingredient[];
   author: Author;
@@ -19,7 +20,9 @@ interface Author {
   age: number;
 }
 
-const recipeSchema: JsonSchema<Recipe> = {
+type ExtraFormats = 'id';
+
+const recipeSchema: JsonSchema<Recipe, ExtraFormats> = {
 
   $id: 'recipe.json',
   required: ['type', 'title', 'ingredients', 'author'],
@@ -29,6 +32,11 @@ const recipeSchema: JsonSchema<Recipe> = {
     type: {
       type: 'string',
       const: 'recipe',
+    },
+
+    id: {
+      type: 'string',
+      format:
     },
 
     title: {

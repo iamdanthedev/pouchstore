@@ -48,6 +48,8 @@ export type JsonSchemaSimpleTypes = 'string'
 
 
 export interface JsonSchema<T extends ItemModel, F = void, ALLFORMATS = JsonSchemaFormats | F > {
+  [key: string]: any;
+
   $ref?: string;
   $id?: string;
   $schema?: string;
@@ -56,7 +58,7 @@ export interface JsonSchema<T extends ItemModel, F = void, ALLFORMATS = JsonSche
   description?: string;
   required?: (keyof T)[];
 
-  primary?: boolean;
+  primary?: boolean; // custom field
   default?: T;
   const?: T;
 
@@ -99,6 +101,7 @@ export interface JsonSchemaProperty<T, F = void, ALLFORMATS = JsonSchemaFormats 
   required?: (keyof T)[];
 
   primary?: boolean;
+  index?: boolean;
   default?: T;
   const?: T;
 

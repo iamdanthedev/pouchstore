@@ -13,6 +13,9 @@ export interface ITodo extends ItemModel {
   title: string;
   desc: string;
   counter: number;
+  params: {
+    param1: string;
+  }
 }
 
 export const todoSchema: JsonSchema<ITodo> = {
@@ -30,6 +33,7 @@ export const todoSchema: JsonSchema<ITodo> = {
       type: 'string',
       format: 'uuid',
       primary: true,
+      index: true,
     },
 
     title: {
@@ -46,6 +50,16 @@ export const todoSchema: JsonSchema<ITodo> = {
       type: 'number',
       default: 5,
       maximum: 50,
+    },
+
+    params: {
+      type: 'object',
+      properties: {
+        param1: {
+          type: 'string',
+          index: true
+        }
+      }
     }
 
   },

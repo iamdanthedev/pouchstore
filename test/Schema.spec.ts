@@ -37,6 +37,10 @@ describe('Schema', () => {
       expect(defaults.counter).eq(todoSchema.properties.counter.default);
     });
 
+    it('get indexes should match the schema', () => {
+      expect(schema.indexes).to.eql(['id', 'params.param1']);
+    });
+
     it('validating proper document should succeed', () => {
       const doc = {
         type: 'todo',

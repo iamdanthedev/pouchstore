@@ -4,6 +4,7 @@ import { ItemModel } from './Item';
 import { JsonSchema } from './JsonSchema';
 import clone = require('lodash.clonedeep');
 import { ValidationError } from './ValidationError';
+import { trimDots } from './utils';
 
 /**
  * Schema defines collection-wide set of methods for validating documents
@@ -15,6 +16,7 @@ export class Schema<T extends ItemModel> {
   private _validate: Ajv.ValidateFunction;
   private _defaults: Partial<T> = {};
   private _primaryField: keyof T;
+  private _indexes: string[] = [];
   private _type: string;
   private _propValidators: Map<keyof T, Ajv.ValidateFunction> = new Map();
 
@@ -32,6 +34,9 @@ export class Schema<T extends ItemModel> {
     else {
       this._primaryField = primaryField;
     }
+
+    // get indexes
+    this._indexes = Schema.GET_INDEXES(this._schema);
 
     // set and check schema object type
     const type: string | undefined = Schema.GET_TYPE(this._schema);
@@ -105,8 +110,47 @@ export class Schema<T extends ItemModel> {
     return result;
   }
 
+  /**
+   * Extracts schema indexes
+   * @copyright https://github.com/pubkey/rxdb/blob/master/src/rx-schema.js
+   * @param {JsonSchema<T extends ItemModel>} schema
+   * @param {string} prePath
+   * @returns {string[]}
+   * @constructor
+   */
+  public static GET_INDEXES<T extends ItemModel>(schema: JsonSchema<T>, prePath: string = ''): string[] {
+
+    let indexes: string[] = []
+
+    Object.keys(schema).forEach(key => {
+      const obj: any = schema[key];
+
+      const path: string = key == 'properties'
+        ? prePath
+        : trimDots(`${prePath}.${key}`);
+
+      if (obj.index === true) {
+        indexes.push(path);
+      }
+
+      if (typeof obj === 'object' && !Array.isArray(obj)) {
+        const add = Schema.GET_INDEXES(obj, path);
+        indexes = indexes.concat(add);
+      }
+    });
+
+    indexes = indexes
+      .filter((elem, pos, arr) => arr.indexOf(elem) == pos); // unique;
+
+    return indexes;
+  }
+
   get defaults(): Partial<T> {
     return clone(this._defaults);
+  }
+
+  get indexes(): string[] {
+    return clone(this._indexes);
   }
 
   get primaryField(): keyof T {

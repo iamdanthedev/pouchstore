@@ -1,6 +1,6 @@
 {
   "name": "pouchstore",
-  "version": "0.1.59",
+  "version": "0.1.60",
   "description": "PouchDB Store",
   "publishConfig": {
     "registry": "http://localhost:4873"

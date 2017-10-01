@@ -14,14 +14,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOCK" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOG" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/test-db/LOG.old" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/pouchstore.iml" afterPath="$PROJECT_DIR$/.idea/pouchstore.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/CollectionOptions.ts" afterPath="$PROJECT_DIR$/src/CollectionOptions.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Collection.spec.ts" afterPath="$PROJECT_DIR$/test/Collection.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DB.spec.ts" afterPath="$PROJECT_DIR$/test/DB.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="$PROJECT_DIR$/test/Item.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Schema.spec.ts" afterPath="$PROJECT_DIR$/test/Schema.spec.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -101,8 +94,8 @@
           <file leaf-file-name="Schema.spec.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="187">
-                  <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+                <state relative-caret-position="238">
+                  <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
                   <folding>
                     <element signature="e#649#971#0" expanded="false" />
                     <element signature="e#1033#1334#0" expanded="false" />
@@ -735,14 +728,7 @@
       <workItem from="1506427035192" duration="2719000" />
       <workItem from="1506455270327" duration="14961000" />
       <workItem from="1506540580209" duration="450000" />
-      <workItem from="1506701178857" duration="21700000" />
-    </task>
-    <task id="LOCAL-00008" summary="reformat">
-      <created>1501247881529</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1501247881530</updated>
+      <workItem from="1506701178857" duration="21775000" />
     </task>
     <task id="LOCAL-00009" summary="index.ts -&gt; src/index.ts">
       <created>1501248278048</created>
@@ -1080,7 +1066,14 @@
       <option name="project" value="LOCAL" />
       <updated>1506865665286</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="set proper path for dbs in tests">
+      <created>1506870021333</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1506870021333</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1116,7 +1109,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253077000" />
+    <option name="totallyTimeSpent" value="253152000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1136,8 +1129,8 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1544196" sideWeight="0.4070707" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="995" y="128" width="844" height="828" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.58181816" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="995" y="128" width="844" height="828" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.58181816" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24141414" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1544196" sideWeight="0.5929293" order="0" side_tool="false" content_ui="combo" />
@@ -1192,7 +1185,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="updated Store.remove() and package.json scripts" />
     <MESSAGE value="version bump" />
     <MESSAGE value="added DB class and tests" />
     <MESSAGE value="refactored" />
@@ -1217,7 +1209,8 @@
     <MESSAGE value="bug" />
     <MESSAGE value="bug&#10;+ test ExtraFormats" />
     <MESSAGE value="prev test bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="prev test bug" />
+    <MESSAGE value="set proper path for dbs in tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="set proper path for dbs in tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1699,8 +1692,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="29" lean-forward="false" selection-start-line="19" selection-start-column="29" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="238">
+          <caret line="22" column="17" lean-forward="false" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
           <folding>
             <element signature="e#649#971#0" expanded="false" />
             <element signature="e#1033#1334#0" expanded="false" />

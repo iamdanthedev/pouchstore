@@ -151,15 +151,28 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
   /**
    * Get item by id or index
    */
-  public getItem(arg: string): U | undefined {
+  public getItem(id: string): U | undefined {
     if (!this._subscribed) {
       this._log('error: attempt to access unsubscribed collection items');
     }
 
-    return this._items.get(arg);
+    if (id.match(`/^${this._schema.primaryField}::/`)) {
+      id = id.split('::')[1];
+    }
+
+    if (!!id) {
+      return this._items.get(id);
+    }
   }
 
-  public async find(req: PouchDB.Find.FindRequest<T>): Promise<ItemDoc<T>[]> {
+  /**
+   * Conducts a search query
+   * @todo should return U[]
+   *
+   * @param {PouchDB.Find.FindRequest<T extends ItemModel>} req
+   * @returns {Promise<ItemDoc<T extends ItemModel>[]>}
+   */
+  public async find(req: PouchDB.Find.FindRequest<T>): Promise<U[]> {
     try {
       const request: PouchDB.Find.FindRequest<T> = {
         selector: {
@@ -180,6 +193,9 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
       // if (!!response.warning) {
       //   return Promise.reject(`Index is missing: ${response.warning}`)
       // }
+      this._id(doc)
+
+      return response.docs.map(doc => this.getItem(doc.))
 
       const docs: ItemDoc<T>[] = response.docs as ItemDoc<T>[];
 

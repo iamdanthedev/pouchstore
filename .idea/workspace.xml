@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoTestManager">
+    <enabled-run-configurations>
+      <run-configuration type="mocha-javascript-test-runner" name="Collection" />
+      <run-configuration type="mocha-javascript-test-runner" name="Collection.Collection#find" />
+    </enabled-run-configurations>
+  </component>
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/Collection.ts" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="+ Collection.find + tests">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Collection.ts" afterPath="$PROJECT_DIR$/src/Collection.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Collection.spec.ts" afterPath="$PROJECT_DIR$/test/Collection.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DB.spec.ts" afterPath="$PROJECT_DIR$/test/DB.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="$PROJECT_DIR$/test/Item.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Schema.spec.ts" afterPath="$PROJECT_DIR$/test/Schema.spec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mocks/Todo.ts" afterPath="$PROJECT_DIR$/test/mocks/Todo.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,7 +36,7 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5464481">
+    <splitter split-orientation="horizontal" split-proportion="0.47662416">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file leaf-file-name="Schema.spec.ts" pinned="false" current-in-tab="false">
@@ -47,26 +50,6 @@
                     <element signature="e#1569#1860#0" expanded="false" />
                     <element signature="e#1931#2245#0" expanded="false" />
                     <element signature="e#2314#2590#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Collection.spec.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1598">
-                  <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
-                  <folding>
-                    <element signature="n#!!block;n#createCollection#0" expanded="false" />
-                    <element signature="e#1521#1834#0" expanded="false" />
-                    <element signature="e#1894#1984#0" expanded="false" />
-                    <element signature="e#2022#2359#0" expanded="false" />
-                    <element signature="e#2424#2623#0" expanded="false" />
-                    <element signature="e#2683#3008#0" expanded="false" />
-                    <element signature="e#3590#4101#0" expanded="false" />
-                    <element signature="e#4141#4575#0" expanded="false" />
-                    <element signature="e#5032#5345#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -89,8 +72,8 @@
           <file leaf-file-name="Collection.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Collection.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="500">
-                  <caret line="190" column="95" lean-forward="false" selection-start-line="190" selection-start-column="95" selection-end-line="190" selection-end-column="95" />
+                <state relative-caret-position="181">
+                  <caret line="190" column="23" lean-forward="false" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
@@ -165,10 +148,31 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="Collection.spec.ts" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="498">
+                  <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#!!block;n#createCollection#0" expanded="false" />
+                    <element signature="e#1334#3086#0" expanded="false" />
+                    <element signature="e#1554#1867#0" expanded="false" />
+                    <element signature="e#1927#2017#0" expanded="false" />
+                    <element signature="e#2055#2392#0" expanded="false" />
+                    <element signature="e#2457#2656#0" expanded="false" />
+                    <element signature="e#2716#3041#0" expanded="false" />
+                    <element signature="e#3134#3552#0" expanded="false" />
+                    <element signature="e#3623#4134#0" expanded="false" />
+                    <element signature="e#4174#4608#0" expanded="false" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
           <file leaf-file-name="Schema.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Schema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
+                <state relative-caret-position="17">
                   <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
@@ -180,11 +184,11 @@
           <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1105">
-                  <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+                <state relative-caret-position="-51">
+                  <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
                   <folding>
                     <element signature="e#28#72#0" expanded="true" />
-                    <element signature="n#Todo#0" expanded="false" />
+                    <element signature="e#437#1311#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -202,11 +206,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DB.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="DB.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/DB.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="907">
-                  <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+                <state relative-caret-position="125">
+                  <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
                   </folding>
@@ -312,15 +316,15 @@
         <option value="$PROJECT_DIR$/src/utils.ts" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/src/JsonSchema.ts" />
-        <option value="$PROJECT_DIR$/test/mocks/Todo.ts" />
         <option value="$PROJECT_DIR$/src/DB.ts" />
         <option value="$PROJECT_DIR$/src/Schema.ts" />
-        <option value="async_hooks.js" />
-        <option value="$PROJECT_DIR$/test/Collection.spec.ts" />
         <option value="$PROJECT_DIR$/test/DB.spec.ts" />
         <option value="$PROJECT_DIR$/test/Item.spec.ts" />
         <option value="$PROJECT_DIR$/test/Schema.spec.ts" />
         <option value="$PROJECT_DIR$/src/Collection.ts" />
+        <option value="async_hooks.js" />
+        <option value="$PROJECT_DIR$/test/mocks/Todo.ts" />
+        <option value="$PROJECT_DIR$/test/Collection.spec.ts" />
       </list>
     </option>
   </component>
@@ -493,7 +497,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.DB.collections functionality">
+  <component name="RunManager" selected="Mocha.Collection.Collection#find">
     <configuration name="Collection (1)" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -522,6 +526,23 @@
       <test-file>$PROJECT_DIR$/test/Collection.spec.ts</test-file>
       <test-names>
         <name value="Collection" />
+      </test-names>
+    </configuration>
+    <configuration name="Collection.Collection#find" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="TS_NODE_PROJECT" value="test/tsconfig.json" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/Collection.spec.ts</test-file>
+      <test-names>
+        <name value="Collection" />
+        <name value="Collection#find" />
       </test-names>
     </configuration>
     <configuration name="DB.collections functionality" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
@@ -601,15 +622,6 @@
       <test-directory>$PROJECT_DIR$/test</test-directory>
       <recursive>false</recursive>
     </configuration>
-    <configuration name="build" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-    </configuration>
     <configuration name="pub:patch" type="js.build_tools.npm" factoryName="npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -645,17 +657,17 @@
       <item index="4" class="java.lang.String" itemvalue="npm.test:watch" />
       <item index="5" class="java.lang.String" itemvalue="npm.test" />
       <item index="6" class="java.lang.String" itemvalue="npm.pub:patch" />
-      <item index="7" class="java.lang.String" itemvalue="npm.build" />
-      <item index="8" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
-      <item index="9" class="java.lang.String" itemvalue="Mocha.DB.collections functionality" />
+      <item index="7" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
+      <item index="8" class="java.lang.String" itemvalue="Mocha.DB.collections functionality" />
+      <item index="9" class="java.lang.String" itemvalue="Mocha.Collection.Collection#find" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.pub:patch" />
-        <item index="1" class="java.lang.String" itemvalue="Mocha.DB.collections functionality" />
-        <item index="2" class="java.lang.String" itemvalue="npm.test" />
-        <item index="3" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
-        <item index="4" class="java.lang.String" itemvalue="npm.build" />
+        <item index="0" class="java.lang.String" itemvalue="Mocha.Collection.Collection#find" />
+        <item index="1" class="java.lang.String" itemvalue="npm.pub:patch" />
+        <item index="2" class="java.lang.String" itemvalue="Mocha.DB.collections functionality" />
+        <item index="3" class="java.lang.String" itemvalue="npm.test" />
+        <item index="4" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -715,14 +727,7 @@
       <workItem from="1507036105596" duration="552000" />
       <workItem from="1507200427460" duration="1303000" />
       <workItem from="1507360762702" duration="1203000" />
-      <workItem from="1507990270903" duration="1130000" />
-    </task>
-    <task id="LOCAL-00016" summary="+ fixed bug with Item.set">
-      <created>1501336267597</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1501336267597</updated>
+      <workItem from="1507990270903" duration="2920000" />
     </task>
     <task id="LOCAL-00017" summary="+ version">
       <created>1501336290070</created>
@@ -1060,43 +1065,50 @@
       <option name="project" value="LOCAL" />
       <updated>1507991324332</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="Collection.find returns U[] instead of docs">
+      <created>1507991434294</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1507991434294</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Collection - 2017.10.01 at 22h 06m 15s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 41m 12s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 22h 07m 11s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 41m 28s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 22h 15m 26s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 41m 55s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 22h 19m 12s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 42m 27s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 22h 22m 40s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 42m 45s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="DB_collections_functionality - 2017.10.01 at 22h 24m 14s.xml">
-      <configuration name="DB.collections functionality" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 43m 01s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="all_tests - 2017.10.01 at 22h 23m 31s.xml">
-      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 43m 12s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="all_tests - 2017.10.01 at 22h 27m 13s.xml">
-      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 43m 19s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="all_tests - 2017.10.01 at 22h 27m 59s.xml">
-      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 43m 52s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
-    <history-entry file="all_tests - 2017.10.01 at 22h 28m 58s.xml">
-      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    <history-entry file="Collection_Collection#find - 2017.10.14 at 18h 45m 15s.xml">
+      <configuration name="Collection.Collection#find" configurationId="mocha-javascript-test-runner" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="270145000" />
+    <option name="totallyTimeSpent" value="271935000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1114,8 +1126,8 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300319" sideWeight="0.43232325" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="590" y="112" width="844" height="828" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12300319" sideWeight="0.43232325" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="WINDOWED" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="195" y="98" width="834" height="823" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3939394" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08181818" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
@@ -1138,26 +1150,27 @@
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.14164004" sideWeight="0.3919192" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="446" y="81" width="1074" height="827" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31414142" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Code comment" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300319" sideWeight="0.43232325" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="true" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="190" y="98" width="844" height="828" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3939394" sideWeight="0.48722044" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Code comment" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24141414" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12034079" sideWeight="0.6080808" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08181818" sideWeight="0.49786553" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300319" sideWeight="0.5676768" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32929292" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4949495" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36262625" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4010101" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1172,7 +1185,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed unnecessary line" />
     <MESSAGE value="cleanup" />
     <MESSAGE value="+ Schema class &#10;+ Schema class tests" />
     <MESSAGE value="+ Schema.FIND_PRIMARY&#10;+ Schema.GET_TYPE&#10;refactored Schema.GET_DEFAULTS" />
@@ -1197,7 +1209,8 @@
     <MESSAGE value="+ Schema get indexes &amp; tests" />
     <MESSAGE value="+ Collection.find + tests" />
     <MESSAGE value="getItem works with both _id and id" />
-    <option name="LAST_COMMIT_MESSAGE" value="getItem works with both _id and id" />
+    <MESSAGE value="Collection.find returns U[] instead of docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Collection.find returns U[] instead of docs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1227,8 +1240,14 @@
           <line>117</line>
           <option name="timeStamp" value="130" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/Collection.ts</url>
+          <line>190</line>
+          <properties />
+          <option name="timeStamp" value="153" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="151" />
+      <option name="time" value="155" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="mocha-javascript-test-runner">
@@ -1306,7 +1325,7 @@
           <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
           <folding>
             <element signature="e#28#72#0" expanded="true" />
-            <element signature="n#Todo#0" expanded="false" />
+            <element signature="e#437#1311#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1331,14 +1350,15 @@
           <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
           <folding>
             <element signature="n#!!block;n#createCollection#0" expanded="false" />
-            <element signature="e#1521#1834#0" expanded="false" />
-            <element signature="e#1894#1984#0" expanded="false" />
-            <element signature="e#2022#2359#0" expanded="false" />
-            <element signature="e#2424#2623#0" expanded="false" />
-            <element signature="e#2683#3008#0" expanded="false" />
-            <element signature="e#3590#4101#0" expanded="false" />
-            <element signature="e#4141#4575#0" expanded="false" />
-            <element signature="e#5032#5345#0" expanded="false" />
+            <element signature="e#1334#3086#0" expanded="false" />
+            <element signature="e#1554#1867#0" expanded="false" />
+            <element signature="e#1927#2017#0" expanded="false" />
+            <element signature="e#2055#2392#0" expanded="false" />
+            <element signature="e#2457#2656#0" expanded="false" />
+            <element signature="e#2716#3041#0" expanded="false" />
+            <element signature="e#3134#3552#0" expanded="false" />
+            <element signature="e#3623#4134#0" expanded="false" />
+            <element signature="e#4174#4608#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1452,7 +1472,7 @@
           <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
           <folding>
             <element signature="e#28#72#0" expanded="true" />
-            <element signature="n#Todo#0" expanded="false" />
+            <element signature="e#437#1311#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1550,14 +1570,15 @@
           <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
           <folding>
             <element signature="n#!!block;n#createCollection#0" expanded="false" />
-            <element signature="e#1521#1834#0" expanded="false" />
-            <element signature="e#1894#1984#0" expanded="false" />
-            <element signature="e#2022#2359#0" expanded="false" />
-            <element signature="e#2424#2623#0" expanded="false" />
-            <element signature="e#2683#3008#0" expanded="false" />
-            <element signature="e#3590#4101#0" expanded="false" />
-            <element signature="e#4141#4575#0" expanded="false" />
-            <element signature="e#5032#5345#0" expanded="false" />
+            <element signature="e#1334#3086#0" expanded="false" />
+            <element signature="e#1554#1867#0" expanded="false" />
+            <element signature="e#1927#2017#0" expanded="false" />
+            <element signature="e#2055#2392#0" expanded="false" />
+            <element signature="e#2457#2656#0" expanded="false" />
+            <element signature="e#2716#3041#0" expanded="false" />
+            <element signature="e#3134#3552#0" expanded="false" />
+            <element signature="e#3623#4134#0" expanded="false" />
+            <element signature="e#4174#4608#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1598,7 +1619,7 @@
           <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
           <folding>
             <element signature="e#28#72#0" expanded="true" />
-            <element signature="n#Todo#0" expanded="false" />
+            <element signature="e#437#1311#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1648,16 +1669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Schema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test/mocks/TodoCollection.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -1668,49 +1679,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1105">
-          <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
-          <folding>
-            <element signature="e#28#72#0" expanded="true" />
-            <element signature="n#Todo#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1598">
-          <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
-          <folding>
-            <element signature="n#!!block;n#createCollection#0" expanded="false" />
-            <element signature="e#1521#1834#0" expanded="false" />
-            <element signature="e#1894#1984#0" expanded="false" />
-            <element signature="e#2022#2359#0" expanded="false" />
-            <element signature="e#2424#2623#0" expanded="false" />
-            <element signature="e#2683#3008#0" expanded="false" />
-            <element signature="e#3590#4101#0" expanded="false" />
-            <element signature="e#4141#4575#0" expanded="false" />
-            <element signature="e#5032#5345#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="907">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1746,12 +1718,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="32" column="27" lean-forward="false" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Collection.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="500">
-          <caret line="190" column="95" lean-forward="false" selection-start-line="190" selection-start-column="95" selection-end-line="190" selection-end-column="95" />
+        <state relative-caret-position="181">
+          <caret line="190" column="23" lean-forward="false" selection-start-line="190" selection-start-column="23" selection-end-line="190" selection-end-column="23" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+            <element signature="e#437#1311#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!block;n#createCollection#0" expanded="false" />
+            <element signature="e#1334#3086#0" expanded="false" />
+            <element signature="e#1554#1867#0" expanded="false" />
+            <element signature="e#1927#2017#0" expanded="false" />
+            <element signature="e#2055#2392#0" expanded="false" />
+            <element signature="e#2457#2656#0" expanded="false" />
+            <element signature="e#2716#3041#0" expanded="false" />
+            <element signature="e#3134#3552#0" expanded="false" />
+            <element signature="e#3623#4134#0" expanded="false" />
+            <element signature="e#4174#4608#0" expanded="false" />
           </folding>
         </state>
       </provider>

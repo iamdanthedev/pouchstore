@@ -17,7 +17,7 @@ export interface ITodo extends ItemModel {
   params: {
     color: string;
     checked: boolean;
-  }
+  },
 }
 
 export const todoSchema: JsonSchema<ITodo> = {
@@ -101,6 +101,10 @@ export class Todo extends Item<ITodo> {
 
   get tags(): string[] {
     return this.getProp('tags');
+  }
+
+  get color(): string {
+    return this.getProp('params').color;
   }
 }
 

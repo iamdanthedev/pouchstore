@@ -156,7 +156,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
       this._log('error: attempt to access unsubscribed collection items');
     }
 
-    if (id.match(`/^${this._schema.primaryField}::/`)) {
+    if (id.match(`^${this._schema.type}::`)) {
       id = id.split('::')[1];
     }
 

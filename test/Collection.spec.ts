@@ -10,6 +10,7 @@ import * as path from 'path';
 import { genTodos, ITodo, todoSchema, todoTags } from './mocks/Todo';
 import { setTimeout } from 'timers';
 import { __awaiter } from 'tslib';
+import { accessSync } from 'fs';
 
 DB.PLUGIN(memoryAdapter);
 
@@ -225,18 +226,39 @@ describe('Collection', () => {
       expect(docs.length).to.eq(1);
     });
 
-    // it('should find by params.color', async () => {
-    //   const docs = await todos.find({
-    //     selector: {
-    //       params: {
-    //         color: 'red'
-    //       }
-    //     }
-    //   });
-    //
-    //   expect(docs).to.exist;
-    //   expect(docs.length).to.eq(1);
-    // });
+    it('should find by params.color', async () => {
+      const docs = await todos.find({
+        selector: {
+          'params.color': 'red'
+        }
+      });
+
+      expect(docs).to.exist;
+
+      for (const doc of docs) {
+        expect(doc.getProp('params').color).eq('red');
+      }
+    });
+
+    it('should find by tags', async () => {
+
+      const docs = await todos.find({
+        selector: {
+          tags: {
+              $all: ['slim', 'shady']
+          }
+        }
+      });
+
+      expect(docs).to.exist;
+      expect(docs.length).to.be.gt(0);
+
+      for (const doc of docs) {
+        expect(doc.getProp('tags').includes('slim'));
+        expect(doc.getProp('tags').includes('shady'));
+      }
+
+    });
 
     // it('should find by tag', async () => {
     //

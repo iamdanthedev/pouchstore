@@ -60,8 +60,8 @@ describe('DB', () => {
 
     let todos: Collection<ITodo, Item<ITodo>>;
 
-    it('should create Todo collection', () => {
-      todos = db.createCollection('todos', {
+    it('should create Todo collection', async () => {
+      todos = await db.createCollection('todos', {
         factory: (doc, collection) => new Item(doc, collection),
         schema: todoSchema,
       });

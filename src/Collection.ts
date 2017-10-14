@@ -190,16 +190,7 @@ export class Collection<T extends ItemModel, U extends Item<T> = Item<T>, D exte
 
       const response = await this.$db.$pouchdb.find(request) as PouchDB.Find.FindResponse<T> & { warning?: string };
 
-      // if (!!response.warning) {
-      //   return Promise.reject(`Index is missing: ${response.warning}`)
-      // }
-      this._id(doc)
-
-      return response.docs.map(doc => this.getItem(doc.))
-
-      const docs: ItemDoc<T>[] = response.docs as ItemDoc<T>[];
-
-      return docs;
+      return response.docs.map(doc => this.getItem(doc._id)).filter(u => u !== undefined) as U[];
     }
     catch (e) {
       return Promise.reject(e);

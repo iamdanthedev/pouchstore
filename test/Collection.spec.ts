@@ -194,7 +194,7 @@ describe('Collection', () => {
 
     it('indexes should exist', async () => {
       const response = await todos.$db.$pouchdb.getIndexes();
-      expect(response.indexes.length).to.eq(todos.indexes.length);
+      expect(response.indexes[1].def.fields.length).to.eq(todos.indexes.length);
     });
 
     it('add 500 items to store sequentially', async () => {

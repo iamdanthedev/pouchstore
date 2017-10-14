@@ -43,7 +43,7 @@ describe('Item', () => {
     return Promise.resolve();
   }
 
-  function createCollection(name: string, schema: JsonSchema<ITodo> = todoSchema): Collection<ITodo, Item<ITodo>> {
+  async function createCollection(name: string, schema: JsonSchema<ITodo> = todoSchema): Promise<Collection<ITodo, Item<ITodo>>> {
     return db.createCollection(name, {
       schema,
       factory: (doc, collection) => new Item(doc, collection),
@@ -58,14 +58,8 @@ describe('Item', () => {
 
     before(async () => {
       await prepareDB(false);
-      todos = createCollection('todos');
+      todos = await createCollection('todos');
       todosData = genTodos(500);
-    });
-
-    it('db should be empty', () => {
-      return db.$pouchdb.allDocs().then(resp => {
-        expect(resp.total_rows).to.eq(0);
-      });
     });
 
     it('db should subscribe collections', () => {
@@ -163,13 +157,7 @@ describe('Item', () => {
       filetype = 'image/jpeg';
 
       await prepareDB(false);
-      todos = createCollection('todos');
-    });
-
-    it('db should be empty', () => {
-      return db.$pouchdb.allDocs().then(resp => {
-        expect(resp.total_rows).to.eq(0);
-      });
+      todos = await createCollection('todos');
     });
 
     it('db should subscribe collections', () => {
@@ -248,8 +236,8 @@ describe('Item', () => {
       img4 = fs.readFileSync(path.resolve(mocksDir, 'img4.png'));
 
       await prepareDB(false);
-      todos = createCollection('todos');
-      todos2 = createCollection('todos2', todoSchema2);
+      todos = await createCollection('todos');
+      todos2 = await createCollection('todos2', todoSchema2);
       await db.subscribeCollections();
     });
 
@@ -348,7 +336,7 @@ describe('Item', () => {
       img4 = fs.readFileSync(path.resolve(mocksDir, 'img4.png'));
 
       await prepareDB(false);
-      todos = createCollection('todos');
+      todos = await createCollection('todos');
       await db.subscribeCollections();
     });
 
@@ -359,6 +347,11 @@ describe('Item', () => {
         title: 'test doc',
         type: 'todo',
         desc: 'test test',
+        tags: [],
+        params: {
+          color: 'red',
+          checked: false
+        },
         counter: 0,
         _attachments: {
           'img1.png': {

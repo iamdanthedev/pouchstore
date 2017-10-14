@@ -4,16 +4,14 @@
     <bookmark url="file://$PROJECT_DIR$/src/Collection.ts" line="0" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="">
+    <list default="true" id="812791f0-e111-482b-8351-2ba7d4b34ded" name="Default" comment="+ Collection.find + tests">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package-lock.json" afterPath="$PROJECT_DIR$/package-lock.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Collection.ts" afterPath="$PROJECT_DIR$/src/Collection.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/DB.ts" afterPath="$PROJECT_DIR$/src/DB.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Schema.ts" afterPath="$PROJECT_DIR$/src/Schema.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Collection.spec.ts" afterPath="$PROJECT_DIR$/test/Collection.spec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/DB.spec.ts" afterPath="$PROJECT_DIR$/test/DB.spec.ts" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Item.spec.ts" afterPath="$PROJECT_DIR$/test/Item.spec.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Schema.spec.ts" afterPath="$PROJECT_DIR$/test/Schema.spec.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/mocks/Todo.ts" afterPath="$PROJECT_DIR$/test/mocks/Todo.ts" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -35,44 +33,31 @@
     <fileColor scope="Non-Project Files (Material Palenight)" color="2f2e43" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.49605343">
+    <splitter split-orientation="horizontal" split-proportion="0.5464481">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="JsonSchema.ts" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="184">
-                  <caret line="55" column="56" lean-forward="false" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
-                  <folding>
-                    <element signature="n#!!doc" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Schema.spec.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="204">
-                  <caret line="33" column="62" lean-forward="false" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
+                <state relative-caret-position="544">
+                  <caret line="40" column="89" lean-forward="false" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
                   <folding>
                     <element signature="n#!!doc" expanded="true" />
-                    <element signature="e#1191#1492#0" expanded="false" />
-                    <element signature="e#1561#1852#0" expanded="false" />
-                    <element signature="e#1923#2237#0" expanded="false" />
-                    <element signature="e#2306#2582#0" expanded="false" />
+                    <element signature="e#1199#1500#0" expanded="false" />
+                    <element signature="e#1569#1860#0" expanded="false" />
+                    <element signature="e#1931#2245#0" expanded="false" />
+                    <element signature="e#2314#2590#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Collection.spec.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Collection.spec.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="317">
-                  <caret line="218" column="18" lean-forward="false" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
+                <state relative-caret-position="1598">
+                  <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
                   <folding>
-                    <element signature="n#!!block;n#prepareDB#0" expanded="false" />
                     <element signature="n#!!block;n#createCollection#0" expanded="false" />
                     <element signature="e#1521#1834#0" expanded="false" />
                     <element signature="e#1894#1984#0" expanded="false" />
@@ -81,27 +66,67 @@
                     <element signature="e#2683#3008#0" expanded="false" />
                     <element signature="e#3590#4101#0" expanded="false" />
                     <element signature="e#4141#4575#0" expanded="false" />
-                    <element signature="e#5018#5331#0" expanded="false" />
+                    <element signature="e#5032#5345#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="async_hooks.js" pinned="false" current-in-tab="false">
-            <entry file="mock://async_hooks.js">
-              <provider selected="true" editor-type-id="vmFileEditor">
-                <state />
+          <file leaf-file-name="DB.spec.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2448">
+                  <caret line="152" column="2" lean-forward="false" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+                  <folding>
+                    <element signature="e#88#134#0" expanded="true" />
+                    <element signature="e#2391#2440#0" expanded="false" />
+                    <marker date="1506885864884" expanded="true" signature="1669:1678" ph="{&quot;schema&quot;: todoSchema...}" />
+                  </folding>
+                </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Collection.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Collection.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Collection.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="307">
-                  <caret line="177" column="23" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
+                <state relative-caret-position="500">
+                  <caret line="190" column="95" lean-forward="false" selection-start-line="190" selection-start-column="95" selection-end-line="190" selection-end-column="95" />
                   <folding>
                     <element signature="e#0#31#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Item.spec.ts" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="2567">
+                  <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+                  <folding>
+                    <element signature="n#!!doc" expanded="true" />
+                    <element signature="e#28#74#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/tsconfig.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="306">
+                  <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tsconfig.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/test/tsconfig.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="0">
+                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -119,8 +144,8 @@
           <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-find/index.d.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="234">
-                  <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+                <state relative-caret-position="304">
+                  <caret line="168" column="8" lean-forward="false" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
                   <folding />
                 </state>
               </provider>
@@ -129,7 +154,7 @@
           <file leaf-file-name="index.d.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-core/index.d.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="313">
+                <state relative-caret-position="3383">
                   <caret line="205" column="13" lean-forward="false" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="13" />
                   <folding />
                 </state>
@@ -143,22 +168,20 @@
           <file leaf-file-name="Schema.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Schema.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="663">
+                <state relative-caret-position="561">
                   <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
-                    <marker date="1506883600861" expanded="true" signature="4332:5144" ph="..." />
-                    <marker date="1506883600861" expanded="true" signature="4912:5144" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Todo.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-629">
-                  <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+                <state relative-caret-position="1105">
+                  <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
                   <folding>
                     <element signature="e#28#72#0" expanded="true" />
                     <element signature="n#Todo#0" expanded="false" />
@@ -170,8 +193,8 @@
           <file leaf-file-name="TodoCollection.ts" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/test/mocks/TodoCollection.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="289">
-                  <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+                <state relative-caret-position="255">
+                  <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
                   <folding>
                     <element signature="e#26#53#0" expanded="true" />
                   </folding>
@@ -179,10 +202,10 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="DB.ts" pinned="false" current-in-tab="false">
+          <file leaf-file-name="DB.ts" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/DB.ts">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="410">
+                <state relative-caret-position="907">
                   <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
                   <folding>
                     <element signature="e#0#27#0" expanded="true" />
@@ -284,20 +307,20 @@
         <option value="$PROJECT_DIR$/src/Item.ts" />
         <option value="$PROJECT_DIR$/test/mocks/ComplexSchema.ts" />
         <option value="$PROJECT_DIR$/src/CollectionOptions.ts" />
-        <option value="$PROJECT_DIR$/test/DB.spec.ts" />
-        <option value="$PROJECT_DIR$/test/Item.spec.ts" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/tsconfig.json" />
         <option value="$PROJECT_DIR$/src/utils.ts" />
         <option value="$PROJECT_DIR$/LICENSE.txt" />
         <option value="$PROJECT_DIR$/src/JsonSchema.ts" />
-        <option value="$PROJECT_DIR$/test/Schema.spec.ts" />
         <option value="$PROJECT_DIR$/test/mocks/Todo.ts" />
         <option value="$PROJECT_DIR$/src/DB.ts" />
         <option value="$PROJECT_DIR$/src/Schema.ts" />
         <option value="async_hooks.js" />
-        <option value="$PROJECT_DIR$/src/Collection.ts" />
         <option value="$PROJECT_DIR$/test/Collection.spec.ts" />
+        <option value="$PROJECT_DIR$/test/DB.spec.ts" />
+        <option value="$PROJECT_DIR$/test/Item.spec.ts" />
+        <option value="$PROJECT_DIR$/test/Schema.spec.ts" />
+        <option value="$PROJECT_DIR$/src/Collection.ts" />
       </list>
     </option>
   </component>
@@ -380,6 +403,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -406,44 +430,30 @@
             <path>
               <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
               <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="pouchdb-find" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="pouchdb-find" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pouchstore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pouchstore" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/build" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="settings.json.schema" />
     <property name="typescript-compiler-editor-notification" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="8.2.1" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -483,7 +493,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Mocha.Collection">
+  <component name="RunManager" selected="Mocha.DB.collections functionality">
     <configuration name="Collection (1)" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -514,6 +524,23 @@
         <name value="Collection" />
       </test-names>
     </configuration>
+    <configuration name="DB.collections functionality" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <envs>
+        <env name="TS_NODE_PROJECT" value="test/tsconfig.json" />
+      </envs>
+      <ui>bdd</ui>
+      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/test/DB.spec.ts</test-file>
+      <test-names>
+        <name value="DB" />
+        <name value="collections functionality" />
+      </test-names>
+    </configuration>
     <configuration name="Item" type="mocha-javascript-test-runner" factoryName="Mocha" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
@@ -528,23 +555,6 @@
       <test-file>$PROJECT_DIR$/test/Item.spec.ts</test-file>
       <test-names>
         <name value="Item" />
-      </test-names>
-    </configuration>
-    <configuration name="Item.multiple attachments (start from a new doc)" type="mocha-javascript-test-runner" factoryName="Mocha" temporary="true" nameIsGenerated="true">
-      <node-interpreter>project</node-interpreter>
-      <node-options />
-      <working-directory>$PROJECT_DIR$</working-directory>
-      <pass-parent-env>true</pass-parent-env>
-      <envs>
-        <env name="TS_NODE_PROJECT" value="test/tsconfig.json" />
-      </envs>
-      <ui>bdd</ui>
-      <extra-mocha-options>--require ts-node/register</extra-mocha-options>
-      <test-kind>SUITE</test-kind>
-      <test-file>$PROJECT_DIR$/test/Item.spec.ts</test-file>
-      <test-names>
-        <name value="Item" />
-        <name value="multiple attachments (start from a new doc)" />
       </test-names>
     </configuration>
     <configuration name="Schema" type="mocha-javascript-test-runner" factoryName="Mocha" nameIsGenerated="true">
@@ -635,17 +645,17 @@
       <item index="4" class="java.lang.String" itemvalue="npm.test:watch" />
       <item index="5" class="java.lang.String" itemvalue="npm.test" />
       <item index="6" class="java.lang.String" itemvalue="npm.pub:patch" />
-      <item index="7" class="java.lang.String" itemvalue="Mocha.Item.multiple attachments (start from a new doc)" />
-      <item index="8" class="java.lang.String" itemvalue="npm.build" />
-      <item index="9" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
+      <item index="7" class="java.lang.String" itemvalue="npm.build" />
+      <item index="8" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
+      <item index="9" class="java.lang.String" itemvalue="Mocha.DB.collections functionality" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="npm.pub:patch" />
-        <item index="1" class="java.lang.String" itemvalue="npm.test" />
-        <item index="2" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
-        <item index="3" class="java.lang.String" itemvalue="npm.build" />
-        <item index="4" class="java.lang.String" itemvalue="Mocha.Item.multiple attachments (start from a new doc)" />
+        <item index="1" class="java.lang.String" itemvalue="Mocha.DB.collections functionality" />
+        <item index="2" class="java.lang.String" itemvalue="npm.test" />
+        <item index="3" class="java.lang.String" itemvalue="Mocha.Collection (1)" />
+        <item index="4" class="java.lang.String" itemvalue="npm.build" />
       </list>
     </recent_temporary>
   </component>
@@ -701,20 +711,11 @@
       <workItem from="1506455270327" duration="14961000" />
       <workItem from="1506540580209" duration="450000" />
       <workItem from="1506701178857" duration="22369000" />
-    </task>
-    <task id="LOCAL-00014" summary="package.json">
-      <created>1501257746000</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1501257746000</updated>
-    </task>
-    <task id="LOCAL-00015" summary="named task lib">
-      <created>1501259293170</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1501259293170</updated>
+      <workItem from="1507035893510" duration="169000" />
+      <workItem from="1507036105596" duration="552000" />
+      <workItem from="1507200427460" duration="1303000" />
+      <workItem from="1507360762702" duration="1203000" />
+      <workItem from="1507990270903" duration="1130000" />
     </task>
     <task id="LOCAL-00016" summary="+ fixed bug with Item.set">
       <created>1501336267597</created>
@@ -1045,28 +1046,24 @@
       <option name="project" value="LOCAL" />
       <updated>1506878177119</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="+ Collection.find + tests">
+      <created>1506885610987</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1506885610987</updated>
+    </task>
+    <task id="LOCAL-00064" summary="getItem works with both _id and id">
+      <created>1507991324331</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1507991324332</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Collection - 2017.10.01 at 21h 49m 38s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 21h 56m 33s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 21h 58m 43s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 22h 01m 36s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 22h 03m 04s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
-    <history-entry file="Collection - 2017.10.01 at 22h 04m 51s.xml">
-      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
-    </history-entry>
     <history-entry file="Collection - 2017.10.01 at 22h 06m 15s.xml">
       <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
     </history-entry>
@@ -1079,9 +1076,27 @@
     <history-entry file="Collection - 2017.10.01 at 22h 19m 12s.xml">
       <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
     </history-entry>
+    <history-entry file="Collection - 2017.10.01 at 22h 22m 40s.xml">
+      <configuration name="Collection" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="DB_collections_functionality - 2017.10.01 at 22h 24m 14s.xml">
+      <configuration name="DB.collections functionality" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="all_tests - 2017.10.01 at 22h 23m 31s.xml">
+      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="all_tests - 2017.10.01 at 22h 27m 13s.xml">
+      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="all_tests - 2017.10.01 at 22h 27m 59s.xml">
+      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
+    <history-entry file="all_tests - 2017.10.01 at 22h 28m 58s.xml">
+      <configuration name="all tests" configurationId="mocha-javascript-test-runner" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="264156000" />
+    <option name="totallyTimeSpent" value="270145000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1093,24 +1108,24 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-24" width="1920" height="1080" extended-state="6" />
+    <frame x="-1" y="-25" width="1922" height="1082" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15305068" sideWeight="0.51277953" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3146998" sideWeight="0.49359658" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300319" sideWeight="0.4070707" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="957" y="146" width="844" height="828" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300319" sideWeight="0.43232325" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" show_stripe_button="true" weight="0.21831736" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" x="590" y="112" width="844" height="828" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3939394" sideWeight="0.48722044" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960597" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.08181818" sideWeight="0.49786553" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300319" sideWeight="0.5929293" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12300319" sideWeight="0.5676768" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="true" internal_type="SLIDING" type="FLOATING" visible="false" show_stripe_button="true" weight="0.13631523" sideWeight="0.75757575" order="1" side_tool="false" content_ui="tabs" x="663" y="147" width="484" height="636" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4010101" sideWeight="0.49479166" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -1157,8 +1172,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="tests refactored" />
-    <MESSAGE value="StoreOptions.ts -&gt; CollectionOptions.ts" />
     <MESSAGE value="removed unnecessary line" />
     <MESSAGE value="cleanup" />
     <MESSAGE value="+ Schema class &#10;+ Schema class tests" />
@@ -1182,53 +1195,40 @@
     <MESSAGE value="git cleanup" />
     <MESSAGE value="+ license" />
     <MESSAGE value="+ Schema get indexes &amp; tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="+ Schema get indexes &amp; tests" />
+    <MESSAGE value="+ Collection.find + tests" />
+    <MESSAGE value="getItem works with both _id and id" />
+    <option name="LAST_COMMIT_MESSAGE" value="getItem works with both _id and id" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/DB.spec.ts</url>
-          <line>145</line>
-          <option name="timeStamp" value="82" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/test/Item.spec.ts</url>
-          <line>390</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/test/Collection.spec.js</url>
           <line>122</line>
-          <properties />
           <option name="timeStamp" value="120" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/test/Collection.spec.js</url>
           <line>123</line>
-          <properties />
           <option name="timeStamp" value="125" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/test/Collection.spec.js</url>
           <line>107</line>
-          <properties />
           <option name="timeStamp" value="128" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/test/Collection.spec.js</url>
           <line>108</line>
-          <properties />
           <option name="timeStamp" value="129" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/build/test/Collection.spec.js</url>
           <line>117</line>
-          <properties />
           <option name="timeStamp" value="130" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="148" />
+      <option name="time" value="151" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="mocha-javascript-test-runner">
@@ -1238,278 +1238,26 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/.editorconfig">
+    <entry file="file://$PROJECT_DIR$/src/types.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/json-schema-interface/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="46" lean-forward="false" selection-start-line="2" selection-start-column="46" selection-end-line="2" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/lodash.clonedeep/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="2" lean-forward="false" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/json-schema-interface/JsonSchema6.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1380">
-          <caret line="44" column="17" lean-forward="false" selection-start-line="44" selection-start-column="17" selection-end-line="44" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/json-schema-interface/JsonSchemaAjv.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="40" lean-forward="false" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ajv/lib/ajv.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="104" column="12" lean-forward="false" selection-start-line="104" selection-start-column="12" selection-end-line="104" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ValidationError.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="39" lean-forward="false" selection-start-line="21" selection-start-column="39" selection-end-line="21" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tslint.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="221">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.npmignore">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-find/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="7" column="21" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="21" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/UserCollection.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" column="38" lean-forward="false" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        <state relative-caret-position="2091">
+          <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocha.opts">
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-core/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pouchdb/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="25" column="29" lean-forward="false" selection-start-line="25" selection-start-column="29" selection-end-line="25" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tslint.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="54" lean-forward="false" selection-start-line="1" selection-start-column="54" selection-end-line="1" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/TestDB.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="27" lean-forward="false" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/chai/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="215" column="8" lean-forward="false" selection-start-line="215" selection-start-column="8" selection-end-line="215" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/src/Collection.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/test/Collection.spec.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="116" column="12" lean-forward="false" selection-start-line="116" selection-start-column="12" selection-end-line="116" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/node/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="5629" column="20" lean-forward="false" selection-start-line="5629" selection-start-column="20" selection-end-line="5629" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Item.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="553">
-          <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding>
-            <element signature="e#204#251#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/src/Item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="124" column="12" lean-forward="false" selection-start-line="124" selection-start-column="12" selection-end-line="124" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build/src/Collection.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="160" column="8" lean-forward="false" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/CollectionOptions.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="30" column="4" lean-forward="false" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-adapter-memory/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="15" lean-forward="false" selection-start-line="26" selection-start-column="15" selection-end-line="26" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pouchdb-adapter-leveldb-core/lib/index.es.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pouchdb-adapter-memory/lib/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="32" column="31" lean-forward="false" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="e#88#134#0" expanded="true" />
-            <element signature="e#1883#1930#0" expanded="false" />
-            <element signature="e#2379#2428#0" expanded="false" />
-            <marker date="1506869902461" expanded="true" signature="1657:1666" ph="{&quot;schema&quot;: todoSchema...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/mocks/ComplexSchema.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="38" column="16" lean-forward="false" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="23" lean-forward="false" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#28#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/test-db/000003.log" />
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8141">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tsconfig.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="3383">
+          <caret line="205" column="13" lean-forward="false" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1522,31 +1270,117 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils.ts">
+    <entry file="file://$PROJECT_DIR$/src/Schema.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        <state relative-caret-position="561">
+          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LICENSE.txt">
+    <entry file="file://$PROJECT_DIR$/test/mocks/TodoCollection.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="31" lean-forward="false" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
-          <folding />
+        <state relative-caret-position="255">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#53#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JsonSchema.ts">
+    <entry file="file://$PROJECT_DIR$/src/DB.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="55" column="56" lean-forward="false" selection-start-line="55" selection-start-column="56" selection-end-line="55" selection-end-column="56" />
+        <state relative-caret-position="1241">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+            <element signature="n#Todo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="40" column="89" lean-forward="false" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1199#1500#0" expanded="false" />
+            <element signature="e#1569#1860#0" expanded="false" />
+            <element signature="e#1931#2245#0" expanded="false" />
+            <element signature="e#2314#2590#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!block;n#createCollection#0" expanded="false" />
+            <element signature="e#1521#1834#0" expanded="false" />
+            <element signature="e#1894#1984#0" expanded="false" />
+            <element signature="e#2022#2359#0" expanded="false" />
+            <element signature="e#2424#2623#0" expanded="false" />
+            <element signature="e#2683#3008#0" expanded="false" />
+            <element signature="e#3590#4101#0" expanded="false" />
+            <element signature="e#4141#4575#0" expanded="false" />
+            <element signature="e#5032#5345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="152" column="2" lean-forward="false" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+          <folding>
+            <element signature="e#88#134#0" expanded="true" />
+            <element signature="e#2391#2440#0" expanded="false" />
+            <marker date="1506885864884" expanded="true" signature="1669:1678" ph="{&quot;schema&quot;: todoSchema...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Collection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3009">
+          <caret line="177" column="23" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2567">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#28#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1558,32 +1392,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-find/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-core/index.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
+        <state relative-caret-position="3383">
           <caret line="205" column="13" lean-forward="false" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="33" column="62" lean-forward="false" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#1191#1492#0" expanded="false" />
-            <element signature="e#1561#1852#0" expanded="false" />
-            <element signature="e#1923#2237#0" expanded="false" />
-            <element signature="e#2306#2582#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/DB.ts">
+    <entry file="file://$PROJECT_DIR$/src/Schema.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+        <state relative-caret-position="561">
+          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
           </folding>
@@ -1592,38 +1428,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test/mocks/TodoCollection.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
             <element signature="e#26#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Schema.ts">
+    <entry file="file://$PROJECT_DIR$/src/DB.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+        <state relative-caret-position="1241">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
           <folding>
             <element signature="e#0#27#0" expanded="true" />
-            <marker date="1506883600861" expanded="true" signature="4332:5144" ph="..." />
-            <marker date="1506883600861" expanded="true" signature="4912:5144" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-find/index.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-629">
-          <caret line="28" column="10" lean-forward="false" selection-start-line="28" selection-start-column="10" selection-end-line="28" selection-end-column="10" />
+        <state relative-caret-position="1105">
+          <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
           <folding>
             <element signature="e#28#72#0" expanded="true" />
             <element signature="n#Todo#0" expanded="false" />
@@ -1631,9 +1457,35 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="40" column="89" lean-forward="false" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1199#1500#0" expanded="false" />
+            <element signature="e#1569#1860#0" expanded="false" />
+            <element signature="e#1931#2245#0" expanded="false" />
+            <element signature="e#2314#2590#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="152" column="2" lean-forward="false" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+          <folding>
+            <element signature="e#88#134#0" expanded="true" />
+            <element signature="e#2391#2440#0" expanded="false" />
+            <marker date="1506885864884" expanded="true" signature="1669:1678" ph="{&quot;schema&quot;: todoSchema...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Collection.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
+        <state relative-caret-position="2856">
           <caret line="177" column="23" lean-forward="false" selection-start-line="177" selection-start-column="23" selection-end-line="177" selection-end-column="23" />
           <folding>
             <element signature="e#0#31#0" expanded="true" />
@@ -1641,22 +1493,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/pouchdb-find/lib/index.es.js">
+    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="1038" column="54" lean-forward="false" selection-start-line="1038" selection-start-column="54" selection-end-line="1038" selection-end-column="54" />
+        <state relative-caret-position="2567">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
           <folding>
-            <element signature="e#0#75#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#28#74#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-find/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="127" column="18" lean-forward="false" selection-start-line="127" selection-start-column="18" selection-end-line="127" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-core/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="205" column="13" lean-forward="false" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="317">
-          <caret line="218" column="18" lean-forward="false" selection-start-line="218" selection-start-column="18" selection-end-line="218" selection-end-column="18" />
+        <state relative-caret-position="1598">
+          <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
           <folding>
-            <element signature="n#!!block;n#prepareDB#0" expanded="false" />
             <element signature="n#!!block;n#createCollection#0" expanded="false" />
             <element signature="e#1521#1834#0" expanded="false" />
             <element signature="e#1894#1984#0" expanded="false" />
@@ -1665,7 +1557,201 @@
             <element signature="e#2683#3008#0" expanded="false" />
             <element signature="e#3590#4101#0" expanded="false" />
             <element signature="e#4141#4575#0" expanded="false" />
-            <element signature="e#5018#5331#0" expanded="false" />
+            <element signature="e#5032#5345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/TodoCollection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1241">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+            <element signature="n#Todo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Schema.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="40" column="89" lean-forward="false" selection-start-line="40" selection-start-column="89" selection-end-line="40" selection-end-column="89" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#1199#1500#0" expanded="false" />
+            <element signature="e#1569#1860#0" expanded="false" />
+            <element signature="e#1931#2245#0" expanded="false" />
+            <element signature="e#2314#2590#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/DB.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2448">
+          <caret line="152" column="2" lean-forward="false" selection-start-line="152" selection-start-column="2" selection-end-line="152" selection-end-column="2" />
+          <folding>
+            <element signature="e#88#134#0" expanded="true" />
+            <element signature="e#2391#2440#0" expanded="false" />
+            <marker date="1506885864884" expanded="true" signature="1669:1678" ph="{&quot;schema&quot;: todoSchema...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Item.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2567">
+          <caret line="162" column="0" lean-forward="false" selection-start-line="162" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#28#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-core/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3383">
+          <caret line="205" column="13" lean-forward="false" selection-start-line="205" selection-start-column="13" selection-end-line="205" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Schema.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="39" column="63" lean-forward="false" selection-start-line="39" selection-start-column="63" selection-end-line="39" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/TodoCollection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding>
+            <element signature="e#26#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/mocks/Todo.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1105">
+          <caret line="71" column="9" lean-forward="false" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
+          <folding>
+            <element signature="e#28#72#0" expanded="true" />
+            <element signature="n#Todo#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Collection.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1598">
+          <caret line="196" column="49" lean-forward="false" selection-start-line="196" selection-start-column="49" selection-end-line="196" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!block;n#createCollection#0" expanded="false" />
+            <element signature="e#1521#1834#0" expanded="false" />
+            <element signature="e#1894#1984#0" expanded="false" />
+            <element signature="e#2022#2359#0" expanded="false" />
+            <element signature="e#2424#2623#0" expanded="false" />
+            <element signature="e#2683#3008#0" expanded="false" />
+            <element signature="e#3590#4101#0" expanded="false" />
+            <element signature="e#4141#4575#0" expanded="false" />
+            <element signature="e#5032#5345#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DB.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="907">
+          <caret line="78" column="0" lean-forward="false" selection-start-line="78" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="8" lean-forward="false" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/types.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="14" column="18" lean-forward="false" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tsconfig.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/pouchdb-find/index.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="168" column="8" lean-forward="false" selection-start-line="168" selection-start-column="8" selection-end-line="168" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Collection.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="190" column="95" lean-forward="false" selection-start-line="190" selection-start-column="95" selection-end-line="190" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>

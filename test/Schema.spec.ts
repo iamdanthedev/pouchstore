@@ -38,7 +38,7 @@ describe('Schema', () => {
     });
 
     it('get indexes should match the schema', () => {
-      expect(schema.indexes).to.eql(['id', 'tags', 'params.color', 'params.checked']);
+      expect(schema.indexes).to.eql(['id', 'tags', 'params.color', 'params.checked', 'type']);
     });
 
     it('validating proper document should succeed', () => {

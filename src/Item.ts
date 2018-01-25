@@ -63,7 +63,7 @@ export class Item<T extends ItemModel> {
   }
 
   /**
-   * Checks of the doc object merged with the changes object is valid
+   * Checks if the doc object merged with the changes object is valid
    *
    * @param {{} | T} currentDoc
    * @param {Partial<T extends ItemModel> | T} changes

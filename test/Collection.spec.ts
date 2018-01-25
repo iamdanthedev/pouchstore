@@ -244,6 +244,7 @@ describe('Collection', () => {
 
       const docs = await todos.find({
         selector: {
+
           tags: {
               $all: ['slim', 'shady']
           }
